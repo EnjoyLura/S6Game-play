@@ -10,10 +10,10 @@
         "02e877c1-d657-4b46-8e25-9e8e02e4ec04",
         "02e877c1-d657-4b46-8e25-9e8e02e4ec04@6c48a",
         "02e877c1-d657-4b46-8e25-9e8e02e4ec04@f9941",
+        "042d347be",
         "08cba099-0b68-44ff-8196-1fb9b2a5facd",
         "08cba099-0b68-44ff-8196-1fb9b2a5facd@6c48a",
         "08cba099-0b68-44ff-8196-1fb9b2a5facd@f9941",
-        "0b2f2bde6",
         "0f838bea-d8ee-48a9-a516-95aeb6579ac7",
         "0f838bea-d8ee-48a9-a516-95aeb6579ac7@6c48a",
         "0f838bea-d8ee-48a9-a516-95aeb6579ac7@f9941",
@@ -50,6 +50,9 @@
         "a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c",
         "a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c@6c48a",
         "a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c@f9941",
+        "af804088-a2b2-4d75-91f0-7d05be5b6a30",
+        "af804088-a2b2-4d75-91f0-7d05be5b6a30@6c48a",
+        "af804088-a2b2-4d75-91f0-7d05be5b6a30@f9941",
         "c3fdc5dc-3410-487c-b36f-46c7fc3795f9",
         "c3fdc5dc-3410-487c-b36f-46c7fc3795f9@6c48a",
         "c3fdc5dc-3410-487c-b36f-46c7fc3795f9@f9941",
@@ -322,6 +325,21 @@
             "cc.SpriteFrame",
             1
         ],
+        "af804088-a2b2-4d75-91f0-7d05be5b6a30": [
+            "art/v2-feature-scenes",
+            "cc.ImageAsset",
+            1
+        ],
+        "af804088-a2b2-4d75-91f0-7d05be5b6a30@6c48a": [
+            "art/v2-feature-scenes/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "af804088-a2b2-4d75-91f0-7d05be5b6a30@f9941": [
+            "art/v2-feature-scenes/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ],
         "08cba099-0b68-44ff-8196-1fb9b2a5facd": [
             "art/v2-icons",
             "cc.ImageAsset",
@@ -370,7 +388,7 @@
     },
     "scenes": {},
     "packs": {
-        "0b2f2bde6": [
+        "042d347be": [
             "0f838bea-d8ee-48a9-a516-95aeb6579ac7@6c48a",
             "1fb846a0-6c7b-42f6-898b-176a930db7e9@6c48a",
             "02e877c1-d657-4b46-8e25-9e8e02e4ec04@6c48a",
@@ -386,6 +404,7 @@
             "6688a0d8-81f2-442b-a440-20865d0be5df@6c48a",
             "a5e318f6-5f9c-48f6-950f-343ae6a785dc@6c48a",
             "a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c@6c48a",
+            "af804088-a2b2-4d75-91f0-7d05be5b6a30@6c48a",
             "c3fdc5dc-3410-487c-b36f-46c7fc3795f9@6c48a",
             "cd45215e-c8ca-4c85-87d0-10f079658178@6c48a",
             "d251be49-d451-4b30-81dc-89ef9b1396c7@6c48a",

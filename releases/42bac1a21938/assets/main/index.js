@@ -153,7 +153,7 @@ System.register("chunks:///_virtual/Adventure.ts", ['./rollupPluginModLoBabelHel
           this.canvasRoot = this.root;
           game.on(Game.EVENT_HIDE, this.hide, this);
           game.on(Game.EVENT_SHOW, this.show, this);
-          Promise.all(['forest', 'hero-knight', 'hero-mage', 'hero-priest', 'hero-archer', 'monsters-4', 'adventure-ui-v5', 'hero-ui-v6', 'training-yard', 'bag-ui-v4', 'recruit-ui-v1', 'modal-skin-v1', 'modal-controls-9', 'dungeon-ui-v2', 'v2-backgrounds', 'v2-controls', 'v2-icons', 'v2-navigation', 'v2-skills'].map(function (n) {
+          Promise.all(['forest', 'hero-knight', 'hero-mage', 'hero-priest', 'hero-archer', 'monsters-4', 'adventure-ui-v5', 'hero-ui-v6', 'training-yard', 'bag-ui-v4', 'recruit-ui-v1', 'modal-skin-v1', 'modal-controls-9', 'dungeon-ui-v2', 'v2-backgrounds', 'v2-controls', 'v2-icons', 'v2-navigation', 'v2-skills', 'v2-feature-scenes'].map(function (n) {
             return _this2.texture('art/' + n);
           })).then(function (_ref) {
             var forest = _ref[0],
@@ -174,7 +174,8 @@ System.register("chunks:///_virtual/Adventure.ts", ['./rollupPluginModLoBabelHel
               v2Controls = _ref[15],
               v2Icons = _ref[16],
               v2Adventure = _ref[17],
-              v2Skills = _ref[18];
+              v2Skills = _ref[18],
+              v2Features = _ref[19];
             setModalSkin(modalSkin, modalControls);
             _this2.ui = ui;
             _this2.heroTextures = [knight, mage, priest, archer];
@@ -293,7 +294,9 @@ System.register("chunks:///_virtual/Adventure.ts", ['./rollupPluginModLoBabelHel
                 'hero-knight': knight,
                 'hero-mage': mage,
                 'hero-priest': priest,
-                'hero-archer': archer
+                'hero-archer': archer,
+                'modal-controls-9': modalControls,
+                'v2-feature-scenes': v2Features
               });
             }
             if (_this2.model.dungeon.run) _this2.openPage('dungeon');
@@ -4429,14 +4432,14 @@ System.register("chunks:///_virtual/SecondEditionStyles.ts", ['cc'], function (e
     execute: function () {
       cclegacy._RF.push({}, "78953leEdlNeJKBqhrj48AG", "SecondEditionStyles", undefined);
       /** Shared responsive skin, nine-slice controls and square item grids. */
-      var SECOND_EDITION_STYLES = exports('SECOND_EDITION_STYLES', "\nhtml,body{background:#263b2c!important}\n#s6-v2,#s6-v2 *{box-sizing:border-box}\n#s6-v2{--ink:#623719;--cream:#fff2df;--gold:#ffcc27;--scene:none;position:fixed;inset:0;margin:auto;width:min(100vw,56.25dvh,600px);max-width:600px;height:100dvh;color:var(--ink);font-family:'Microsoft YaHei','PingFang SC',sans-serif;font-size:clamp(12px,2.7vw,17px);font-weight:700;z-index:20;pointer-events:none;container-type:inline-size;isolation:isolate}\n#s6-v2 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}\n#s6-v2 img{object-fit:contain;max-width:100%;user-select:none}\n#s6-v2 h1,#s6-v2 h2,#s6-v2 h3,#s6-v2 p{margin:0}\n#s6-v2 h1{font-size:5.2cqw}\n#s6-v2 h2{font-size:4cqw}\n#s6-v2 h3{font-size:3.7cqw}\n#s6-v2 small{font-size:2.7cqw}\n#s6-v2 em{font-style:normal;color:#348c13}\n#s6-backdrop{position:fixed;inset:0;background-position:center;background-size:cover;z-index:0;pointer-events:none}\n#GameDiv,#Cocos3dGameContainer{background:transparent!important}\n#GameDiv{position:relative!important;z-index:1!important;width:min(100vw,56.25dvh,600px)!important;max-width:600px;margin:auto!important}\n#s6-v2 .v2-content{height:100%;position:relative}\n#s6-v2 .page,#s6-v2 .secondary{height:100%;pointer-events:auto;background:#fce7ce;overflow:hidden;display:flex;flex-direction:column;padding:2cqw 2cqw 0;gap:1.5cqw;background-image:var(--scene);background-size:100% auto;background-repeat:no-repeat}\n#s6-v2 .v2-button{border:1px solid #eda516;border-radius:2.8cqw;background:linear-gradient(#ffe45d 0%,#ffcc20 65%,#ffbc10);box-shadow:inset 0 1px 1px #fffbd1,0 2px 2px #be813040;min-height:7cqw;padding:1cqw 3cqw;display:inline-flex;align-items:center;justify-content:center;gap:.7cqw;position:relative;flex-shrink:0;pointer-events:auto;text-shadow:0 1px #ffffff50}\n#s6-v2 .v2-button:hover{filter:brightness(1.035)}\n#s6-v2 .v2-button:active{transform:translateY(1px)}\n#s6-v2 .v2-button:focus-visible{outline:3px solid #2a83ce;outline-offset:2px}\n#s6-v2 .quiet{background:linear-gradient(#fff6e8,#ffe4c1);border-color:#ecd1ae}\n#s6-v2 .selected{background:linear-gradient(#ffe969,#ffc213);border-color:#eaaa22;box-shadow:inset 0 0 0 1px #fff6bf,0 2px 3px #a96b3140}\n#s6-v2 .v2-button:disabled{filter:grayscale(.7);opacity:.62;cursor:default}\n#s6-v2 .flat,#s6-v2 .equipment-slot{border:0;background:none;box-shadow:none;padding:0;min-height:0}\n#s6-v2 .wallet{display:flex;gap:2cqw;min-height:8.5cqw;align-items:center;padding:0 1cqw}\n#s6-v2 .resource{display:inline-flex;align-items:center;background:#fff0d9;border:1px solid #9e662e;border-radius:8cqw;height:6.5cqw;padding:0 2cqw 0 .3cqw;gap:1cqw;font-size:3.4cqw;box-shadow:0 2px 1px #7d4a3b22}\n#s6-v2 .resource img{height:7cqw;width:7cqw;margin-top:-.2cqw}\n#s6-v2 .v2-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:1cqw;margin-top:auto;padding:1cqw 0 max(1cqw,env(safe-area-inset-bottom));min-height:14cqw;pointer-events:auto}\n#s6-v2 .v2-nav button{padding:1cqw .5cqw;flex-direction:column;gap:0;border-radius:4cqw;font-size:3.5cqw;min-width:0}\n#s6-v2 .v2-nav img{height:7cqw;width:11cqw}\n#s6-v2 .main-tabs{display:flex;gap:1cqw}\n#s6-v2 .main-tabs button{flex:1;min-width:0;border-radius:8cqw;font-size:3.8cqw;padding:1.5cqw .5cqw}\n#s6-v2 .page-actions{display:flex;gap:3cqw;justify-content:center}\n#s6-v2 .page-actions button{min-width:32%;font-size:3.8cqw}\n#s6-v2 .cream-card{background:#fff6e5bd;border:1px solid #fff5df;border-radius:3cqw;padding:2cqw;box-shadow:0 1px 2px #ab6e2b16}\n#s6-v2 .section-title{align-self:flex-start;font-size:3.5cqw!important;padding:.8cqw 2cqw;margin-bottom:1cqw!important;background:linear-gradient(90deg,#ffdc9f,#ffdc9f80);border-radius:9cqw;display:table}\n#s6-v2 .stat-row{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#fbe1be,#fce5c9);border-radius:5cqw;padding:.7cqw 2.5cqw;margin:1cqw 0;font-size:3.2cqw;min-height:4.5cqw;gap:1cqw}\n#s6-v2 .two-grid{display:grid;grid-template-columns:1fr 1fr;gap:1cqw 2cqw}\n#s6-v2 .face{aspect-ratio:1;object-fit:contain}\n#s6-v2 .hero-tabs{display:flex;gap:1cqw}\n#s6-v2 .hero-tabs button{flex:1;padding:0;font-size:3.3cqw;border-radius:3cqw;min-width:0;height:9cqw}\n#s6-v2 .hero-tabs img{width:10cqw;margin-left:-1cqw}\n#s6-v2 .hero-stage{position:relative;flex:1;min-height:44cqw;max-height:65cqw;text-align:center;padding-top:.7cqw}\n#s6-v2 .hero-stage h1{font-size:5cqw}\n#s6-v2 .stars{color:#f9b800;text-shadow:0 1px #9f540f;font-size:5cqw;display:flex;align-items:center;justify-content:center;gap:.7cqw}\n#s6-v2 .stars>span{color:#aaa89b}\n#s6-v2 .star-button{border-radius:50%;padding:0;width:6cqw;min-height:6cqw;font-size:5cqw;margin-left:2cqw}\n#s6-v2 .roles{font-size:3cqw}\n#s6-v2 .hero-figure{position:absolute;width:54%;height:78%;bottom:0;left:23%;pointer-events:none}\n#s6-v2 .equipment-left,#s6-v2 .equipment-right{position:absolute;top:11cqw;bottom:0;display:flex;flex-direction:column;justify-content:space-around;width:18cqw;z-index:1}\n#s6-v2 .equipment-left{left:3cqw}\n#s6-v2 .equipment-right{right:3cqw}\n#s6-v2 .equipment-slot{display:flex;flex-direction:column;width:100%;gap:.3cqw}\n#s6-v2 .gear-tile{position:relative;aspect-ratio:1;background:linear-gradient(130deg,#ffffff25,transparent),var(--quality,#c4b6a6);border-radius:2cqw;overflow:hidden;width:100%}\n#s6-v2 .gear-tile>img{width:98%;height:98%;padding:2%;object-fit:contain}\n#s6-v2 .gear-tile.empty{background:#c5b8a7}\n#s6-v2 .gear-level{position:absolute;right:4%;bottom:1%;font-size:3.2cqw;color:white;text-shadow:1px 1px #5f3b21,-1px -1px #5f3b21,1px -1px #5f3b21,-1px 1px #5f3b21}\n#s6-v2 .gear-lock{position:absolute;right:4%;top:1%;color:#fff4c0;font-size:3.5cqw;text-shadow:1px 1px #4f381b}\n#s6-v2 .formation-link{position:absolute;bottom:1cqw;left:38%;font-size:2.5cqw;min-height:5cqw;z-index:2}\n#s6-v2 .experience{display:flex;align-items:center;gap:2cqw;padding:0 5cqw}\n#s6-v2 progress{width:100%;height:2.3cqw;border-radius:8px;overflow:hidden;accent-color:#ffce32}\n#s6-v2 .experience small{white-space:nowrap}\n#s6-v2 .hero-skills{display:grid;grid-template-columns:repeat(5,1fr);gap:1.8cqw}\n#s6-v2 .hero-skills button{flex-direction:column;font-size:2.8cqw;gap:.4cqw}\n#s6-v2 .hero-skills img,#s6-v2 .hero-skills .skill-symbol{width:12cqw;height:12cqw}\n#s6-v2 .hero-skills b{font-size:2.8cqw}\n#s6-v2 .unavailable{filter:grayscale(.9);opacity:.7}\n#s6-v2 .skill-symbol{display:flex;align-items:center;justify-content:center;border-radius:2cqw;color:white;font-size:10cqw;text-shadow:0 0 8px #fff;background:radial-gradient(#fff897,#ffae00 55%,#d85900)}\n#s6-v2 .skill-symbol.heal{background:radial-gradient(#eeff8e,#7bcf08 60%,#459a08)}\n#s6-v2 .attributes .stat-row{font-size:2.9cqw;min-height:4.7cqw}\n#s6-v2 .part-tabs{display:flex;gap:.7cqw;padding:0 1cqw}\n#s6-v2 .part-tabs button{flex:1;padding:.5cqw;min-width:0;font-size:6cqw;height:10cqw}\n#s6-v2 .part-tabs img{width:8cqw;height:8cqw}\n#s6-v2 .filter-row{display:flex;justify-content:space-between;padding:0 2cqw}\n#s6-v2 .filter-row button{font-size:3.4cqw;min-height:6.5cqw;border-radius:8cqw}\n#s6-v2 .five-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.5cqw;align-content:start}\n#s6-v2 .five-grid>.flat{display:block;min-width:0}\n#s6-v2 .bag-scroll{flex:1;min-height:0;overflow:auto;padding:2.5cqw;scrollbar-color:#f8b71a #f6dbba;scrollbar-width:thin}\n#s6-v2 .bag-footer{display:flex;align-items:center;justify-content:space-between;gap:1cqw;font-size:3cqw;padding:1cqw 2cqw}\n#s6-v2 .bag-footer button{font-size:3cqw;padding:1cqw 2cqw;border-radius:6cqw}\n#s6-v2 .bag-page>.main-tabs{margin-top:1cqw}\n#s6-v2 .empty-message{grid-column:1/-1;text-align:center;opacity:.7;padding:4cqw}\n#s6-v2 .reward{aspect-ratio:1;position:relative;background:#48b7e5;border-radius:1.8cqw;overflow:hidden;min-width:0}\n#s6-v2 .reward>img{height:90%;width:90%;margin:2% 5%}\n#s6-v2 .reward>b{position:absolute;right:5%;bottom:1%;color:#fff;font-size:3cqw;text-shadow:1px 1px #563d21,-1px -1px #563d21}\n#s6-v2 .reward>small{display:none}\n#s6-v2 .recruit-page{background-size:cover;background-position:center}\n#s6-v2 .ticket-wallet{position:absolute;top:2.2cqw;right:2.5cqw;color:#fff;display:flex;align-items:center;gap:1cqw;font-size:2.6cqw}\n#s6-v2 .ticket-wallet .resource{font-size:3cqw}\n#s6-v2 .recruit-page>.main-tabs{margin-top:1cqw;z-index:1}\n#s6-v2 .recruit-cast{position:relative;flex:1;min-height:35cqw}\n#s6-v2 .recruit-cast .face{position:absolute;object-fit:contain}\n#s6-v2 .cast-center{width:65%;height:90%;left:17%;top:8%;z-index:2}\n#s6-v2 .cast-left{width:53%;height:70%;left:-7%;top:0}\n#s6-v2 .cast-right{width:53%;height:70%;right:-7%;top:-4%}\n#s6-v2 .recruit-caption{text-align:center;color:#fff3b7;text-shadow:0 2px 2px #4d2861}\n#s6-v2 .recruit-caption h1{font-size:8cqw}\n#s6-v2 .recruit-caption p{font-size:3.5cqw}\n#s6-v2 .recruit-bottom{color:#fff8e8;padding:1cqw 3cqw;display:flex;flex-direction:column;gap:1.8cqw}\n#s6-v2 .pool-links{display:flex;gap:2cqw;justify-content:center}\n#s6-v2 .pool-links button{min-height:5.5cqw;font-size:3cqw}\n#s6-v2 .pity{display:flex;justify-content:space-between;font-size:3.3cqw}\n#s6-v2 .pity em{color:#ffed64}\n#s6-v2 .recruit-bottom .page-actions button{min-width:42%;flex-direction:column;padding:.8cqw;font-size:4cqw;min-height:10cqw}\n#s6-v2 .recruit-page>.v2-nav{margin-top:0}\n#s6-v2 .dungeon-list{flex:1;overflow:auto;display:flex;flex-direction:column;gap:2cqw;padding:1cqw;min-height:0}\n#s6-v2 .dungeon-card{display:grid;grid-template-columns:46% 54%;background:#fff2df;border-radius:3cqw;padding:1cqw;gap:0;min-height:0;flex:1;max-height:31cqw;box-shadow:0 1px 2px #a86a351a}\n#s6-v2 .dungeon-card>img{width:100%;height:100%;object-fit:cover;border-radius:2cqw;min-height:0}\n#s6-v2 .dungeon-card>div{display:flex;flex-direction:column;padding:.7cqw 1.8cqw;gap:1cqw;min-width:0}\n#s6-v2 .dungeon-card h2{font-size:4cqw;text-align:center}\n#s6-v2 .drop-icons{display:flex;gap:1cqw;flex:1;min-height:0;justify-content:center;align-items:center}\n#s6-v2 .drop-icons>.reward{width:11cqw;max-height:12cqw}\n#s6-v2 .drop-icons>img{width:10cqw;height:10cqw;background:#42b4e7;border-radius:1cqw}\n#s6-v2 .dungeon-card footer{display:flex;align-items:center;justify-content:space-between;gap:.5cqw}\n#s6-v2 .dungeon-card footer button{font-size:3.3cqw;min-height:6cqw;padding:.3cqw 4cqw;border-radius:8cqw}\n#s6-v2 .dungeon-card footer small{font-size:2.6cqw;white-space:nowrap}\n#s6-v2 .endless-note{text-align:center;padding:7cqw;background:#fff2dfaa;border-radius:3cqw;font-size:3.5cqw;line-height:1.8}\n#s6-v2 .v2-modal-host{position:absolute;inset:0;pointer-events:none;z-index:50}\n#s6-v2 .v2-scrim{position:absolute;inset:0;background:#18291fc2;backdrop-filter:blur(2px);pointer-events:auto;display:flex;align-items:center;justify-content:center;padding:4cqw}\n#s6-v2 .v2-dialog{outline:0;width:100%;max-height:91%;border:3px solid #dda848;border-radius:4cqw;background:linear-gradient(125deg,#fff8e8,#ffeed4);box-shadow:inset 0 0 0 2px #fff4d3,0 5px 20px #080d0a66;padding:0 3.5cqw 3cqw;display:flex;flex-direction:column;gap:2cqw;position:relative;font-size:3.2cqw}\n#s6-v2 .dialog-head{min-height:9cqw;display:flex;justify-content:center;align-items:center;margin:-2cqw 0 0}\n#s6-v2 .dialog-head h2{background:linear-gradient(#ffe3a1,#ffc779);border:2px solid #f4c672;border-radius:4cqw;padding:1.4cqw 7cqw;font-size:4.6cqw;box-shadow:0 2px 2px #ac722636}\n#s6-v2 .dialog-head .close{position:absolute;right:-2cqw;top:-2cqw;padding:0;background:linear-gradient(#ffd879,#f6a32c);border:2px solid #fff2b8;color:#fff;font-size:7cqw;line-height:1;border-radius:50%;width:8cqw;height:8cqw;min-height:0}\n#s6-v2 .dialog-body{overflow:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#efb84f #fae1bd;display:flex;flex-direction:column;gap:1.2cqw}\n#s6-v2 .dialog-actions{display:flex;justify-content:center;gap:3cqw;padding-top:1cqw}\n#s6-v2 .dialog-actions button{min-width:31%;font-size:3.8cqw;min-height:8cqw;flex-direction:column;border-radius:8cqw}\n#s6-v2 .outside-hint{position:absolute;bottom:1.5%;color:#fff1d0;font-size:3cqw}\n#s6-v2 .small{max-width:84%;gap:2cqw}\n#s6-v2 .small .info-pad{min-height:16cqw;font-size:3.4cqw;line-height:1.8;justify-content:center}\n#s6-v2 .info-pad{background:#f1e4cf;border:1px solid #f8efde;border-radius:2cqw;padding:2.5cqw;line-height:1.65;white-space:pre-line;font-size:3.2cqw}\n#s6-v2 .info-pad.compact{padding:1.6cqw;font-size:2.8cqw}\n#s6-v2 .item-heading{display:flex;align-items:center;gap:3cqw;position:relative;padding:1cqw 0}\n#s6-v2 .item-heading>.gear-tile,#s6-v2 .item-heading>.face{width:22%;flex-shrink:0}\n#s6-v2 .item-heading>div:not(.gear-tile){display:flex;flex-direction:column;gap:1cqw}\n#s6-v2 .lock-button{margin-left:auto;font-size:5cqw}\n#s6-v2 .equip-owner{font-size:2.7cqw;text-align:center}\n#s6-v2 .skill-preview img,#s6-v2 .skill-preview .skill-symbol{width:17cqw;height:17cqw}\n#s6-v2 .equipment-scroll{height:66cqw;overflow:auto;padding:1cqw;scrollbar-width:thin}\n#s6-v2 .filter-options{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;padding:2cqw}\n#s6-v2 .salvage-scroll{height:59cqw}\n#s6-v2 .quality-checks{display:flex;flex-wrap:wrap;gap:1cqw}\n#s6-v2 .quality-checks button{font-size:2.7cqw;padding:1cqw 1.4cqw;min-height:5cqw}\n#s6-v2 .list-heading{display:flex;justify-content:space-between;font-size:3.3cqw}\n#s6-v2 .checked{position:absolute;left:0;bottom:0;background:#ffe24c;border-radius:50%;font-size:4cqw;padding:0 1cqw}\n#s6-v2 .material-line{display:flex;align-items:center;justify-content:center;gap:2cqw;font-size:3cqw}\n#s6-v2 .material-line img{height:6cqw;width:6cqw}\n#s6-v2 .reward-scroll{height:39cqw;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#f7bd36 #f5e0bd;background:#f6e6ce;border-radius:2cqw;padding:1.6cqw}\n#s6-v2 .offline-rates{display:flex;gap:2cqw;justify-content:center}\n#s6-v2 .offline-rates .resource{font-size:2.7cqw}\n#s6-v2 .challenge-heading{display:flex;gap:2cqw;align-items:center}\n#s6-v2 .challenge-heading>img{width:34%;aspect-ratio:1.4;object-fit:cover;border-radius:2cqw}\n#s6-v2 .challenge-cost{display:flex;align-items:center;justify-content:center;font-size:3cqw}\n#s6-v2 .challenge-cost img{width:5cqw;height:5cqw}\n#s6-v2 .pool-name{text-align:center}\n#s6-v2 .pool-heroes{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw}\n#s6-v2 .hero-card{background:linear-gradient(130deg,#fff7,#fff0),var(--quality);border:2px solid #fff1bf;border-radius:2cqw;padding:1cqw;display:flex;flex-direction:column;position:relative;overflow:hidden;text-align:center;min-width:0;box-shadow:0 2px 2px #65452e33}\n#s6-v2 .hero-card>.face{width:100%;aspect-ratio:1}\n#s6-v2 .hero-card>b{font-size:3cqw}\n#s6-v2 .hero-card>small{font-size:2.1cqw;white-space:nowrap}\n#s6-v2 .hero-role{font-size:2cqw;text-align:left}\n#s6-v2 .hero-card.locked{filter:grayscale(.8);opacity:.65}\n#s6-v2 .new{position:absolute;top:1%;right:0;font:italic 800 2.5cqw sans-serif;background:#ff593d;color:white;padding:.4cqw 1cqw;z-index:1}\n#s6-v2 .fullscreen{background:transparent;border:0;box-shadow:none;color:#fff6db;gap:4cqw;padding:0;max-height:95%}\n#s6-v2 .fullscreen .dialog-head h2{background:none;border:0;box-shadow:none;font-size:8cqw;color:#ffed97;text-shadow:0 2px 2px #b36c17}\n#s6-v2 .fullscreen .close{display:none}\n#s6-v2 .fullscreen .dialog-body{gap:3cqw;text-align:center}\n#s6-v2 .fullscreen .dialog-actions{padding-top:7cqw}\n#s6-v2 .fullscreen .hero-card{color:#653b21}\n#s6-v2 .result-cards{gap:1.5cqw}\n#s6-v2 .result-cards.single{width:34cqw;align-self:center}\n#s6-v2 .result-cards.single .hero-card>b{font-size:5cqw}\n#s6-v2 .rewards-fullscreen .reward-scroll{background:#a3713233;height:46cqw;padding:2cqw 0}\n#s6-v2 .secondary{padding:0;gap:0}\n#s6-v2 .title-plaque{display:table;margin:2cqw auto!important;padding:1.6cqw 7cqw;background:linear-gradient(#fff4d8,#ffdfa6);border:2px solid #efbd66;border-radius:2cqw;box-shadow:inset 0 0 0 2px #fff9df;font-size:5cqw}\n#s6-v2 .forge-scene{height:42%;position:relative;background-size:cover;background-position:center;flex-shrink:0}\n#s6-v2 .forge-scene .wallet{position:absolute;top:1cqw;left:1cqw}\n#s6-v2 .forge-scene>.title-plaque{position:relative;width:max-content;font-size:4.5cqw}\n#s6-v2 .forge-item{position:absolute;top:12cqw;left:3cqw;display:flex;gap:1.5cqw;align-items:center}\n#s6-v2 .forge-item>.gear-tile{width:15cqw}\n#s6-v2 .forge-item h2{font-size:3.7cqw}\n#s6-v2 .forge-item p{font-size:2.6cqw}\n#s6-v2 .forge-weapon{position:absolute;width:27%;height:40%;left:35%;bottom:15%;filter:drop-shadow(0 0 8px #ffdf61)}\n#s6-v2 .upgrade-body{padding:1cqw 5cqw 2cqw;display:flex;flex-direction:column;flex:1;gap:.8cqw}\n#s6-v2 .level-preview{text-align:center;padding:1cqw 0 2cqw;font-size:5.7cqw}\n#s6-v2 .upgrade-body .stat-row{margin:.5cqw 0;padding:1cqw 2.5cqw}\n#s6-v2 .upgrade-body .section-title{margin-top:1cqw}\n#s6-v2 .upgrade-costs{display:flex;align-items:center;justify-content:space-around;gap:4cqw;margin-top:auto;padding-top:2cqw;font-size:3cqw}\n#s6-v2 .upgrade-costs>div{display:flex;flex-direction:column;align-items:center;gap:.4cqw}\n#s6-v2 .upgrade-costs .reward{width:10cqw;background:transparent;border:1px solid #d7b38d}\n#s6-v2 .upgrade-costs .reward>b{display:none}\n#s6-v2 .upgrade-costs button{min-width:33%;border-radius:8cqw;font-size:4.2cqw}\n#s6-v2 .secondary-close{align-self:center;width:40%;font-size:4.5cqw;margin:3cqw 0 2cqw;border-radius:9cqw}\n#s6-v2 .breakthrough-note{display:flex;align-items:center;justify-content:center;color:#9d6b36;font-size:2.8cqw;margin-top:1cqw}\n#s6-v2 .breakthrough-note:before,#s6-v2 .breakthrough-note:after{content:'';height:1px;background:#e5bc76;flex:1}\n#s6-v2 .formation-scene{height:37%;background-position:center;background-size:cover;position:relative}\n#s6-v2 .standing-heroes{position:absolute;inset:17% 3% 0;display:flex;justify-content:space-around;align-items:center}\n#s6-v2 .standing-heroes .standing{width:29%;padding:0;background:none;box-shadow:none;border:0;display:flex;flex-direction:column;font-size:3cqw}\n#s6-v2 .standing img{width:100%;height:22cqw}\n#s6-v2 .standing small{background:#fff0ccdd;border-radius:3cqw;padding:0 2cqw}\n#s6-v2 .slot0{transform:translateY(6cqw)}\n#s6-v2 .empty-position{border:2px dashed #bca77b;background:#f7ebcd66;width:22%;height:14cqw}\n#s6-v2 .formation-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1cqw;padding:2cqw;font-size:3cqw}\n#s6-v2 .formation-toolbar>div{display:flex;gap:1cqw}\n#s6-v2 .formation-toolbar>div button{padding:0;width:6cqw;min-height:6cqw;border-radius:50%}\n#s6-v2 .formation-toolbar>button{font-size:2.7cqw;min-height:6cqw;padding:1cqw 2cqw}\n#s6-v2 .roster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;padding:2cqw 3cqw;flex:1;align-content:start;overflow:auto}\n#s6-v2 .roster-grid button{display:block;position:relative;align-self:start}\n#s6-v2 .deployed{position:absolute;right:1cqw;top:1cqw;height:max-content;background:#ee8c51;color:white;font-size:2.5cqw;padding:.3cqw 1cqw}\n#s6-v2 .formation-types>button{padding:2cqw 1cqw;flex-direction:column;gap:2cqw}\n#s6-v2 .formation-mini{display:flex}\n#s6-v2 .formation-mini>div{display:flex;flex-direction:column;width:33%}\n#s6-v2 .formation-mini img{width:100%}\n#s6-v2 .formation-mini b{font-size:3cqw}\n#s6-v2 .talent-wallet{text-align:center}\n#s6-v2 .talent-tree{position:relative;height:65cqw;min-height:65cqw;background:radial-gradient(ellipse,#b1d26a44,transparent 70%)}\n#s6-v2 .talent-tree svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}\n#s6-v2 .talent-tree path{fill:none;stroke:#a3843c;stroke-width:1.2;stroke-linecap:round}\n#s6-v2 .talent-node{position:absolute;transform:translate(-50%,-50%);width:8cqw;height:8cqw;min-height:0;border-radius:50%;padding:0;font-size:4cqw;background:linear-gradient(#e1dac7,#cbbf9c)}\n#s6-v2 .talent-node.learned{background:linear-gradient(#fff06e,#efa51d);box-shadow:0 0 5px #ffc600}\n#s6-v2 .flow-node{left:50%;top:95%}\n#s6-v2 .v2-toast{position:absolute;bottom:25%;left:10%;width:80%;text-align:center;background:#4b3527ef;color:#fff4d6;padding:2cqw 3cqw;border-radius:2cqw;opacity:0;transition:opacity .15s;z-index:100;font-size:3.5cqw;pointer-events:none}\n#s6-v2 .v2-toast.visible{opacity:1}\n#s6-v2 .battle-hud{height:100%;position:relative;padding:1cqw;pointer-events:none;display:flex;flex-direction:column}\n#s6-v2 .battle-hud>.wallet{flex-direction:column;align-items:flex-start;position:absolute;top:1cqw;left:10cqw;gap:.6cqw;z-index:1}\n#s6-v2 .battle-hud .resource{height:4.7cqw;font-size:2.8cqw}\n#s6-v2 .battle-hud .resource img{height:5.5cqw;width:5.5cqw}\n#s6-v2 .menu{position:absolute;left:1cqw;top:1cqw;width:8cqw;height:8cqw;font-size:6cqw;padding:0}\n#s6-v2 .stage-heading{text-align:center;margin-top:1cqw;min-height:19cqw;display:flex;flex-direction:column;align-items:center;margin-left:24cqw}\n#s6-v2 .stage-heading h1{font-size:5.8cqw;text-shadow:1px 1px #fff5d0,-1px -1px #fff5d0}\n#s6-v2 .stage-heading>b{font-size:3.8cqw}\n#s6-v2 .checkpoint{display:flex;align-items:center;gap:4cqw;border-top:2px solid #fff1ca;margin-top:2cqw;height:2cqw;color:#7b5c32}\n#s6-v2 .checkpoint i{width:2.5cqw;height:2.5cqw;background:#73be31;border:1px solid #fff7d2;border-radius:50%;display:block;margin-top:-2cqw}\n#s6-v2 .turn-order{display:flex;align-items:center;justify-content:center;gap:1cqw;font-size:3cqw;margin-top:2cqw;height:8cqw}\n#s6-v2 .turn-order>.face{width:7cqw;height:7cqw}\n#s6-v2 .monster-turn{width:7cqw;height:7cqw;border-radius:50%;background:#a4dc62;color:#45632f;display:flex;align-items:center;justify-content:center;font-size:5cqw}\n#s6-v2 .battle-tools{position:absolute;right:2cqw;top:34cqw;display:flex;flex-direction:column;gap:1.5cqw}\n#s6-v2 .battle-tools button{width:8cqw;height:8cqw;min-height:0;padding:0;flex-direction:column;font-size:4cqw;gap:0;border-radius:2.4cqw}\n#s6-v2 .battle-tools small{font-size:1.8cqw}\n#s6-v2 .battle-tools .on:after{content:'';position:absolute;right:-.4cqw;top:-.4cqw;background:#78d02d;width:1.8cqw;height:1.8cqw;border:1px solid #fff;border-radius:50%}\n#s6-v2 .field-actions{margin-top:auto;display:flex;gap:2cqw;padding:1cqw 2cqw}\n#s6-v2 .field-actions button{min-height:6.5cqw;border-radius:6cqw;padding:.5cqw 3cqw;font-size:3.4cqw}\n#s6-v2 .skill-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:linear-gradient(#fff3e1,#ffeed5);pointer-events:auto;padding:2cqw 1cqw;min-height:36cqw;gap:1.8cqw;border-top:1px solid #fff6cf}\n#s6-v2 .party-card{min-width:0;border-right:1px solid #edd1ad;padding-right:1cqw}\n#s6-v2 .party-card:last-child{border-right:0}\n#s6-v2 .party-card>header{display:flex;align-items:center;min-height:12cqw}\n#s6-v2 .party-card>header>.face{width:11cqw;height:11cqw;border:1px solid #edd1ad;border-radius:50%;background:#fff0d5}\n#s6-v2 .party-card>header>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:.3cqw}\n#s6-v2 .party-card b{font-size:3cqw}\n#s6-v2 .party-card small{font-size:2.2cqw;white-space:nowrap}\n#s6-v2 .health-track{height:1.7cqw;background:#c8ae83;border:1px solid #675326;border-radius:8px;overflow:hidden}\n#s6-v2 .health-track i{display:block;height:100%;background:linear-gradient(#c9ff75,#74ca19)}\n#s6-v2 .active-skills{display:grid;grid-template-columns:1fr 1fr;gap:1.2cqw;margin-top:1.5cqw}\n#s6-v2 .skill-button{display:flex;flex-direction:column;background:none;box-shadow:none;border:0;padding:0;min-width:0}\n#s6-v2 .skill-button>img,#s6-v2 .skill-button>.skill-symbol{width:12cqw;height:12cqw;object-fit:contain;border-radius:2cqw;background:radial-gradient(#fff6a1,#e9b535)}\n#s6-v2 .skill-button>span[data-cooldown]{position:absolute;top:30%;color:white;text-shadow:0 1px 2px #3b2411;font-size:4cqw}\n#s6-v2 .battle-hud>.v2-nav{background:#fff0d7;margin:0;padding:1cqw}\n#s6-v2 .battle-hud>.v2-nav button{min-height:13cqw}\n#s6-v2 .page>.wallet{flex-shrink:0}\n#s6-v2 .hero-stage{flex:none;height:76cqw;min-height:76cqw;max-height:76cqw}\n#s6-v2 .bag-page,#s6-v2 .dungeon-page{background-size:100% 18cqw}\n#s6-v2 .hero-page{background-image:linear-gradient(transparent 0%,transparent 42%,#fce7ce 52%),var(--scene);background-size:100% 100%,100% auto}\n#s6-v2 .recruit-bottom .v2-button{color:var(--ink)}\n\n#s6-v2 .v2-button{--button-art:var(--gold-art)}\n#s6-v2 .v2-button.quiet{--button-art:var(--cream-art)}\n#s6-v2 .v2-button.selected{--button-art:var(--gold-art)}\n#s6-v2 .v2-button:not(.flat):not(.equipment-slot):not(.talent-node):not(.standing):not(.skill-button){background:none;border-image:var(--button-art) 65 150 fill / 8px 18px stretch;box-shadow:none}\n#s6-v2 .dialog-head .close{border-image:none!important;background-image:var(--close-art)!important;background-size:100% 100%!important;border:0!important;color:transparent!important}\n#s6-v2 .v2-dialog:not(.fullscreen){border-image:var(--panel-art) 75 fill / 22px stretch;background:none;border-width:12px;padding:0 2cqw 2cqw}\n#s6-v2 .dialog-head h2{background-image:var(--plaque-art);background-size:100% 100%;border:0;box-shadow:none;padding:2.5cqw 7cqw}\n#s6-v2 .v2-button.flat{border-image:none}\n#s6-v2 .up-ticket{filter:hue-rotate(290deg)}\n#s6-v2 .empty-position{border-image:none!important;background:#f7ebcd66!important}\n#s6-v2 .empty-slot-symbol{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:7cqw;color:#a89984}\n#s6-v2 .equipment-slot small{font-size:3cqw;line-height:1.3}\n#s6-v2 .hero-tabs button{height:10cqw}\n#s6-v2 .hero-tabs img{width:9cqw}\n#s6-v2 .bag-page,#s6-v2 .dungeon-page{background-image:linear-gradient(transparent 0 16cqw,#fce7ce 18cqw),var(--scene);background-size:100% 100%,100% auto;background-position:top,center top}\n#s6-v2 .dungeon-card{max-height:39cqw}\n#s6-v2 .stage-heading small{font-size:2.8cqw}\n#s6-v2 .battle-tools small{font-size:1.7cqw;white-space:nowrap;line-height:1.2}\n#s6-v2 .turn-portrait{width:7cqw;height:7cqw;display:flex;align-items:center;border-radius:50%;border:1px solid transparent}\n#s6-v2 .turn-portrait img{width:100%;height:100%}\n#s6-v2 .turn-portrait.turn-current{border-color:#ffe250;filter:drop-shadow(0 0 3px #fff460)}\n#s6-v2 .field-actions img{width:5cqw;height:5cqw}#s6-v2 .battle-tools img{width:4.5cqw;height:4.5cqw}\n#s6-v2 .field-actions{background:linear-gradient(transparent,#daeabd88)}\n#s6-v2 .party-card small{font-size:2.5cqw}\n#s6-v2 .skill-button small{font-size:2.7cqw}\n#s6-v2 .v2-nav button{font-size:3.8cqw;min-height:14cqw}\n#s6-v2 .hero-page{overflow-y:auto}\n#s6-v2 .hero-page>.v2-nav{position:sticky;bottom:0;background:#fce7ce;z-index:4;flex-shrink:0}\n#s6-v2 .hero-page>.cream-card,#s6-v2 .hero-page>.hero-tabs,#s6-v2 .hero-page>.page-actions{flex-shrink:0}\n@media(max-height:650px){#s6-v2 .hero-stage{min-height:35cqw}\n#s6-v2 .hero-skills img,#s6-v2 .hero-skills .skill-symbol{width:9cqw;height:9cqw}\n#s6-v2 .attributes .stat-row{min-height:3.6cqw}\n#s6-v2 .page{gap:.7cqw}\n#s6-v2 .skill-bar{min-height:31cqw}\n#s6-v2 .v2-dialog{max-height:94%}}@media(prefers-reduced-motion:reduce){#s6-v2 *{transition:none!important}}");
+      var SECOND_EDITION_STYLES = exports('SECOND_EDITION_STYLES', "\nhtml,body{background:#263b2c!important}\n#s6-v2,#s6-v2 *{box-sizing:border-box}\n#s6-v2{--ink:#623719;--cream:#fff2df;--gold:#ffcc27;--scene:none;position:fixed;inset:0;margin:auto;width:min(100vw,56.25dvh,600px);max-width:600px;height:100dvh;color:var(--ink);font-family:'Microsoft YaHei','PingFang SC',sans-serif;font-size:clamp(12px,2.7vw,17px);font-weight:700;z-index:20;pointer-events:none;container-type:inline-size;isolation:isolate}\n#s6-v2 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}\n#s6-v2 img{object-fit:contain;max-width:100%;user-select:none}\n#s6-v2 h1,#s6-v2 h2,#s6-v2 h3,#s6-v2 p{margin:0}\n#s6-v2 h1{font-size:5.2cqw}\n#s6-v2 h2{font-size:4cqw}\n#s6-v2 h3{font-size:3.7cqw}\n#s6-v2 small{font-size:2.7cqw}\n#s6-v2 em{font-style:normal;color:#348c13}\n#s6-backdrop{position:fixed;inset:0;background-position:center;background-size:cover;z-index:0;pointer-events:none}\n#GameDiv,#Cocos3dGameContainer{background:transparent!important}\n#GameDiv{position:relative!important;z-index:1!important;width:min(100vw,56.25dvh,600px)!important;max-width:600px;margin:auto!important}\n#s6-v2 .v2-content{height:100%;position:relative}\n#s6-v2 .page,#s6-v2 .secondary{height:100%;pointer-events:auto;background:#fce7ce;overflow:hidden;display:flex;flex-direction:column;padding:2cqw 2cqw 0;gap:1.5cqw;background-image:var(--scene);background-size:100% auto;background-repeat:no-repeat}\n#s6-v2 .v2-button{border:1px solid #eda516;border-radius:2.8cqw;background:linear-gradient(#ffe45d 0%,#ffcc20 65%,#ffbc10);box-shadow:inset 0 1px 1px #fffbd1,0 2px 2px #be813040;min-height:7cqw;padding:1cqw 3cqw;display:inline-flex;align-items:center;justify-content:center;gap:.7cqw;position:relative;flex-shrink:0;pointer-events:auto;text-shadow:0 1px #ffffff50}\n#s6-v2 .v2-button:hover{filter:brightness(1.035)}\n#s6-v2 .v2-button:active{transform:translateY(1px)}\n#s6-v2 .v2-button:focus-visible{outline:3px solid #2a83ce;outline-offset:2px}\n#s6-v2 .quiet{background:linear-gradient(#fff6e8,#ffe4c1);border-color:#ecd1ae}\n#s6-v2 .selected{background:linear-gradient(#ffe969,#ffc213);border-color:#eaaa22;box-shadow:inset 0 0 0 1px #fff6bf,0 2px 3px #a96b3140}\n#s6-v2 .v2-button:disabled{filter:grayscale(.7);opacity:.62;cursor:default}\n#s6-v2 .flat,#s6-v2 .equipment-slot{border:0;background:none;box-shadow:none;padding:0;min-height:0}\n#s6-v2 .wallet{display:flex;gap:2cqw;min-height:8.5cqw;align-items:center;padding:0 1cqw}\n#s6-v2 .resource{display:inline-flex;align-items:center;background:#fff0d9;border:1px solid #9e662e;border-radius:8cqw;height:6.5cqw;padding:0 2cqw 0 .3cqw;gap:1cqw;font-size:3.4cqw;box-shadow:0 2px 1px #7d4a3b22}\n#s6-v2 .resource img{height:7cqw;width:7cqw;margin-top:-.2cqw}\n#s6-v2 .v2-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:1cqw;margin-top:auto;padding:1cqw 0 max(1cqw,env(safe-area-inset-bottom));min-height:14cqw;pointer-events:auto}\n#s6-v2 .v2-nav button{padding:1cqw .5cqw;flex-direction:column;gap:0;border-radius:4cqw;font-size:3.5cqw;min-width:0}\n#s6-v2 .v2-nav img{height:7cqw;width:11cqw}\n#s6-v2 .main-tabs{display:flex;gap:1cqw}\n#s6-v2 .main-tabs button{flex:1;min-width:0;border-radius:8cqw;font-size:3.8cqw;padding:1.5cqw .5cqw}\n#s6-v2 .page-actions{display:flex;gap:3cqw;justify-content:center}\n#s6-v2 .page-actions button{min-width:32%;font-size:3.8cqw}\n#s6-v2 .cream-card{background:#fff6e5bd;border:1px solid #fff5df;border-radius:3cqw;padding:2cqw;box-shadow:0 1px 2px #ab6e2b16}\n#s6-v2 .section-title{align-self:flex-start;font-size:3.5cqw!important;padding:.8cqw 2cqw;margin-bottom:1cqw!important;background:linear-gradient(90deg,#ffdc9f,#ffdc9f80);border-radius:9cqw;display:table}\n#s6-v2 .stat-row{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#fbe1be,#fce5c9);border-radius:5cqw;padding:.7cqw 2.5cqw;margin:1cqw 0;font-size:3.2cqw;min-height:4.5cqw;gap:1cqw}\n#s6-v2 .two-grid{display:grid;grid-template-columns:1fr 1fr;gap:1cqw 2cqw}\n#s6-v2 .face{aspect-ratio:1;object-fit:contain}\n#s6-v2 .hero-tabs{display:flex;gap:1cqw}\n#s6-v2 .hero-tabs button{flex:1;padding:0;font-size:3.3cqw;border-radius:3cqw;min-width:0;height:9cqw}\n#s6-v2 .hero-tabs img{width:10cqw;margin-left:-1cqw}\n#s6-v2 .hero-stage{position:relative;flex:1;min-height:44cqw;max-height:65cqw;text-align:center;padding-top:.7cqw}\n#s6-v2 .hero-stage h1{font-size:5cqw}\n#s6-v2 .stars{color:#f9b800;text-shadow:0 1px #9f540f;font-size:5cqw;display:flex;align-items:center;justify-content:center;gap:.7cqw}\n#s6-v2 .stars>span{color:#aaa89b}\n#s6-v2 .star-button{border-radius:50%;padding:0;width:6cqw;min-height:6cqw;font-size:5cqw;margin-left:2cqw}\n#s6-v2 .roles{font-size:3cqw}\n#s6-v2 .hero-figure{position:absolute;width:54%;height:78%;bottom:0;left:23%;pointer-events:none}\n#s6-v2 .equipment-left,#s6-v2 .equipment-right{position:absolute;top:11cqw;bottom:0;display:flex;flex-direction:column;justify-content:space-around;width:18cqw;z-index:1}\n#s6-v2 .equipment-left{left:3cqw}\n#s6-v2 .equipment-right{right:3cqw}\n#s6-v2 .equipment-slot{display:flex;flex-direction:column;width:100%;gap:.3cqw}\n#s6-v2 .gear-tile{position:relative;aspect-ratio:1;background:linear-gradient(130deg,#ffffff25,transparent),var(--quality,#c4b6a6);border-radius:2cqw;overflow:hidden;width:100%}\n#s6-v2 .gear-tile>img{width:98%;height:98%;padding:2%;object-fit:contain}\n#s6-v2 .gear-tile.empty{background:#c5b8a7}\n#s6-v2 .gear-level{position:absolute;right:4%;bottom:1%;font-size:3.2cqw;color:white;text-shadow:1px 1px #5f3b21,-1px -1px #5f3b21,1px -1px #5f3b21,-1px 1px #5f3b21}\n#s6-v2 .gear-lock{position:absolute;right:4%;top:1%;color:#fff4c0;font-size:3.5cqw;text-shadow:1px 1px #4f381b}\n#s6-v2 .formation-link{position:absolute;bottom:1cqw;left:38%;font-size:2.5cqw;min-height:5cqw;z-index:2}\n#s6-v2 .experience{display:flex;align-items:center;gap:2cqw;padding:0 5cqw}\n#s6-v2 progress{width:100%;height:2.3cqw;border-radius:8px;overflow:hidden;accent-color:#ffce32}\n#s6-v2 .experience small{white-space:nowrap}\n#s6-v2 .hero-skills{display:grid;grid-template-columns:repeat(5,1fr);gap:1.8cqw}\n#s6-v2 .hero-skills button{flex-direction:column;font-size:2.8cqw;gap:.4cqw}\n#s6-v2 .hero-skills img,#s6-v2 .hero-skills .skill-symbol{width:12cqw;height:12cqw}\n#s6-v2 .hero-skills b{font-size:2.8cqw}\n#s6-v2 .unavailable{filter:grayscale(.9);opacity:.7}\n#s6-v2 .skill-symbol{display:flex;align-items:center;justify-content:center;border-radius:2cqw;color:white;font-size:10cqw;text-shadow:0 0 8px #fff;background:radial-gradient(#fff897,#ffae00 55%,#d85900)}\n#s6-v2 .skill-symbol.heal{background:radial-gradient(#eeff8e,#7bcf08 60%,#459a08)}\n#s6-v2 .attributes .stat-row{font-size:2.9cqw;min-height:4.7cqw}\n#s6-v2 .part-tabs{display:flex;gap:.7cqw;padding:0 1cqw}\n#s6-v2 .part-tabs button{flex:1;padding:.5cqw;min-width:0;font-size:6cqw;height:10cqw}\n#s6-v2 .part-tabs img{width:8cqw;height:8cqw}\n#s6-v2 .filter-row{display:flex;justify-content:space-between;padding:0 2cqw}\n#s6-v2 .filter-row button{font-size:3.4cqw;min-height:6.5cqw;border-radius:8cqw}\n#s6-v2 .five-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.5cqw;align-content:start}\n#s6-v2 .five-grid>.flat{display:block;min-width:0}\n#s6-v2 .bag-scroll{flex:1;min-height:0;overflow:auto;padding:2.5cqw;scrollbar-color:#f8b71a #f6dbba;scrollbar-width:thin}\n#s6-v2 .bag-footer{display:flex;align-items:center;justify-content:space-between;gap:1cqw;font-size:3cqw;padding:1cqw 2cqw}\n#s6-v2 .bag-footer button{font-size:3cqw;padding:1cqw 2cqw;border-radius:6cqw}\n#s6-v2 .bag-page>.main-tabs{margin-top:1cqw}\n#s6-v2 .empty-message{grid-column:1/-1;text-align:center;opacity:.7;padding:4cqw}\n#s6-v2 .reward{aspect-ratio:1;position:relative;background:#48b7e5;border-radius:1.8cqw;overflow:hidden;min-width:0}\n#s6-v2 .reward>img{height:90%;width:90%;margin:2% 5%}\n#s6-v2 .reward>b{position:absolute;right:5%;bottom:1%;color:#fff;font-size:3cqw;text-shadow:1px 1px #563d21,-1px -1px #563d21}\n#s6-v2 .reward>small{display:none}\n#s6-v2 .recruit-page{background-size:cover;background-position:center}\n#s6-v2 .ticket-wallet{position:absolute;top:2.2cqw;right:2.5cqw;color:#fff;display:flex;align-items:center;gap:1cqw;font-size:2.6cqw}\n#s6-v2 .ticket-wallet .resource{font-size:3cqw}\n#s6-v2 .recruit-page>.main-tabs{margin-top:1cqw;z-index:1}\n#s6-v2 .recruit-cast{position:relative;flex:1;min-height:35cqw}\n#s6-v2 .recruit-cast .face{position:absolute;object-fit:contain}\n#s6-v2 .cast-center{width:65%;height:90%;left:17%;top:8%;z-index:2}\n#s6-v2 .cast-left{width:53%;height:70%;left:-7%;top:0}\n#s6-v2 .cast-right{width:53%;height:70%;right:-7%;top:-4%}\n#s6-v2 .recruit-caption{text-align:center;color:#fff3b7;text-shadow:0 2px 2px #4d2861}\n#s6-v2 .recruit-caption h1{font-size:8cqw}\n#s6-v2 .recruit-caption p{font-size:3.5cqw}\n#s6-v2 .recruit-bottom{color:#fff8e8;padding:1cqw 3cqw;display:flex;flex-direction:column;gap:1.8cqw}\n#s6-v2 .pool-links{display:flex;gap:2cqw;justify-content:center}\n#s6-v2 .pool-links button{min-height:5.5cqw;font-size:3cqw}\n#s6-v2 .pity{display:flex;justify-content:space-between;font-size:3.3cqw}\n#s6-v2 .pity em{color:#ffed64}\n#s6-v2 .recruit-bottom .page-actions button{min-width:42%;flex-direction:column;padding:.8cqw;font-size:4cqw;min-height:10cqw}\n#s6-v2 .recruit-page>.v2-nav{margin-top:0}\n#s6-v2 .dungeon-list{flex:1;overflow:auto;display:flex;flex-direction:column;gap:2cqw;padding:1cqw;min-height:0}\n#s6-v2 .dungeon-card{display:grid;grid-template-columns:46% 54%;background:#fff2df;border-radius:3cqw;padding:1cqw;gap:0;min-height:0;flex:1;max-height:31cqw;box-shadow:0 1px 2px #a86a351a}\n#s6-v2 .dungeon-card>img{width:100%;height:100%;object-fit:cover;border-radius:2cqw;min-height:0}\n#s6-v2 .dungeon-card>div{display:flex;flex-direction:column;padding:.7cqw 1.8cqw;gap:1cqw;min-width:0}\n#s6-v2 .dungeon-card h2{font-size:4cqw;text-align:center}\n#s6-v2 .drop-icons{display:flex;gap:1cqw;flex:1;min-height:0;justify-content:center;align-items:center}\n#s6-v2 .drop-icons>.reward{width:11cqw;max-height:12cqw}\n#s6-v2 .drop-icons>img{width:10cqw;height:10cqw;background:#42b4e7;border-radius:1cqw}\n#s6-v2 .dungeon-card footer{display:flex;align-items:center;justify-content:space-between;gap:.5cqw}\n#s6-v2 .dungeon-card footer button{font-size:3.3cqw;min-height:6cqw;padding:.3cqw 4cqw;border-radius:8cqw}\n#s6-v2 .dungeon-card footer small{font-size:2.6cqw;white-space:nowrap}\n#s6-v2 .endless-note{text-align:center;padding:7cqw;background:#fff2dfaa;border-radius:3cqw;font-size:3.5cqw;line-height:1.8}\n#s6-v2 .v2-modal-host{position:absolute;inset:0;pointer-events:none;z-index:50}\n#s6-v2 .v2-scrim{position:absolute;inset:0;background:#18291fc2;backdrop-filter:blur(2px);pointer-events:auto;display:flex;align-items:center;justify-content:center;padding:4cqw}\n#s6-v2 .v2-dialog{outline:0;width:100%;max-height:91%;border:3px solid #dda848;border-radius:4cqw;background:linear-gradient(125deg,#fff8e8,#ffeed4);box-shadow:inset 0 0 0 2px #fff4d3,0 5px 20px #080d0a66;padding:0 3.5cqw 3cqw;display:flex;flex-direction:column;gap:2cqw;position:relative;font-size:3.2cqw}\n#s6-v2 .dialog-head{min-height:9cqw;display:flex;justify-content:center;align-items:center;margin:-2cqw 0 0}\n#s6-v2 .dialog-head h2{background:linear-gradient(#ffe3a1,#ffc779);border:2px solid #f4c672;border-radius:4cqw;padding:1.4cqw 7cqw;font-size:4.6cqw;box-shadow:0 2px 2px #ac722636}\n#s6-v2 .dialog-head .close{position:absolute;right:-2cqw;top:-2cqw;padding:0;background:linear-gradient(#ffd879,#f6a32c);border:2px solid #fff2b8;color:#fff;font-size:7cqw;line-height:1;border-radius:50%;width:8cqw;height:8cqw;min-height:0}\n#s6-v2 .dialog-body{overflow:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#efb84f #fae1bd;display:flex;flex-direction:column;gap:1.2cqw}\n#s6-v2 .dialog-actions{display:flex;justify-content:center;gap:3cqw;padding-top:1cqw}\n#s6-v2 .dialog-actions button{min-width:31%;font-size:3.8cqw;min-height:8cqw;flex-direction:column;border-radius:8cqw}\n#s6-v2 .outside-hint{position:absolute;bottom:1.5%;color:#fff1d0;font-size:3cqw}\n#s6-v2 .small{max-width:84%;gap:2cqw}\n#s6-v2 .small .info-pad{min-height:16cqw;font-size:3.4cqw;line-height:1.8;justify-content:center}\n#s6-v2 .info-pad{background:#f1e4cf;border:1px solid #f8efde;border-radius:2cqw;padding:2.5cqw;line-height:1.65;white-space:pre-line;font-size:3.2cqw}\n#s6-v2 .info-pad.compact{padding:1.6cqw;font-size:2.8cqw}\n#s6-v2 .item-heading{display:flex;align-items:center;gap:3cqw;position:relative;padding:1cqw 0}\n#s6-v2 .item-heading>.gear-tile,#s6-v2 .item-heading>.face{width:22%;flex-shrink:0}\n#s6-v2 .item-heading>div:not(.gear-tile){display:flex;flex-direction:column;gap:1cqw}\n#s6-v2 .lock-button{margin-left:auto;font-size:5cqw}\n#s6-v2 .equip-owner{font-size:2.7cqw;text-align:center}\n#s6-v2 .skill-preview img,#s6-v2 .skill-preview .skill-symbol{width:17cqw;height:17cqw}\n#s6-v2 .equipment-scroll{height:66cqw;overflow:auto;padding:1cqw;scrollbar-width:thin}\n#s6-v2 .filter-options{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw;padding:2cqw}\n#s6-v2 .salvage-scroll{height:59cqw}\n#s6-v2 .quality-checks{display:flex;flex-wrap:wrap;gap:1cqw}\n#s6-v2 .quality-checks button{font-size:2.7cqw;padding:1cqw 1.4cqw;min-height:5cqw}\n#s6-v2 .list-heading{display:flex;justify-content:space-between;font-size:3.3cqw}\n#s6-v2 .checked{position:absolute;left:0;bottom:0;background:#ffe24c;border-radius:50%;font-size:4cqw;padding:0 1cqw}\n#s6-v2 .material-line{display:flex;align-items:center;justify-content:center;gap:2cqw;font-size:3cqw}\n#s6-v2 .material-line img{height:6cqw;width:6cqw}\n#s6-v2 .reward-scroll{height:39cqw;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#f7bd36 #f5e0bd;background:#f6e6ce;border-radius:2cqw;padding:1.6cqw}\n#s6-v2 .offline-rates{display:flex;gap:2cqw;justify-content:center}\n#s6-v2 .offline-rates .resource{font-size:2.7cqw}\n#s6-v2 .challenge-heading{display:flex;gap:2cqw;align-items:center}\n#s6-v2 .challenge-heading>img{width:34%;aspect-ratio:1.4;object-fit:cover;border-radius:2cqw}\n#s6-v2 .challenge-cost{display:flex;align-items:center;justify-content:center;font-size:3cqw}\n#s6-v2 .challenge-cost img{width:5cqw;height:5cqw}\n#s6-v2 .pool-name{text-align:center}\n#s6-v2 .pool-heroes{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw}\n#s6-v2 .hero-card{background:linear-gradient(130deg,#fff7,#fff0),var(--quality);border:2px solid #fff1bf;border-radius:2cqw;padding:1cqw;display:flex;flex-direction:column;position:relative;overflow:hidden;text-align:center;min-width:0;box-shadow:0 2px 2px #65452e33}\n#s6-v2 .hero-card>.face{width:100%;aspect-ratio:1}\n#s6-v2 .hero-card>b{font-size:3cqw}\n#s6-v2 .hero-card>small{font-size:2.1cqw;white-space:nowrap}\n#s6-v2 .hero-role{font-size:2cqw;text-align:left}\n#s6-v2 .hero-card.locked{filter:grayscale(.8);opacity:.65}\n#s6-v2 .new{position:absolute;top:1%;right:0;font:italic 800 2.5cqw sans-serif;background:#ff593d;color:white;padding:.4cqw 1cqw;z-index:1}\n#s6-v2 .fullscreen{background:transparent;border:0;box-shadow:none;color:#fff6db;gap:4cqw;padding:0;max-height:95%}\n#s6-v2 .fullscreen .dialog-head h2{background:none;border:0;box-shadow:none;font-size:8cqw;color:#ffed97;text-shadow:0 2px 2px #b36c17}\n#s6-v2 .fullscreen .close{display:none}\n#s6-v2 .fullscreen .dialog-body{gap:3cqw;text-align:center}\n#s6-v2 .fullscreen .dialog-actions{padding-top:7cqw}\n#s6-v2 .fullscreen .hero-card{color:#653b21}\n#s6-v2 .result-cards{gap:1.5cqw}\n#s6-v2 .result-cards.single{width:34cqw;align-self:center}\n#s6-v2 .result-cards.single .hero-card>b{font-size:5cqw}\n#s6-v2 .rewards-fullscreen .reward-scroll{background:#a3713233;height:46cqw;padding:2cqw 0}\n#s6-v2 .secondary{padding:0;gap:0}\n#s6-v2 .title-plaque{display:table;margin:2cqw auto!important;padding:1.6cqw 7cqw;background:linear-gradient(#fff4d8,#ffdfa6);border:2px solid #efbd66;border-radius:2cqw;box-shadow:inset 0 0 0 2px #fff9df;font-size:5cqw}\n#s6-v2 .forge-scene{height:42%;position:relative;background-size:cover;background-position:center;flex-shrink:0}\n#s6-v2 .forge-scene .wallet{position:absolute;top:1cqw;left:1cqw}\n#s6-v2 .forge-scene>.title-plaque{position:relative;width:max-content;font-size:4.5cqw}\n#s6-v2 .forge-item{position:absolute;top:12cqw;left:3cqw;display:flex;gap:1.5cqw;align-items:center}\n#s6-v2 .forge-item>.gear-tile{width:15cqw}\n#s6-v2 .forge-item h2{font-size:3.7cqw}\n#s6-v2 .forge-item p{font-size:2.6cqw}\n#s6-v2 .forge-weapon{position:absolute;width:27%;height:40%;left:35%;bottom:15%;filter:drop-shadow(0 0 8px #ffdf61)}\n#s6-v2 .upgrade-body{padding:1cqw 5cqw 2cqw;display:flex;flex-direction:column;flex:1;gap:.8cqw}\n#s6-v2 .level-preview{text-align:center;padding:1cqw 0 2cqw;font-size:5.7cqw}\n#s6-v2 .upgrade-body .stat-row{margin:.5cqw 0;padding:1cqw 2.5cqw}\n#s6-v2 .upgrade-body .section-title{margin-top:1cqw}\n#s6-v2 .upgrade-costs{display:flex;align-items:center;justify-content:space-around;gap:4cqw;margin-top:auto;padding-top:2cqw;font-size:3cqw}\n#s6-v2 .upgrade-costs>div{display:flex;flex-direction:column;align-items:center;gap:.4cqw}\n#s6-v2 .upgrade-costs .reward{width:10cqw;background:transparent;border:1px solid #d7b38d}\n#s6-v2 .upgrade-costs .reward>b{display:none}\n#s6-v2 .upgrade-costs button{min-width:33%;border-radius:8cqw;font-size:4.2cqw}\n#s6-v2 .secondary-close{align-self:center;width:40%;font-size:4.5cqw;margin:3cqw 0 2cqw;border-radius:9cqw}\n#s6-v2 .breakthrough-note{display:flex;align-items:center;justify-content:center;color:#9d6b36;font-size:2.8cqw;margin-top:1cqw}\n#s6-v2 .breakthrough-note:before,#s6-v2 .breakthrough-note:after{content:'';height:1px;background:#e5bc76;flex:1}\n#s6-v2 .formation-scene{height:37%;background-position:center;background-size:cover;position:relative}\n#s6-v2 .standing-heroes{position:absolute;inset:17% 3% 0;display:flex;justify-content:space-around;align-items:center}\n#s6-v2 .standing-heroes .standing{width:29%;padding:0;background:none;box-shadow:none;border:0;display:flex;flex-direction:column;font-size:3cqw}\n#s6-v2 .standing img{width:100%;height:22cqw}\n#s6-v2 .standing small{background:#fff0ccdd;border-radius:3cqw;padding:0 2cqw}\n#s6-v2 .slot0{transform:translateY(6cqw)}\n#s6-v2 .empty-position{border:2px dashed #bca77b;background:#f7ebcd66;width:22%;height:14cqw}\n#s6-v2 .formation-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1cqw;padding:2cqw;font-size:3cqw}\n#s6-v2 .formation-toolbar>div{display:flex;gap:1cqw}\n#s6-v2 .formation-toolbar>div button{padding:0;width:6cqw;min-height:6cqw;border-radius:50%}\n#s6-v2 .formation-toolbar>button{font-size:2.7cqw;min-height:6cqw;padding:1cqw 2cqw}\n#s6-v2 .roster-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;padding:2cqw 3cqw;flex:1;align-content:start;overflow:auto}\n#s6-v2 .roster-grid button{display:block;position:relative;align-self:start}\n#s6-v2 .deployed{position:absolute;right:1cqw;top:1cqw;height:max-content;background:#ee8c51;color:white;font-size:2.5cqw;padding:.3cqw 1cqw}\n#s6-v2 .formation-types>button{padding:2cqw 1cqw;flex-direction:column;gap:2cqw}\n#s6-v2 .formation-mini{display:flex}\n#s6-v2 .formation-mini>div{display:flex;flex-direction:column;width:33%}\n#s6-v2 .formation-mini img{width:100%}\n#s6-v2 .formation-mini b{font-size:3cqw}\n#s6-v2 .talent-wallet{text-align:center}\n#s6-v2 .talent-tree{position:relative;height:65cqw;min-height:65cqw;background:radial-gradient(ellipse,#b1d26a44,transparent 70%)}\n#s6-v2 .talent-tree svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}\n#s6-v2 .talent-tree path{fill:none;stroke:#a3843c;stroke-width:1.2;stroke-linecap:round}\n#s6-v2 .talent-node{position:absolute;transform:translate(-50%,-50%);width:8cqw;height:8cqw;min-height:0;border-radius:50%;padding:0;font-size:4cqw;background:linear-gradient(#e1dac7,#cbbf9c)}\n#s6-v2 .talent-node.learned{background:linear-gradient(#fff06e,#efa51d);box-shadow:0 0 5px #ffc600}\n#s6-v2 .flow-node{left:50%;top:95%}\n#s6-v2 .v2-toast{position:absolute;bottom:25%;left:10%;width:80%;text-align:center;background:#4b3527ef;color:#fff4d6;padding:2cqw 3cqw;border-radius:2cqw;opacity:0;transition:opacity .15s;z-index:100;font-size:3.5cqw;pointer-events:none}\n#s6-v2 .v2-toast.visible{opacity:1}\n#s6-v2 .battle-hud{height:100%;position:relative;padding:1cqw;pointer-events:none;display:flex;flex-direction:column}\n#s6-v2 .battle-hud>.wallet{flex-direction:column;align-items:flex-start;position:absolute;top:1cqw;left:10cqw;gap:.6cqw;z-index:1}\n#s6-v2 .battle-hud .resource{height:4.7cqw;font-size:2.8cqw}\n#s6-v2 .battle-hud .resource img{height:5.5cqw;width:5.5cqw}\n#s6-v2 .menu{position:absolute;left:1cqw;top:1cqw;width:8cqw;height:8cqw;font-size:6cqw;padding:0}\n#s6-v2 .stage-heading{text-align:center;margin-top:1cqw;min-height:19cqw;display:flex;flex-direction:column;align-items:center;margin-left:24cqw}\n#s6-v2 .stage-heading h1{font-size:5.8cqw;text-shadow:1px 1px #fff5d0,-1px -1px #fff5d0}\n#s6-v2 .stage-heading>b{font-size:3.8cqw}\n#s6-v2 .checkpoint{display:flex;align-items:center;gap:4cqw;border-top:2px solid #fff1ca;margin-top:2cqw;height:2cqw;color:#7b5c32}\n#s6-v2 .checkpoint i{width:2.5cqw;height:2.5cqw;background:#73be31;border:1px solid #fff7d2;border-radius:50%;display:block;margin-top:-2cqw}\n#s6-v2 .turn-order{display:flex;align-items:center;justify-content:center;gap:1cqw;font-size:3cqw;margin-top:2cqw;height:8cqw}\n#s6-v2 .turn-order>.face{width:7cqw;height:7cqw}\n#s6-v2 .monster-turn{width:7cqw;height:7cqw;border-radius:50%;background:#a4dc62;color:#45632f;display:flex;align-items:center;justify-content:center;font-size:5cqw}\n#s6-v2 .battle-tools{position:absolute;right:2cqw;top:34cqw;display:flex;flex-direction:column;gap:1.5cqw}\n#s6-v2 .battle-tools button{width:8cqw;height:8cqw;min-height:0;padding:0;flex-direction:column;font-size:4cqw;gap:0;border-radius:2.4cqw}\n#s6-v2 .battle-tools small{font-size:1.8cqw}\n#s6-v2 .battle-tools .on:after{content:'';position:absolute;right:-.4cqw;top:-.4cqw;background:#78d02d;width:1.8cqw;height:1.8cqw;border:1px solid #fff;border-radius:50%}\n#s6-v2 .field-actions{margin-top:auto;display:flex;gap:2cqw;padding:1cqw 2cqw}\n#s6-v2 .field-actions button{min-height:6.5cqw;border-radius:6cqw;padding:.5cqw 3cqw;font-size:3.4cqw}\n#s6-v2 .skill-bar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:linear-gradient(#fff3e1,#ffeed5);pointer-events:auto;padding:2cqw 1cqw;min-height:36cqw;gap:1.8cqw;border-top:1px solid #fff6cf}\n#s6-v2 .party-card{min-width:0;border-right:1px solid #edd1ad;padding-right:1cqw}\n#s6-v2 .party-card:last-child{border-right:0}\n#s6-v2 .party-card>header{display:flex;align-items:center;min-height:12cqw}\n#s6-v2 .party-card>header>.face{width:11cqw;height:11cqw;border:1px solid #edd1ad;border-radius:50%;background:#fff0d5}\n#s6-v2 .party-card>header>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:.3cqw}\n#s6-v2 .party-card b{font-size:3cqw}\n#s6-v2 .party-card small{font-size:2.2cqw;white-space:nowrap}\n#s6-v2 .health-track{height:1.7cqw;background:#c8ae83;border:1px solid #675326;border-radius:8px;overflow:hidden}\n#s6-v2 .health-track i{display:block;height:100%;background:linear-gradient(#c9ff75,#74ca19)}\n#s6-v2 .active-skills{display:grid;grid-template-columns:1fr 1fr;gap:1.2cqw;margin-top:1.5cqw}\n#s6-v2 .skill-button{display:flex;flex-direction:column;background:none;box-shadow:none;border:0;padding:0;min-width:0}\n#s6-v2 .skill-button>img,#s6-v2 .skill-button>.skill-symbol{width:12cqw;height:12cqw;object-fit:contain;border-radius:2cqw;background:radial-gradient(#fff6a1,#e9b535)}\n#s6-v2 .skill-button>span[data-cooldown]{position:absolute;top:30%;color:white;text-shadow:0 1px 2px #3b2411;font-size:4cqw}\n#s6-v2 .battle-hud>.v2-nav{background:#fff0d7;margin:0;padding:1cqw}\n#s6-v2 .battle-hud>.v2-nav button{min-height:13cqw}\n#s6-v2 .page>.wallet{flex-shrink:0}\n#s6-v2 .hero-stage{flex:none;height:76cqw;min-height:76cqw;max-height:76cqw}\n#s6-v2 .bag-page,#s6-v2 .dungeon-page{background-size:100% 18cqw}\n#s6-v2 .hero-page{background-image:linear-gradient(transparent 0%,transparent 42%,#fce7ce 52%),var(--scene);background-size:100% 100%,100% auto}\n#s6-v2 .recruit-bottom .v2-button{color:var(--ink)}\n\n#s6-v2 .v2-button{--button-art:var(--gold-art)}\n#s6-v2 .v2-button.quiet{--button-art:var(--cream-art)}\n#s6-v2 .v2-button.selected{--button-art:var(--gold-art)}\n#s6-v2 .v2-button:not(.flat):not(.equipment-slot):not(.talent-node):not(.standing):not(.skill-button){background:none;border-image:var(--button-art) 65 150 fill / 8px 18px stretch;box-shadow:none}\n#s6-v2 .dialog-head .close{border-image:none!important;background-image:var(--close-art)!important;background-size:100% 100%!important;border:0!important;color:transparent!important}\n#s6-v2 .v2-dialog:not(.fullscreen){border-image:var(--panel-art) 75 fill / 22px stretch;background:none;border-width:12px;padding:0 2cqw 2cqw}\n#s6-v2 .dialog-head h2{background-image:var(--plaque-art);background-size:100% 100%;border:0;box-shadow:none;padding:2.5cqw 7cqw}\n#s6-v2 .v2-button.flat{border-image:none}\n#s6-v2 .up-ticket{filter:hue-rotate(290deg)}\n#s6-v2 .empty-position{border-image:none!important;background:#f7ebcd66!important}\n#s6-v2 .empty-slot-symbol{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:7cqw;color:#a89984}\n#s6-v2 .equipment-slot small{font-size:3cqw;line-height:1.3}\n#s6-v2 .hero-tabs button{height:10cqw}\n#s6-v2 .hero-tabs img{width:9cqw}\n#s6-v2 .bag-page,#s6-v2 .dungeon-page{background-image:linear-gradient(transparent 0 16cqw,#fce7ce 18cqw),var(--scene);background-size:100% 100%,100% auto;background-position:top,center top}\n#s6-v2 .dungeon-card{max-height:39cqw}\n#s6-v2 .stage-heading small{font-size:2.8cqw}\n#s6-v2 .battle-tools small{font-size:1.7cqw;white-space:nowrap;line-height:1.2}\n#s6-v2 .turn-portrait{width:7cqw;height:7cqw;display:flex;align-items:center;border-radius:50%;border:1px solid transparent}\n#s6-v2 .turn-portrait img{width:100%;height:100%}\n#s6-v2 .turn-portrait.turn-current{border-color:#ffe250;filter:drop-shadow(0 0 3px #fff460)}\n#s6-v2 .field-actions img{width:5cqw;height:5cqw}#s6-v2 .battle-tools img{width:4.5cqw;height:4.5cqw}\n#s6-v2 .field-actions{background:linear-gradient(transparent,#daeabd88)}\n#s6-v2 .party-card small{font-size:2.5cqw}\n#s6-v2 .skill-button small{font-size:2.7cqw}\n#s6-v2 .v2-nav button{font-size:3.8cqw;min-height:14cqw}\n#s6-v2 .hero-page{overflow-y:auto}\n#s6-v2 .hero-page>.v2-nav{position:sticky;bottom:0;background:#fce7ce;z-index:4;flex-shrink:0}\n#s6-v2 .hero-page>.cream-card,#s6-v2 .hero-page>.hero-tabs,#s6-v2 .hero-page>.page-actions{flex-shrink:0}\n@media(max-height:650px){#s6-v2 .hero-stage{min-height:35cqw}\n#s6-v2 .hero-skills img,#s6-v2 .hero-skills .skill-symbol{width:9cqw;height:9cqw}\n#s6-v2 .attributes .stat-row{min-height:3.6cqw}\n#s6-v2 .page{gap:.7cqw}\n#s6-v2 .skill-bar{min-height:31cqw}\n#s6-v2 .v2-dialog{max-height:94%}}@media(prefers-reduced-motion:reduce){#s6-v2 *{transition:none!important}}\n/* ---- Concept-fidelity skin (2026-11-18): plaques, rows, fullscreen results, feature pages ---- */\n#s6-v2 .ico{width:1.15em;height:1.15em;fill:currentColor;flex-shrink:0;vertical-align:-.18em}\n#s6-v2 .ico.mirror,#s6-v2 .laurel.mirror{transform:scaleX(-1)}\n#s6-v2 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}\n#s6-v2 .v2-button{color:#5d3216}\n#s6-v2 .v2-button.peach{border-image:var(--peach-art) 46 90 fill / 8px 18px stretch!important;color:#6b2f12}\n#s6-v2 .wide{min-width:56%!important}\n#s6-v2 .wallet{gap:2.4cqw}\n#s6-v2 .page>.wallet .resource{height:7.4cqw;font-size:3.9cqw;padding:0 3cqw 0 .3cqw}\n#s6-v2 .page>.wallet .resource img{height:8.4cqw;width:8.4cqw}\n#s6-v2 .main-tabs button{font-size:4.4cqw;min-height:9.6cqw}\n#s6-v2 .filter-row button{font-size:3.6cqw;min-height:8cqw;padding:1cqw 3.6cqw;gap:1.2cqw}\n#s6-v2 .filter-row .ico{width:4.4cqw;height:4.4cqw}\n#s6-v2 .exp-track{width:100%;height:2.4cqw;background:#c9b495;border-radius:2cqw;overflow:hidden;box-shadow:inset 0 1px 2px #0003}\n#s6-v2 .exp-track i{display:block;height:100%;background:linear-gradient(#a8ef5a,#4fae1d);border-radius:2cqw}\n/* plaque */\n#s6-v2 .plaque{position:relative;display:inline-flex;align-items:center;padding:0 2.8cqw!important;background:none!important;border:0!important;box-shadow:none!important;filter:drop-shadow(0 2px 1.5px #9b5f1c55)}\n#s6-v2 .plaque:before,#s6-v2 .plaque:after{content:'';position:absolute;top:50%;width:6.4cqw;height:6.4cqw;background:linear-gradient(135deg,#fffaf0,#ffdba0);border:2px solid #d9a24c;transform:translateY(-50%) rotate(45deg);border-radius:.9cqw}\n#s6-v2 .plaque:before{left:.4cqw}\n#s6-v2 .plaque:after{right:.4cqw}\n#s6-v2 .plate{position:relative;z-index:1;display:flex;align-items:center;gap:2.4cqw;padding:1.5cqw 4.6cqw;background:linear-gradient(#fffbf2,#ffe3ab);border-top:2px solid #d9a24c;border-bottom:2px solid #d9a24c;box-shadow:inset 0 2px #fff,inset 0 -2px #fff0d0;font-size:5cqw;color:#5d3216;line-height:1.25;white-space:nowrap}\n#s6-v2 .plate>i{font-style:normal;color:#d8962d;font-size:3cqw}\n#s6-v2 .dialog-head .plate>i:first-child:before,#s6-v2 .dialog-head .plate>i:last-child:before{content:'';position:absolute;top:-4cqw;width:8.5cqw;height:5.4cqw;background:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 24'%3E%3Cpath d='M21 23C15 14 7 12 2 14c5-9 14-8 19 9z' fill='%2387c540' stroke='%23507d22' stroke-width='1.4'/%3E%3Cpath d='M21 23c1-10 8-17 17-16-3 9-9 13-17 16z' fill='%23a3d856' stroke='%23507d22' stroke-width='1.4'/%3E%3C/svg%3E\") center/contain no-repeat}\n#s6-v2 .dialog-head .plate>i:first-child:before{left:-7cqw}\n#s6-v2 .dialog-head .plate>i:last-child:before{right:-7cqw;transform:scaleX(-1)}\n/* dialogs */\n#s6-v2 .v2-scrim{flex-direction:column;gap:2.6cqw;padding:5cqw 4cqw;background:#2a2116b8;backdrop-filter:blur(1.5px)}\n#s6-v2 .v2-scrim.dark{background:radial-gradient(ellipse at 50% 38%,#26304fe6,#0c1020f2 75%)}\n#s6-v2 .v2-dialog.small{width:78cqw;max-width:none}\n#s6-v2 .v2-dialog.medium{width:82cqw}\n#s6-v2 .v2-dialog.large{width:90cqw}\n#s6-v2 .v2-dialog:not(.fullscreen){border-width:14px;border-image:var(--panel-art) 75 fill / 26px stretch;padding:0 2.4cqw 2.6cqw;max-height:86%;gap:1.6cqw}\n#s6-v2 .dialog-head:not(.celebrate){margin:-8.6cqw 0 0;min-height:10cqw}\n#s6-v2 .dialog-head .close{right:-6.4cqw;top:-6.2cqw;width:10cqw;height:10cqw}\n#s6-v2 .outside-hint{position:static;display:flex;gap:1.6cqw;align-items:center;color:#fff3d6;font-size:3.3cqw;cursor:pointer;pointer-events:auto;text-shadow:0 1px 2px #0008}\n#s6-v2 .outside-hint .ico{color:#e8d7a0;width:3.6cqw;height:3.6cqw}\n#s6-v2 .dialog-body{gap:1.3cqw;padding:0 .6cqw}\n#s6-v2 .dialog-actions{gap:3.6cqw;padding-top:1.4cqw}\n#s6-v2 .dialog-actions button{min-width:39%;min-height:11.5cqw;font-size:4.8cqw}\n#s6-v2 .dialog-actions button small{font-size:3.1cqw;display:flex;align-items:center;gap:.4cqw}\n#s6-v2 .dialog-actions:has(.warn),#s6-v2 .dialog-actions:has(.challenge-cost){flex-direction:column;align-items:center;gap:1cqw}\n#s6-v2 .warn{display:flex;align-items:center;gap:1cqw;color:#8c5a35;font-size:3cqw}\n#s6-v2 .warn .ico{color:#e0702b}\n#s6-v2 .info-pad{background:#f3e2c8;border:0;border-radius:2.6cqw;text-align:center;font-size:3.7cqw;line-height:1.9;white-space:normal}\n#s6-v2 .info-pad small{display:block;font-size:3.1cqw;color:#86664a}\n#s6-v2 .info-pad b{font-size:4.2cqw}\n#s6-v2 .inline-icon{width:6cqw;height:6cqw;vertical-align:middle}\n#s6-v2 .section-title{display:flex!important;align-items:center;gap:1.6cqw;width:100%;background:none!important;padding:0!important;margin:.8cqw 0 .2cqw!important;font-size:3.8cqw!important}\n#s6-v2 .section-title>span{display:inline-flex;align-items:center;gap:1cqw;background:linear-gradient(90deg,#ffd38a,#ffe6bb 75%,#ffe6bb00);border-radius:4cqw;padding:.5cqw 5cqw .5cqw 1.6cqw;color:#5d3216}\n#s6-v2 .section-title>span .ico{color:#a8661f;width:4cqw;height:4cqw}\n#s6-v2 .section-title:after{content:'';flex:1;height:1px;background:linear-gradient(90deg,#e9c689,transparent)}\n#s6-v2 .section-title.effect>span .ico{color:#9a4fd0}\n#s6-v2 .ornament-line{display:flex;align-items:center;gap:2cqw;color:#e0ad55;font-size:2.4cqw;margin:.4cqw 0}\n#s6-v2 .ornament-line:before,#s6-v2 .ornament-line:after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#e5c287,transparent)}\n#s6-v2 .ornament-line i{font-style:normal}\n#s6-v2 .stat-row{background:linear-gradient(90deg,#f9d9b0,#fde8cd);border-radius:4cqw;padding:.9cqw 3.2cqw;margin:.45cqw 0;font-size:3.6cqw;min-height:6.4cqw}\n#s6-v2 .stat-row>span{display:inline-flex;align-items:center;gap:2.2cqw}\n#s6-v2 .stat-row .ico{color:#8b5530;width:4.2cqw;height:4.2cqw}\n#s6-v2 .stat-row.rate .ico{color:inherit;width:5.4cqw;height:5.4cqw}\n#s6-v2 .stat-row.rate i{display:inline-flex}\n#s6-v2 .change{display:inline-flex;align-items:center;gap:3cqw}\n#s6-v2 .change i{font-style:normal;color:#8b5530;font-size:.85em}\n#s6-v2 em.blue{color:#2e7fd8}\n#s6-v2 em.short{color:#d9412b!important}\n#s6-v2 .pill{display:inline-block;align-self:flex-start;background:#fbdfb8;border-radius:3cqw;padding:.3cqw 2.6cqw;font-size:3.2cqw;color:#7a4a26}\n#s6-v2 .quality-pill{display:inline-block;align-self:flex-start;background:color-mix(in srgb,var(--tone) 16%,#fff);color:var(--tone);border-radius:2cqw;padding:.2cqw 2.4cqw;font-size:3.2cqw}\n#s6-v2 .item-heading{gap:3.4cqw}\n#s6-v2 .item-heading h3{font-size:5cqw}\n#s6-v2 .item-heading>.gear-tile{width:25%;border:2px solid #fff3cf;box-shadow:0 2px 3px #6d462633}\n#s6-v2 .lock-button{position:absolute;right:1cqw;top:1.4cqw;width:8.5cqw}\n#s6-v2 .lock-button img{width:100%}\n#s6-v2 .effect-line{display:flex;align-items:center;gap:2cqw;padding:.6cqw 2cqw;font-size:3.5cqw}\n#s6-v2 .effect-line .ico{color:#46a530;width:6.4cqw;height:6.4cqw;background:#e7f6d6;border-radius:50%;padding:.6cqw}\n#s6-v2 .equip-owner{color:#86664a}\n#s6-v2 .gear-tile>img.gear-lock{position:absolute;right:3%;top:3%;width:27%;height:auto;padding:0}\n#s6-v2 .skill-preview img{width:20cqw;height:20cqw}\n#s6-v2 .portrait-tile{position:relative;aspect-ratio:1;border-radius:2.4cqw;background:linear-gradient(135deg,#ffffff66,transparent 60%),var(--quality);border:2px solid #fff3cf;box-shadow:0 2px 3px #6d462633;overflow:hidden;width:25%;flex-shrink:0}\n#s6-v2 .portrait-tile .face{width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.5);transform-origin:50% 14%}\n#s6-v2 .portrait-tile.small{width:17cqw}\n#s6-v2 .portrait-tile>b{position:absolute;right:5%;bottom:2%;color:#fff;font-size:3.8cqw;text-shadow:1px 1px #5f3b21,-1px -1px #5f3b21,1px -1px #5f3b21,-1px 1px #5f3b21}\n#s6-v2 .portrait-tile>small{position:absolute;left:0;right:0;bottom:0;background:#3d24127a;color:#fff;font-size:2.7cqw;text-align:center}\n#s6-v2 .up-mark{position:absolute;right:0;top:0;background:#ff5a3c;color:#fff;font:italic 800 2.7cqw sans-serif;padding:.2cqw 1.3cqw;border-radius:0 0 0 1.6cqw}\n#s6-v2 .star-change{display:flex;align-items:center;gap:2cqw;color:#f6b400;font-size:6.4cqw;text-shadow:0 1px #9f540f;letter-spacing:-.4cqw}\n#s6-v2 .star-change i{font-style:normal;color:#c9762c;font-size:4.4cqw;letter-spacing:0}\n#s6-v2 .cost-card{display:flex;align-items:center;gap:3.4cqw;background:#fbe5c6;border-radius:3cqw;padding:2.4cqw 3.4cqw}\n#s6-v2 .cost-card>div:last-child{border-left:1px solid #e3c08d;padding-left:3.4cqw;display:flex;flex-direction:column;gap:1cqw}\n#s6-v2 .cost-card h3{font-size:4.2cqw}\n#s6-v2 .cost-card p{font-size:3.4cqw}\n/* hero cards */\n#s6-v2 .hero-card{background:#fff6e6;border:2px solid #efd3a8;border-radius:2.8cqw;padding:1cqw 1cqw 1.2cqw;gap:.4cqw;align-items:center;color:#5d3216;overflow:visible}\n#s6-v2 .hero-card.locked{filter:none;opacity:1}\n#s6-v2 .hero-card .portrait{position:relative;width:100%;aspect-ratio:1.05;border-radius:2cqw;background:linear-gradient(135deg,#ffffff66,transparent 60%),var(--quality);overflow:hidden}\n#s6-v2 .hero-card .portrait .face{width:100%;height:100%;object-fit:contain;object-position:50% 100%;transform:scale(1.18);transform-origin:50% 0}\n#s6-v2 .hero-card.locked .portrait{background:#8f8578}\n#s6-v2 .hero-card.locked .portrait .face{filter:grayscale(1) brightness(.6)}\n#s6-v2 .hero-card>b{font-size:3.4cqw;line-height:1.2}\n#s6-v2 .role-badge{position:absolute;left:-.6cqw;top:-.6cqw;z-index:2;width:6.4cqw;height:6.4cqw;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 2px #0005;color:#fff}\n#s6-v2 .role-badge .ico{width:3.8cqw;height:3.8cqw}\n#s6-v2 .r0{background:#e2463c}#s6-v2 .r1{background:#3d7fe0}#s6-v2 .r2{background:#e8a51c}#s6-v2 .r3{background:#55a735}\n#s6-v2 .star-row{display:inline-flex;gap:0;font-size:3.2cqw;line-height:1}\n#s6-v2 .star-row i{font-style:normal;color:#cfc8ba;text-shadow:0 1px #8b7b62}\n#s6-v2 .star-row i.on{color:#ffc21a;text-shadow:0 1px #a65d0b}\n#s6-v2 .deployed{position:absolute;left:7%;right:7%;bottom:5%;top:auto;height:auto;background:linear-gradient(#86d652,#3f9f26);color:#fff;font-size:2.8cqw;padding:.2cqw 0;text-align:center;clip-path:polygon(0 0,100% 0,95% 50%,100% 100%,0 100%,5% 50%)}\n#s6-v2 .card-tag{position:absolute;right:-.6cqw;top:-.6cqw;z-index:3;font:italic 900 2.8cqw sans-serif;padding:.4cqw 1.6cqw;border-radius:0 2cqw 0 2cqw;color:#fff;background:none}\n#s6-v2 .card-tag.new{background:linear-gradient(#ff7b4b,#ea3a2a);box-shadow:0 1px 2px #0004}\n#s6-v2 .card-tag.dup{background:#5d4a3acc;font:700 2.5cqw sans-serif}\n#s6-v2 .card-lock{position:absolute;right:5%;top:5%;width:26%}\n/* fullscreen results */\n#s6-v2 .fullscreen{width:100%!important;max-width:none!important;color:#fff5dc}\n#s6-v2 .dialog-head.celebrate{margin:0;gap:1cqw;align-items:center;min-height:0}\n#s6-v2 .celebrate h2{font-size:10.5cqw;color:#ffeaa4;-webkit-text-stroke:.55cqw #7a3d0c;paint-order:stroke fill;text-shadow:0 .9cqw 0 #6a320b,0 0 7cqw #ffcf4d;background:none!important;padding:0 1cqw!important;letter-spacing:.6cqw;border:0;box-shadow:none}\n#s6-v2 .laurel{width:9cqw;height:14cqw;fill:#f3b72c;stroke:#a8620f;stroke-width:.8;flex-shrink:0}\n#s6-v2 .rewards-fullscreen .dialog-head{background:radial-gradient(ellipse at 50% 62%,#ffc94f99,#ffc94f22 40%,transparent 66%);padding:9cqw 0 4cqw}\n#s6-v2 .rewards-fullscreen .reward-scroll{background:linear-gradient(90deg,#20140a55,#3a240fbb 12%,#3a240fbb 88%,#20140a55);border:0;border-top:1.5px solid #e9b24c;border-bottom:1.5px solid #e9b24c;height:56cqw;max-height:none;border-radius:0;padding:4cqw 6cqw}\n#s6-v2 .results-screen .dialog-body{gap:3cqw;align-items:center}\n#s6-v2 .result-sub{background:linear-gradient(90deg,transparent,#00000077,transparent);padding:1cqw 12cqw;font-size:4.2cqw;color:#fff4dc}\n#s6-v2 .result-sub em{color:#ffd54a;font-size:5.4cqw;margin:0 .6cqw}\n#s6-v2 .result-cards.five-grid{gap:2.2cqw;padding:0 1.4cqw;width:100%}\n#s6-v2 .result-cards.single{width:36cqw}\n#s6-v2 .result-cards.single .hero-card>b{font-size:4.4cqw}\n#s6-v2 .ticket-left{display:inline-flex;align-items:center;gap:1cqw;background:#0000007a;border:1px solid #ffffff3a;border-radius:5cqw;padding:.6cqw 3.4cqw;font-size:3.5cqw;margin-top:10cqw}\n#s6-v2 .ticket-left img{width:6.4cqw;height:6.4cqw}\n#s6-v2 .ticket-left b{color:#ffd54a;font-size:4.2cqw}\n#s6-v2 .results-screen .dialog-actions{padding-top:2cqw}\n#s6-v2 .ticket-chip{display:inline-flex;align-items:center;gap:.5cqw;background:#7a40161a;border-radius:3cqw;padding:0 2.2cqw;font-size:3.1cqw}\n#s6-v2 .ticket-chip img{width:4.8cqw;height:4.8cqw}\n/* hero page */\n#s6-v2 .hero-stage .stars{gap:1.4cqw}\n#s6-v2 .hero-stage .star-row{font-size:6.6cqw}\n#s6-v2 .v2-button.star-button{width:8cqw;height:8cqw;min-height:0;padding:.6cqw;border-radius:50%;border-image:none!important;background:radial-gradient(#fff6c4,#f7c443)!important;border:2px solid #d49326!important;margin-left:1.5cqw}\n#s6-v2 .star-button img{width:100%;height:100%}\n#s6-v2 .roles{display:flex;justify-content:center;align-items:center;gap:1cqw;font-size:3.4cqw}\n#s6-v2 .roles .ico{color:#c98b22}\n#s6-v2 .roles span{margin-left:2.4cqw;color:#86664a;font-size:3cqw}\n#s6-v2 .formation-link .ico{width:4cqw;height:4cqw}\n#s6-v2 .experience .exp-track{flex:1;height:2.8cqw}\n#s6-v2 .experience .exp-track i{background:linear-gradient(#ffe56f,#f0ad1a)}\n#s6-v2 .experience small{font-size:3.2cqw}\n#s6-v2 .page-actions button{min-height:10.5cqw;font-size:4.6cqw;min-width:38%}\n#s6-v2 .card-title{font-size:4.8cqw!important;margin:0 0 1.2cqw .6cqw!important}\n#s6-v2 .hero-skills{grid-template-columns:repeat(4,1fr) 1px 1fr;align-items:start;gap:1.2cqw}\n#s6-v2 .hero-skills .kind{background:#fbdcb0;border-radius:2cqw;padding:0 2cqw;font-size:2.7cqw}\n#s6-v2 .hero-skills img{width:14cqw;height:14cqw}\n#s6-v2 .hero-skills b{font-size:3.1cqw;white-space:nowrap}\n#s6-v2 .skill-divider{align-self:stretch;background:#e6c79c;margin:2cqw 0}\n#s6-v2 .tree-button img{width:15cqw!important;height:15cqw!important;margin-top:2.4cqw}\n#s6-v2 .attributes .stat-row{font-size:3.3cqw;min-height:6cqw;margin:.35cqw 0}\n#s6-v2 .party-tags{display:flex;gap:.8cqw;align-items:center}\n#s6-v2 .party-tags i{font-style:normal;background:#f6dfbd!important;border-radius:1.6cqw;padding:0 1.3cqw;font-size:2.5cqw;display:inline-flex;align-items:center;gap:.4cqw;color:#5d3216}\n#s6-v2 .party-tags .ico{width:3cqw;height:3cqw;color:#d18d1f}\n#s6-v2 .turn-arrow{color:#5d3216;font-size:3cqw}\n/* bag */\n#s6-v2 .part-tabs .ico{width:6.4cqw;height:6.4cqw;color:#6b4423}\n#s6-v2 .bag-footer{padding:1.4cqw 1.6cqw;font-size:3.9cqw}\n#s6-v2 .bag-footer>b{font-size:3.9cqw;white-space:nowrap}\n#s6-v2 .bag-footer .expand-button{font-size:3.7cqw;min-height:9cqw;padding:1cqw 3.4cqw;gap:1cqw;border-radius:6cqw}\n#s6-v2 .expand-button img{width:5.6cqw;height:5.6cqw}\n#s6-v2 .expand-button .ico{width:5.2cqw;height:5.2cqw;color:#7a4a26}\n#s6-v2 .bag-footer .salvage-button{font-size:4.8cqw;min-height:11cqw;min-width:35%;border-radius:6cqw}\n#s6-v2 .part-tabs.labeled{border-top:1px solid #ecd2a6;padding-top:1.6cqw;gap:.4cqw}\n#s6-v2 .part-tabs.labeled button{flex-direction:column;height:auto;min-height:13.5cqw;padding:.6cqw 0;border-radius:2.6cqw;gap:.2cqw}\n#s6-v2 .part-tabs.labeled img{width:7.4cqw;height:7.4cqw}\n#s6-v2 .part-tabs.labeled small{font-size:2.9cqw}\n/* rewards */\n#s6-v2 .reward{background:linear-gradient(135deg,#ffffff4d,transparent 55%),var(--quality,#48b7e5);border-radius:2cqw}\n#s6-v2 .reward>b{font-size:3.1cqw}\n#s6-v2 .reward-scroll{height:auto;min-height:19cqw;max-height:40cqw;background:#f6e5cc;border:1px solid #efd6b0;border-radius:2.6cqw;padding:2cqw}\n/* recruit */\n#s6-v2 .recruit-page{padding-top:2cqw}\n#s6-v2 .recruit-page>.wallet .resource{height:7.4cqw;font-size:3.9cqw;padding:0 3cqw 0 .3cqw}\n#s6-v2 .recruit-page>.wallet .resource img{height:8.4cqw;width:8.4cqw}\n#s6-v2 .recruit-page .menu{position:static;width:9.4cqw;height:9.4cqw;font-size:6cqw;padding:0}\n#s6-v2 .ticket-resource img{transform:rotate(-12deg)}\n#s6-v2 .recruit-page>.main-tabs{padding:0 5cqw}\n#s6-v2 .recruit-banner{align-self:flex-start;display:flex;flex-direction:column;align-items:center;margin:1.5cqw 0 0 1cqw;z-index:3}\n#s6-v2 .recruit-banner h1{display:flex;align-items:center;gap:.4cqw;font-size:9.4cqw;color:#fff8e2;-webkit-text-stroke:.5cqw #5b2c0e;paint-order:stroke fill;text-shadow:0 .8cqw #5b2c0e;letter-spacing:.3cqw}\n#s6-v2 .recruit-banner .laurel{width:7cqw;height:11cqw}\n#s6-v2 .ribbon{background:linear-gradient(#ad6d33,#7c4520);color:#ffe8b0;font-size:3.5cqw;padding:.6cqw 6cqw;clip-path:polygon(0 0,100% 0,95% 50%,100% 100%,0 100%,5% 50%);letter-spacing:.2cqw;margin:0}\n#s6-v2 .recruit-cast{position:relative;flex:1;min-height:30cqw;margin-top:-6cqw}\n#s6-v2 .recruit-cast .cast{position:absolute;object-fit:contain;filter:drop-shadow(0 1.5cqw 1.5cqw #0006)}\n#s6-v2 .c-front{width:58%;height:66%;left:21%;bottom:0;z-index:4}\n#s6-v2 .c-left{width:40%;height:46%;left:0;top:28%;z-index:2}\n#s6-v2 .c-right{width:40%;height:46%;right:0;top:24%;z-index:2}\n#s6-v2 .c-back{width:38%;height:42%;left:31%;top:8%;z-index:1}\n#s6-v2 .up-badge{position:absolute;right:13%;bottom:14%;z-index:5;background:linear-gradient(#a874ea,#6a39bf);color:#fff;border:2px solid #ffe08a;border-radius:3cqw;padding:.5cqw 2.6cqw;font-size:3.9cqw;display:flex;flex-direction:column;align-items:center;line-height:1.15;transform:rotate(-6deg);box-shadow:0 2px 4px #0005}\n#s6-v2 .up-badge b{background:#ffd23f;color:#6a39bf;border-radius:2cqw;padding:0 2.4cqw;font-size:3.4cqw}\n#s6-v2 .recruit-bottom{gap:2.2cqw;padding:1cqw 3cqw 1.4cqw}\n#s6-v2 .pity-panel{align-self:center;width:74%;display:flex;align-items:center;gap:2.6cqw;background:linear-gradient(#fff8ea,#ffe8c6);border:2px solid #e6c088;border-radius:6cqw;padding:1.4cqw 5cqw 1.4cqw 2cqw;color:#5d3216;box-shadow:0 2px 5px #0004}\n#s6-v2 .pity-panel .crown{width:11cqw;height:11cqw;flex-shrink:0;border-radius:50%;background:radial-gradient(#fff1b8,#f6c64f);display:flex;align-items:center;justify-content:center;color:#d6870a}\n#s6-v2 .pity-panel .crown .ico{width:7cqw;height:7cqw}\n#s6-v2 .pity-panel>div{flex:1;display:flex;flex-direction:column;align-items:center;gap:.6cqw;font-size:3.6cqw}\n#s6-v2 .pity-panel em{color:#d9412b;font-size:1.1em}\n#s6-v2 .pity-panel small{font-size:3.1cqw}\n#s6-v2 .pool-links{justify-content:space-between;padding:0 5cqw}\n#s6-v2 .pool-links button{font-size:3.5cqw;min-height:7.6cqw;gap:1.2cqw;padding:1cqw 3.4cqw}\n#s6-v2 .pool-links .ico{width:4.6cqw;height:4.6cqw}\n#s6-v2 .recruit-bottom .page-actions{gap:3cqw}\n#s6-v2 .recruit-bottom .page-actions button{min-width:45%;min-height:16cqw;flex-direction:column;gap:.2cqw}\n#s6-v2 .recruit-bottom .page-actions b,#s6-v2 .results-screen .dialog-actions b{font-size:5cqw}\n/* dungeon */\n#s6-v2 .dungeon-list{gap:2.4cqw}\n#s6-v2 .dungeon-card{grid-template-columns:44% 56%;border:1.5px solid #f3dab4;padding:1.5cqw;max-height:none;flex:1;min-height:0}\n#s6-v2 .dungeon-card>div{padding:.4cqw .6cqw .4cqw 3cqw;gap:1.2cqw}\n#s6-v2 .dungeon-card h2{text-align:left;font-size:5.2cqw}\n#s6-v2 .drop-icons{justify-content:flex-start;align-items:flex-start;flex:none;gap:1.4cqw}\n#s6-v2 .drop-icons>.reward{width:13cqw;max-height:none}\n#s6-v2 .dungeon-card footer{margin-top:auto}\n#s6-v2 .dungeon-card footer small{font-size:3.1cqw;display:inline-flex;align-items:center;gap:.4cqw}\n#s6-v2 .dungeon-card footer .ico,#s6-v2 .feature-row>b .ico,#s6-v2 .challenge-cost .ico{color:#4fb22a}\n#s6-v2 .dungeon-card footer button{font-size:4.8cqw;min-height:9.6cqw;padding:.5cqw 7cqw}\n#s6-v2 .resume-button{font-size:4cqw;min-height:9cqw}\n#s6-v2 .feature-card{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff4e2;border:1.5px solid #f1d6ad;border-radius:3.6cqw;overflow:hidden;box-shadow:0 2px 3px #a86a3522}\n#s6-v2 .feature-art{position:relative;flex:1;min-height:36cqw;background-size:cover;background-position:center bottom}\n#s6-v2 .feature-title{position:absolute;top:2.4cqw;left:0;right:0;display:flex;flex-direction:column;align-items:center}\n#s6-v2 .title-row{display:flex;align-items:center;gap:.6cqw}\n#s6-v2 .feature-title h2{font-size:9.4cqw;color:#fff4cf;-webkit-text-stroke:.5cqw #6b3510;paint-order:stroke fill;text-shadow:0 .8cqw #6b3510;letter-spacing:.4cqw}\n#s6-v2 .feature-title .laurel{width:7cqw;height:11cqw}\n#s6-v2 .feature-title .ribbon{background:linear-gradient(#fff6de,#f3d9a4);color:#5d3216;font-size:3.8cqw;padding:.6cqw 7cqw;margin-top:-1cqw}\n#s6-v2 .help-button{position:absolute;right:2.4cqw;top:2.4cqw;width:8.4cqw;height:8.4cqw;background:#fff4dc!important;border-radius:50%;color:#6b3d1c;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px #0004!important}\n#s6-v2 .help-button .ico{width:7cqw;height:7cqw}\n#s6-v2 .feature-panel{display:flex;flex-direction:column;padding:.6cqw 3cqw 1.2cqw;background:#fff6e7}\n#s6-v2 .feature-row{display:flex;align-items:center;gap:2.4cqw;padding:1.6cqw 0;border-bottom:1px solid #efd7b2;font-size:3.9cqw;min-height:12cqw}\n#s6-v2 .feature-row:last-child{border-bottom:0}\n#s6-v2 .feature-row>b{white-space:nowrap;display:inline-flex;align-items:center;gap:.6cqw}\n#s6-v2 .feature-row>i{width:1px;align-self:stretch;background:#e5c697;margin:1cqw 0}\n#s6-v2 .feature-row small{font-size:3.1cqw;color:#7a5a3c}\n#s6-v2 .feature-row.record>.ico{width:10cqw;height:10cqw;color:#f0b323}\n#s6-v2 .feature-row.record strong{font-size:4.8cqw}\n#s6-v2 .feature-rewards{display:flex;gap:4.4cqw;flex:1;justify-content:center;align-items:flex-start}\n#s6-v2 .feature-rewards .reward{width:14.5cqw}\n#s6-v2 .feature-rewards>span{display:flex;flex-direction:column;align-items:center;gap:.3cqw}\n#s6-v2 .feature-rewards>span>small{font-size:2.7cqw}\n#s6-v2 .lineup{display:flex;align-items:center;gap:2.4cqw;flex:1;justify-content:flex-end}\n#s6-v2 .round-face{position:relative;display:block;width:14.5cqw;height:14.5cqw}\n#s6-v2 .round-face .disc{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;background:radial-gradient(#fff6db,#f6cf8a);border:2px solid #e2a84a}\n#s6-v2 .round-face .face{width:100%;height:100%;object-fit:cover;object-position:50% 0;transform:scale(1.55);transform-origin:50% 12%}\n#s6-v2 .round-face b{position:absolute;left:50%;bottom:-1.4cqw;transform:translateX(-50%);background:#6b3d1c;color:#fff;font-size:2.5cqw;border-radius:2cqw;padding:0 1.6cqw;white-space:nowrap}\n#s6-v2 .lineup>i{width:1px;align-self:stretch;background:#e5c697}\n#s6-v2 .lineup-button{flex-direction:column;min-height:13cqw;padding:1cqw 2.4cqw;gap:0}\n#s6-v2 .lineup-button .ico{width:6.4cqw;height:6.4cqw;color:#e3a21a}\n#s6-v2 .lineup-button small{font-size:3.2cqw}\n#s6-v2 .go-button{margin-left:auto;font-size:5.2cqw;min-height:11cqw;min-width:36%}\n#s6-v2 .daily-card header{display:flex;align-items:center;justify-content:center;gap:3cqw;padding:2.4cqw}\n#s6-v2 .daily-card header h2{font-size:6.6cqw}\n#s6-v2 .daily-card header>i{width:1px;height:7cqw;background:#e2c393}\n#s6-v2 .today{display:inline-flex;align-items:center;gap:1cqw;background:#ffe5b6;border-radius:4cqw;padding:.6cqw 2.6cqw;font-size:3.4cqw}\n#s6-v2 .today .ico{color:#e2492f;width:5cqw;height:5cqw}\n#s6-v2 .daily-card .feature-art{margin:0 2.4cqw;border-radius:3cqw;background-position:center}\n#s6-v2 .daily-card .feature-panel{margin:2cqw 2.4cqw 2.4cqw;border:1px solid #efd5ac;border-radius:3cqw}\n#s6-v2 .challenge-heading>img{width:38%;border:2px solid #f2d7ae}\n#s6-v2 .challenge-heading h3{font-size:5.2cqw}\n#s6-v2 .challenge-heading small{display:block;font-size:3.3cqw;margin-top:.8cqw}\n#s6-v2 .challenge-dialog .main-tabs button{min-height:9cqw;font-size:4.2cqw}\n#s6-v2 .challenge-cost{display:flex;align-items:center;gap:1cqw;font-size:3.3cqw;margin:0}\n#s6-v2 .challenge-dialog .dialog-actions button{min-height:9.5cqw;font-size:4.4cqw;min-width:40%}\n#s6-v2 .pool-name{display:block;text-align:center;align-self:center;background:#fbe1bb;border-radius:3cqw;padding:.6cqw 5cqw;font-size:4cqw}\n#s6-v2 .pool-name.lined{display:flex;align-items:center;gap:2cqw;background:none;font-size:4.1cqw}\n#s6-v2 .pool-name.lined:before,#s6-v2 .pool-name.lined:after{content:'';width:10cqw;height:1px;background:#e1bc80}\n#s6-v2 .result-line{text-align:center;font-size:3.6cqw}\n#s6-v2 .offline-rates{gap:3cqw}\n#s6-v2 .offline-rates .resource{font-size:3.9cqw;height:8.4cqw;padding:0 3.4cqw 0 .6cqw;background:#fbe1bc;border:0;box-shadow:none}\n#s6-v2 .offline-rates .resource img{width:8.4cqw;height:8.4cqw}\n#s6-v2 .idle-time{display:flex;align-items:center;justify-content:center;gap:2.6cqw;font-size:3.7cqw}\n#s6-v2 .idle-time span{display:inline-flex;align-items:center;gap:1.2cqw;background:linear-gradient(#ebf6cc,#d5ebaa);border-radius:4cqw;padding:.6cqw 3.4cqw;color:#3a5719}\n#s6-v2 .idle-time .ico{color:#5b3a1c;width:4.6cqw;height:4.6cqw}\n#s6-v2 .idle-time small{border-left:1px solid #d9b98b;padding-left:2.6cqw;font-size:3.3cqw;color:#86664a}\n/* salvage */\n#s6-v2 .label-line{font-size:3.9cqw;margin:.4cqw 1cqw 0}\n#s6-v2 .quality-checks{display:flex;flex-wrap:nowrap;justify-content:space-between;background:#f7e5cb;border-radius:2.6cqw;padding:1.6cqw 2.4cqw}\n#s6-v2 .check-option{display:inline-flex!important;align-items:center;gap:1cqw;font-size:3.7cqw}\n#s6-v2 .box{width:5.4cqw;height:5.4cqw;border:2px solid #9a6a3e;border-radius:1.2cqw;background:#fff;display:flex;align-items:center;justify-content:center;font-style:normal}\n#s6-v2 .box.on{background:#fff4cc;border-color:#c98622}\n#s6-v2 .box .ico{width:4.6cqw;height:4.6cqw;color:#7a4316}\n#s6-v2 .lock-note{display:flex;align-items:center;justify-content:center;gap:1.4cqw;background:#fbdfbf;border-radius:2.2cqw;padding:1.2cqw;font-size:3.3cqw}\n#s6-v2 .lock-note .ico{color:#d29a2b;width:4.4cqw;height:4.4cqw}\n#s6-v2 .list-heading{font-size:3.9cqw;padding:0 1cqw}\n#s6-v2 .list-heading em{color:#3d9a1f}\n#s6-v2 .checked{left:auto;right:2%;top:2%;bottom:auto;background:none;padding:0;line-height:0}\n#s6-v2 .checked .ico{width:6.4cqw;height:6.4cqw;color:#ffe04a;filter:drop-shadow(0 0 1px #7a4a0f) drop-shadow(0 1px 0 #7a4a0f)}\n#s6-v2 .salvage-scroll{height:60cqw;background:#fff8ee;border:1px solid #efd7b2;border-radius:2.6cqw;padding:1.6cqw}\n#s6-v2 .material-line{justify-content:space-between;padding:1cqw 2cqw;font-size:3.9cqw}\n#s6-v2 .material-line span{display:inline-flex;align-items:center;gap:1cqw;font-size:4.1cqw}\n#s6-v2 .material-line img{width:7.4cqw;height:7.4cqw}\n/* pools */\n#s6-v2 .pool-heroes{grid-template-columns:repeat(4,1fr);gap:2.6cqw;padding:0 1.6cqw}\n#s6-v2 .pool-heroes .portrait-tile{width:100%}\n#s6-v2 .rules{margin:0;padding:1.8cqw 2cqw 1.8cqw 7cqw;background:#fff8ec;border:1px solid #ecd2aa;border-radius:2.6cqw;font-size:3.4cqw;line-height:1.85}\n/* talents */\n#s6-v2 .talent-wallet{display:flex;align-items:center;justify-content:center;gap:2cqw;font-size:4.1cqw}\n#s6-v2 .talent-wallet .face{width:9.4cqw;height:9.4cqw;border-radius:50%;object-fit:cover;object-position:50% 0;background:#fde4bd}\n#s6-v2 .talent-wallet>i{width:1px;height:5.4cqw;background:#d9b98b}\n#s6-v2 .talent-wallet em{font-size:5.2cqw}\n#s6-v2 .talent-tree{height:90cqw;min-height:0;flex-shrink:0;background:radial-gradient(ellipse at 50% 55%,#fff7df,transparent 72%)}\n#s6-v2 .talent-tree .trunk{stroke:#a8692f;stroke-width:9px;fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke}\n#s6-v2 .talent-tree .branch{stroke:#b57a3d;stroke-width:5px;fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}\n#s6-v2 .talent-tree .leaves ellipse{fill:#86c443;stroke:#4f7e22;stroke-width:1px;vector-effect:non-scaling-stroke}\n#s6-v2 .v2-button.talent-node{width:12.5cqw;height:12.5cqw;border-radius:50%;border-image:none!important;background:radial-gradient(circle at 50% 32%,#ffffff,#dcd7ce 55%,#aaa397)!important;border:3px solid #f4e7d0!important;box-shadow:0 0 0 2px #bba585,0 2px 3px #0003!important;color:#8f8a82;font-size:inherit}\n#s6-v2 .talent-tree>button:nth-of-type(-n+5){width:14.5cqw;height:14.5cqw}\n#s6-v2 .talent-node .ico{width:55%;height:55%}\n#s6-v2 .talent-node.ready{color:#6f5b45}\n#s6-v2 .talent-node.learned{background:radial-gradient(circle at 50% 32%,#fff8bd,#ffc72d 55%,#e2890b)!important;color:#fff;box-shadow:0 0 0 2px #c9831a,0 0 9px #ffd34a!important}\n#s6-v2 .talent-node.learned .ico{filter:drop-shadow(0 1px 0 #a35a06)}\n#s6-v2 .talent-node.current{box-shadow:0 0 0 3px #62d036,0 0 12px 4px #8cf05a!important}\n#s6-v2 .talent-node b{position:absolute;bottom:-2.2cqw;left:50%;transform:translateX(-50%);background:#6b3d1c;color:#fff;font-size:2.5cqw;border-radius:2cqw;padding:0 1.4cqw;line-height:1.5}\n#s6-v2 .talent-info{display:flex;align-items:center;gap:3cqw;background:#fff8ec;border:1px solid #edd3ab;border-radius:3cqw;padding:2.2cqw 3.4cqw}\n#s6-v2 .talent-info>div{flex:1;display:flex;flex-direction:column;gap:.6cqw}\n#s6-v2 .talent-info h3{font-size:4.6cqw}\n#s6-v2 .talent-info p{font-size:3.3cqw;color:#7a5a3c}\n#s6-v2 .talent-info>i{width:1px;align-self:stretch;background:#e2c393}\n#s6-v2 .talent-info>b{font-size:3.9cqw;white-space:nowrap}\n#s6-v2 .talent-info em{font-size:5cqw}\n/* formation */\n#s6-v2 .formation-scene{height:42%;flex-shrink:0}\n#s6-v2 .title-plaque.plaque{display:flex;width:max-content;margin:2.6cqw auto 0!important;font-size:inherit}\n#s6-v2 .title-plaque .plate{font-size:5.6cqw;padding:1.6cqw 7cqw;letter-spacing:.6cqw}\n#s6-v2 .standing-heroes{position:absolute;inset:15cqw 2% 3cqw;display:block}\n#s6-v2 .standing-heroes .v2-button.standing{position:absolute;transform:translate(-50%,-50%);width:30%;display:flex;flex-direction:column;align-items:center;gap:0;border-image:none!important;background:none!important;border:0;padding:0;min-height:0;isolation:isolate}\n#s6-v2 .standing .face{width:100%;height:17cqw;object-fit:contain;filter:drop-shadow(0 1cqw 0 #00000022)}\n#s6-v2 .standing.front .face{height:21cqw}\n#s6-v2 .standing:before{content:'';position:absolute;bottom:3.6cqw;width:78%;height:5cqw;border-radius:50%;background:radial-gradient(#fff4b8ee,#ffd76a77 55%,transparent 72%);z-index:-1}\n#s6-v2 .role-tag{display:inline-flex;align-items:center;gap:.8cqw;background:#fff6e4ee;border-radius:3cqw;padding:.3cqw 2cqw .3cqw .4cqw;font-size:2.8cqw;white-space:nowrap;box-shadow:0 1px 2px #0002;margin-bottom:.4cqw}\n#s6-v2 .role-tag .role-badge{position:static;width:4.8cqw;height:4.8cqw;border-width:1px}\n#s6-v2 .role-tag .role-badge .ico{width:3cqw;height:3cqw}\n#s6-v2 .row-plaque{margin-top:-1.6cqw;background:linear-gradient(#fff5dc,#ffd98e);border:1.5px solid #d9a24c;border-radius:1.6cqw;padding:0 3.4cqw;font-size:3cqw;line-height:1.5}\n#s6-v2 .standing small{background:none;font-size:3.2cqw;color:#4d2a12;text-shadow:0 0 2px #fff,0 0 3px #fff;padding:0;margin-top:.3cqw}\n#s6-v2 .standing-heroes .empty-position{position:absolute;transform:translate(-50%,-50%);width:15cqw;height:15cqw;min-height:0;border-radius:50%}\n#s6-v2 .formation-sheet{flex:1;min-height:0;display:flex;flex-direction:column;background:#fff4e2;border-radius:4.6cqw 4.6cqw 0 0;margin-top:-4cqw;position:relative;box-shadow:0 -2px 5px #a8692f2a}\n#s6-v2 .formation-toolbar{padding:2.6cqw 3cqw;gap:1.6cqw;font-size:3.7cqw;border-bottom:1px solid #efd7b2;justify-content:flex-start}\n#s6-v2 .formation-toolbar>i{width:1px;height:6.4cqw;background:#e2c393}\n#s6-v2 .preset-buttons{display:flex;gap:1.4cqw}\n#s6-v2 .preset-buttons .v2-button{width:8.4cqw;height:8.4cqw;min-height:0;padding:0;border-radius:50%;font-size:4.2cqw;border-image:none!important;background:linear-gradient(#fff7e8,#ffe2bb)!important;border:1.5px solid #e2b77a!important}\n#s6-v2 .preset-buttons .v2-button.selected{background:linear-gradient(#ffe86a,#ffbe14)!important;border-color:#d99a1c!important}\n#s6-v2 .formation-name{margin-left:auto;font-size:3.5cqw}\n#s6-v2 .formation-toolbar>button{font-size:3.7cqw;min-height:8.6cqw;padding:1cqw 3.4cqw;gap:1cqw}\n#s6-v2 .formation-toolbar>button .ico{width:4.6cqw;height:4.6cqw}\n#s6-v2 .roster-grid{gap:2.6cqw;padding:3cqw}\n#s6-v2 .secondary-close{min-height:12cqw;font-size:5.4cqw;width:48%}\n#s6-v2 .formation-types{gap:2.6cqw}\n#s6-v2 .v2-button.formation-option{display:flex;flex-direction:column;align-items:stretch;background:#fff8ec;border:2px solid #efd5ab;border-radius:3cqw;padding:1.6cqw;gap:.6cqw;text-align:left}\n#s6-v2 .v2-button.formation-option.picked{border-color:#f0b323;box-shadow:0 0 0 1px #f8cf5c,inset 0 0 14px #ffe39a;background:#fffbea}\n#s6-v2 .formation-option header{display:flex;align-items:center;gap:1cqw}\n#s6-v2 .formation-option header>.ico{width:6cqw;height:6cqw;background:#a56a2f;color:#fff;border-radius:50%;padding:.9cqw}\n#s6-v2 .formation-option h3{font-size:3.9cqw}\n#s6-v2 .formation-option header small{margin-left:auto;font-size:2.5cqw;color:#7a5a3c;white-space:nowrap}\n#s6-v2 .radio{width:5.2cqw;height:5.2cqw;border-radius:50%;border:1.5px solid #b08a5c;background:#fff;display:flex;align-items:center;justify-content:center;font-style:normal;flex-shrink:0}\n#s6-v2 .radio.on{background:#f5b621;border-color:#d58d14}\n#s6-v2 .radio .ico{width:3.8cqw;height:3.8cqw;color:#fff}\n#s6-v2 .formation-mini{position:relative;height:38cqw;display:block}\n#s6-v2 .formation-mini>div{position:absolute;transform:translate(-50%,-50%);width:auto;display:flex;flex-direction:column;align-items:center}\n#s6-v2 .formation-mini .face{width:13.5cqw;height:13.5cqw;object-fit:contain}\n#s6-v2 .formation-mini b{font-size:2.6cqw;white-space:nowrap;background:radial-gradient(#ffe7a0,#ffe7a000 72%);padding:0 1.4cqw;margin-top:-1cqw}\n#s6-v2 .formation-note{display:flex;justify-content:center;align-items:center;gap:1.6cqw;background:#fbe5c6;border-radius:3cqw;padding:1.2cqw;font-size:3.3cqw}\n#s6-v2 .formation-note .ico{color:#b98a4a}\n/* upgrade page */\n#s6-v2 .forge-scene{height:44%}\n#s6-v2 .forge-scene>.title-plaque{position:absolute;left:50%;top:0;transform:translateX(-50%);margin:2.6cqw 0 0!important}\n#s6-v2 .forge-item{top:20cqw;left:3cqw;gap:2cqw}\n#s6-v2 .forge-item>.gear-tile{width:18cqw;border:2px solid #fff3cf;box-shadow:0 2px 3px #0003}\n#s6-v2 .forge-item>div{display:flex;flex-direction:column;gap:.8cqw}\n#s6-v2 .forge-item h2{font-size:4.6cqw;color:#fff;-webkit-text-stroke:.35cqw #5d3216;paint-order:stroke fill}\n#s6-v2 .upgrade-body{background:#fff4e2;border-radius:5cqw 5cqw 0 0;margin-top:-4cqw;position:relative;padding:2cqw 5cqw 1cqw;z-index:1;box-shadow:0 -2px 5px #6b3d1c26}\n#s6-v2 .level-preview{font-size:7.6cqw;padding:1cqw 0 1.4cqw;display:flex;justify-content:center;align-items:center;gap:3cqw}\n#s6-v2 .level-preview i{font-style:normal;font-size:6cqw}\n#s6-v2 .upgrade-body .stat-row{font-size:4.1cqw;min-height:7.6cqw;padding:1cqw 4cqw;margin:.5cqw 0}\n#s6-v2 .upgrade-body .stat-row .ico{width:5.2cqw;height:5.2cqw}\n#s6-v2 .upgrade-costs{justify-content:space-between;padding:2.4cqw 2cqw 0;gap:3cqw}\n#s6-v2 .upgrade-costs>div{gap:.8cqw}\n#s6-v2 .cost-icon{width:13.5cqw;height:13.5cqw;background:linear-gradient(#fffaf0,#f5e0c0);border:1.5px solid #d9b385;border-radius:2.6cqw;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px #0002}\n#s6-v2 .cost-icon img{width:82%;height:82%}\n#s6-v2 .upgrade-costs b{font-size:3.8cqw}\n#s6-v2 .upgrade-costs em{color:#3d9a1f}\n#s6-v2 .upgrade-costs button{min-width:40%;min-height:12.5cqw;font-size:5.6cqw}\n#s6-v2 .breakthrough-note{font-size:3.3cqw;margin-top:1.4cqw}\n@media(max-height:700px){#s6-v2 .talent-tree{height:72cqw}#s6-v2 .recruit-bottom .page-actions button{min-height:13cqw}#s6-v2 .feature-row{min-height:10cqw;padding:1cqw 0}}\n#s6-v2 .talent-node .ico{position:static;inset:auto;width:55%;height:55%;overflow:visible}\n#s6-v2 .talent-node .ico path{fill:currentColor;stroke:none}\n#s6-v2 .v2-button.talent-node{background:radial-gradient(circle at 50% 30%,#f8f6f2,#d3cdc3 58%,#a2998b)!important;padding:0}\n#s6-v2 .talent-node.ready{color:#6b5a48}\n#s6-v2 .formation-option h3{white-space:nowrap}\n#s6-v2 .formation-mini .face{width:15.5cqw;height:15.5cqw}\n#s6-v2 .formation-mini b{font-size:2.8cqw}\n#s6-v2 .v2-scrim.warm{background:radial-gradient(ellipse at 50% 40%,#3b2a14d9,#120b05f2 75%)}\n#s6-v2 .rewards-fullscreen .celebrate h2{font-size:12.5cqw}\n#s6-v2 .rewards-fullscreen .laurel{width:11cqw;height:17cqw}\n#s6-v2 .hero-card .portrait .face{object-fit:cover;object-position:50% 18%;transform:scale(1.12);transform-origin:50% 30%}\n#s6-v2 .standing .face{height:21cqw}\n#s6-v2 .standing.front .face{height:26cqw}\n#s6-v2 .standing-heroes{inset:13cqw 2% 2cqw}\n#s6-v2 .formation-toolbar{gap:1.2cqw;font-size:3.4cqw;padding:2.4cqw 2.4cqw}\n#s6-v2 .formation-toolbar>b,#s6-v2 .formation-name{white-space:nowrap}\n#s6-v2 .formation-toolbar>button{font-size:3.4cqw;padding:1cqw 2.6cqw}\n#s6-v2 .preset-buttons .v2-button{width:7.6cqw;height:7.6cqw}\n#s6-v2 .feature-row small{white-space:nowrap}\n#s6-v2 .feature-row{gap:2cqw}\n#s6-v2 .ico path{fill-rule:evenodd}\n#s6-v2 .rules{text-align:left}\n#s6-v2 .card-title{text-align:left;align-self:flex-start}\n#s6-v2 .roles span{white-space:nowrap}\n#s6-v2 .party-tags i{white-space:nowrap;padding:0 1cqw}\n#s6-v2 .party-tags{gap:.5cqw}\n");
       cclegacy._RF.pop();
     }
   };
 });
 
 System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './SecondEditionStyles.ts', './SquadBattleModel.ts', './V2Progress.ts'], function (exports) {
-  var _createClass, cclegacy, SECOND_EDITION_STYLES, DUNGEONS, SKILL_NAMES, SKILL_LEVELS, HERO_CONFIG, EQUIPMENT_PARTS, upgradeCost, QUALITY_NAMES, gearPrimary, gearStats, GEAR_ATTRIBUTE_NAMES, gearName, gearUpgradePreview, RECRUIT_CONFIG, dungeonReward, DIFFICULTIES, TREE_NODES, FORMATIONS;
+  var _createClass, cclegacy, SECOND_EDITION_STYLES, QUALITY_NAMES, EQUIPMENT_PARTS, DUNGEONS, SKILL_NAMES, SKILL_LEVELS, HERO_CONFIG, upgradeCost, gearPrimary, gearStats, GEAR_ATTRIBUTE_NAMES, gearName, gearUpgradePreview, RECRUIT_CONFIG, DIFFICULTIES, dungeonReward, TREE_NODES, FORMATIONS;
   return {
     setters: [function (module) {
       _createClass = module.createClass;
@@ -4445,21 +4448,21 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
     }, function (module) {
       SECOND_EDITION_STYLES = module.SECOND_EDITION_STYLES;
     }, function (module) {
+      QUALITY_NAMES = module.QUALITY_NAMES;
+      EQUIPMENT_PARTS = module.EQUIPMENT_PARTS;
       DUNGEONS = module.DUNGEONS;
       SKILL_NAMES = module.SKILL_NAMES;
       SKILL_LEVELS = module.SKILL_LEVELS;
       HERO_CONFIG = module.HERO_CONFIG;
-      EQUIPMENT_PARTS = module.EQUIPMENT_PARTS;
       upgradeCost = module.upgradeCost;
-      QUALITY_NAMES = module.QUALITY_NAMES;
       gearPrimary = module.gearPrimary;
       gearStats = module.gearStats;
       GEAR_ATTRIBUTE_NAMES = module.GEAR_ATTRIBUTE_NAMES;
       gearName = module.gearName;
       gearUpgradePreview = module.gearUpgradePreview;
       RECRUIT_CONFIG = module.RECRUIT_CONFIG;
-      dungeonReward = module.dungeonReward;
       DIFFICULTIES = module.DIFFICULTIES;
+      dungeonReward = module.dungeonReward;
     }, function (module) {
       TREE_NODES = module.TREE_NODES;
       FORMATIONS = module.FORMATIONS;
@@ -4469,6 +4472,7 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
       var NAMES = ['莱恩', '艾琳', '莉亚', '罗宾'],
         ROLES = ['坦克', '输出', '治疗', '输出'];
       var Q = ['#b8afa2', '#83c632', '#39afe7', '#b36add', '#ffc631'];
+      var QUALITY_TEXT = ['#7d6b5c', '#488c1a', '#1479b8', '#8e34ba', '#c47a00'];
       var esc = function esc(s) {
         return String(s).replace(/[&<>"']/g, function (c) {
           return {
@@ -4480,6 +4484,54 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           }[c];
         });
       };
+      /** Small single-colour vector glyphs used for labels, rows and badges (game art stays in atlases). */
+      var ICONS = {
+        heart: 'M12 21s-7.5-4.6-9.6-9.2C.9 8.3 3 4.5 6.6 4.5c2.1 0 3.5 1.2 5.4 3.2 1.9-2 3.3-3.2 5.4-3.2 3.6 0 5.7 3.8 4.2 7.3C19.5 16.4 12 21 12 21z',
+        sword: 'M21 2.6 21.4 3l-.4 4.2L11.6 16.6 7.4 12.4 16.8 3zM6.3 13.5l4.2 4.2-1.4 1.4-1.4-1.4-2.6 2.6.4 1.2-1.6 1-2.4-2.4 1-1.6 1.2.4 2.6-2.6-1.4-1.4z',
+        shield: 'M12 2 20 5v6c0 5.2-3.4 9.4-8 11-4.6-1.6-8-5.8-8-11V5z',
+        speed: 'M4 12h9l-4-5h3.5l5.5 5-5.5 5H9l4-5H4zM1 8h5v2H1zm0 6h5v2H1z',
+        star: 'M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z',
+        sparkle: 'M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z',
+        clock: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5h-2v6.2l5 3 1-1.7-4-2.3z',
+        leaf: 'M11 21v-7.5C11 9.4 8.2 6.5 2.5 6.5c0 5 2.9 7.9 8 7.9zm2 0v-4.6h.6c4.7 0 7.6-2.8 7.6-7.6-5.4 0-8.2 2.8-8.2 6.9z',
+        crown: 'M3 18h18l-1.6-10.5-4.6 4.2L12 5l-2.8 6.7-4.6-4.2zM3 19.5h18V22H3z',
+        bolt: 'M13.5 2 4 14h6.5L9.5 22 20 9.5h-6.6z',
+        lock: 'M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V11a1 1 0 0 1 1-1zm2 0h6V7a3 3 0 0 0-6 0z',
+        fire: 'M12 2c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 2-5 3-6.2 0 2.2 1 3.2 2 3.2 0-3-1-6 1-9z',
+        check: 'M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z',
+        refresh: 'M17.7 6.3A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.8-4.2L13 11h7V4z',
+        warn: 'M12 2 1 21h22zm-1 7h2v6h-2zm0 8h2v2h-2z',
+        list: 'M3 4h3v3H3zm5 .5h13v2H8zM3 10.5h3v3H3zm5 .5h13v2H8zM3 17h3v3H3zm5 .5h13v2H8z',
+        book: 'M4 4.5C6.5 3.5 9.5 3.5 11 5v15c-1.5-1.5-4.5-1.5-7-.5zm16 0c-2.5-1-5.5-1-7 .5v15c1.5-1.5 4.5-1.5 7-.5z',
+        trophy: 'M7 3h10v2h3.5v3A4.5 4.5 0 0 1 16.6 12.5 5 5 0 0 1 13 15.9V18h3.5v3h-9v-3H11v-2.1a5 5 0 0 1-3.6-3.4A4.5 4.5 0 0 1 3.5 8V5H7zm0 4H5.5v1A2.5 2.5 0 0 0 7 10.3zm10 0v3.3A2.5 2.5 0 0 0 18.5 8V7z',
+        people: 'M12 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM5 7.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm14 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM12 11c3 0 5 2 5 5v2H7v-2c0-3 2-5 5-5zm-7 2.5c.9 0 1.6.2 2.1.5-.7 1-1.1 2.2-1.1 3.5H1V17c0-1.9 1.8-3.5 4-3.5zm14 0c2.2 0 4 1.6 4 3.5v.5h-5c0-1.3-.4-2.5-1.1-3.5.5-.3 1.2-.5 2.1-.5z',
+        calendar: 'M7 2h2v2h6V2h2v2h3.5v17h-17V4H7zM5.5 9.5V19h13V9.5zM8 12h3v3H8z',
+        cross: 'M9.5 3h5v6.5H21v5h-6.5V21h-5v-6.5H3v-5h6.5z',
+        swirl: 'M12 3a9 9 0 1 0 9 9h-2.5A6.5 6.5 0 1 1 12 5.5a4 4 0 1 1-4 4H5.5A6.5 6.5 0 1 0 12 3z',
+        arrow: 'M3 19.6 13.6 9 11 8.2 20.6 3.4 15.8 13l-.8-2.6L4.4 21z',
+        filter: 'M3 4h18l-7 8.5V19l-4 2v-8.5z',
+        plus: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.2 5h2.4v3.8H17v2.4h-3.8V17h-2.4v-3.8H7v-2.4h3.8z',
+        grid: 'M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z',
+        question: 'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1.3 15h2.5v2.4h-2.5zm1.4-12c2.6 0 4.4 1.5 4.4 3.8 0 2.8-3.2 3.1-3.2 5.6h-2.5c0-3.4 3.1-3.6 3.1-5.5 0-1-.8-1.7-1.9-1.7s-1.9.7-2 1.9H7.6C7.8 6.6 9.5 5 12.1 5z'
+      };
+      var ico = function ico(name, cls) {
+        if (cls === void 0) {
+          cls = '';
+        }
+        return "<svg class=\"ico " + cls + "\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"" + ICONS[name] + "\"/></svg>";
+      };
+      var LAUREL = "<svg class=\"laurel\" viewBox=\"0 0 40 64\" aria-hidden=\"true\"><path d=\"M31 61C11 52 5 31 15 5\" fill=\"none\" stroke=\"#a8620f\" stroke-width=\"2.6\" stroke-linecap=\"round\"/>" + [[19, 53, -55], [12, 44, -35], [8.5, 34, -15], [8.5, 24, 5], [11, 14.5, 25], [16, 6.5, 45]].map(function (_ref) {
+        var x = _ref[0],
+          y = _ref[1],
+          r = _ref[2];
+        return "<ellipse cx=\"" + x + "\" cy=\"" + y + "\" rx=\"7\" ry=\"3.4\" transform=\"rotate(" + r + " " + x + " " + y + ")\"/>";
+      }).join('') + [[22, 46, 30], [16, 37, 15], [14, 27, 0], [16, 18, -15]].map(function (_ref2) {
+        var x = _ref2[0],
+          y = _ref2[1],
+          r = _ref2[2];
+        return "<ellipse cx=\"" + x + "\" cy=\"" + y + "\" rx=\"5.5\" ry=\"2.8\" transform=\"rotate(" + r + " " + x + " " + y + ")\"/>";
+      }).join('') + "</svg>";
+      var ROLE_ICONS = ['sword', 'swirl', 'cross', 'arrow'];
 
       /** Browser presentation over the shared Cocos battlefield. All actions use model transactions. */
       var SecondEditionUI = exports('SecondEditionUI', /*#__PURE__*/function () {
@@ -4529,7 +4581,7 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           this.root.id = 's6-v2';
           this.root.setAttribute('aria-label', '森林挂机冒险');
           this.root.innerHTML = '<main class="v2-content"></main><div class="v2-modal-host"></div><div class="v2-toast" role="status"></div>';
-          for (var _i2 = 0, _arr = [['gold', this.urls.control0], ['cream', this.urls.control1], ['panel', this.urls.control2], ['plaque', this.urls.control3], ['close', this.urls.control4]]; _i2 < _arr.length; _i2++) {
+          for (var _i2 = 0, _arr = [['gold', this.urls.control0], ['cream', this.urls.control1], ['panel', this.urls.control2], ['plaque', this.urls.control3], ['close', this.urls.roundClose || this.urls.control4], ['peach', this.urls.peach || this.urls.control1]]; _i2 < _arr.length; _i2++) {
             var _arr$_i = _arr[_i2],
               key = _arr$_i[0],
               value = _arr$_i[1];
@@ -4588,6 +4640,22 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           this.urls.tree = this.urls.ability6;
           this.urls.material = this.urls.ability7;
           this.urls.ticket = this.urls.ability8;
+          // Peach secondary button, round close, padlocks and star from the shared modal control sheet.
+          var m = t['modal-controls-9'];
+          if (m) {
+            var r = [['peach', [452, 155, 349, 143]], ['roundClose', [84, 496, 262, 267]], ['lock', [910, 494, 236, 262]], ['unlock', [103, 883, 236, 276]], ['starIcon', [494, 904, 260, 252]]];
+            r.forEach(function (_ref3) {
+              var k = _ref3[0],
+                b = _ref3[1];
+              return _this2.urls[k] = _this2.crop(m, b[0], b[1], b[2], b[3]);
+            });
+          }
+          // Endless tower and daily mushroom illustrations (text-free crops of the approved concepts).
+          var f = t['v2-feature-scenes'];
+          if (f) {
+            this.urls.endlessArt = this.crop(f, 0, 0, f.width, f.height / 2);
+            this.urls.dailyArt = this.crop(f, 0, f.height / 2, f.width, f.height / 2);
+          }
         };
         _proto.pruneActions = function pruneActions() {
           var _this3 = this;
@@ -4607,16 +4675,19 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           }
           return "<img class=\"" + cls + "\" src=\"" + (this.urls[name] || '') + "\" alt=\"" + esc(alt) + "\" draggable=\"false\">";
         };
-        _proto.button = function button(text, fn, cls, disabled) {
+        _proto.button = function button(text, fn, cls, disabled, label) {
           if (cls === void 0) {
             cls = '';
           }
           if (disabled === void 0) {
             disabled = false;
           }
+          if (label === void 0) {
+            label = '';
+          }
           var id = String(++this.serial);
           this.actions.set(id, fn);
-          return "<button type=\"button\" data-action=\"" + id + "\" class=\"v2-button " + cls + "\" " + (disabled ? 'disabled' : '') + ">" + text + "</button>";
+          return "<button type=\"button\" data-action=\"" + id + "\" class=\"v2-button " + cls + "\" " + (disabled ? 'disabled' : '') + " " + (label ? "aria-label=\"" + esc(label) + "\"" : '') + ">" + text + "</button>";
         };
         _proto.face = function face(id, cls) {
           if (cls === void 0) {
@@ -4673,6 +4744,12 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
         _proto.close = function close() {
           this.modal.innerHTML = '';
         };
+        _proto.plate = function plate(title) {
+          return "<span class=\"plate\"><i>\u2726</i><span>" + esc(title) + "</span><i>\u2726</i></span>";
+        };
+        _proto.hint = function hint() {
+          return "<p class=\"outside-hint\">" + ico('leaf') + "\u70B9\u51FB\u7A7A\u767D\u5904\u5173\u95ED" + ico('leaf', 'mirror') + "</p>";
+        };
         _proto.popup = function popup(title, body, actions, size) {
           var _this5 = this,
             _this$modal$querySele;
@@ -4683,55 +4760,78 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             size = 'medium';
           }
           var oldFocus = document.activeElement;
-          this.modal.innerHTML = "<div class=\"v2-scrim\"><section class=\"v2-dialog " + size + "\" role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" aria-label=\"" + esc(title) + "\"><header class=\"dialog-head\"><h2>" + esc(title) + "</h2>" + this.button('×', function () {
+          var full = size.indexOf('fullscreen') >= 0;
+          var head = full ? "<header class=\"dialog-head celebrate\">" + LAUREL + "<h2>" + esc(title) + "</h2>" + LAUREL.replace('class="laurel"', 'class="laurel mirror"') + "</header>" : "<header class=\"dialog-head\"><h2 class=\"plaque\">" + this.plate(title) + "</h2>" + this.button('×', function () {
             _this5.close();
             oldFocus == null || oldFocus.focus();
-          }, 'close') + "</header><div class=\"dialog-body\">" + body + "</div>" + (actions ? '<footer class="dialog-actions">' + actions + '</footer>' : '') + "</section><small class=\"outside-hint\">\u70B9\u51FB\u7A7A\u767D\u5904\u5173\u95ED</small></div>";
+          }, 'close', false, "\u5173\u95ED" + title) + "</header>";
+          this.modal.innerHTML = "<div class=\"v2-scrim " + (full ? size.indexOf('rewards') >= 0 ? 'dark warm' : 'dark' : '') + "\"><section class=\"v2-dialog " + size + "\" role=\"dialog\" tabindex=\"-1\" aria-modal=\"true\" aria-label=\"" + esc(title) + "\">" + head + "<div class=\"dialog-body\">" + body + "</div>" + (actions ? '<footer class="dialog-actions">' + actions + '</footer>' : '') + "</section>" + this.hint() + "</div>";
           var shade = this.modal.firstElementChild;
           shade.addEventListener('click', function (e) {
-            if (e.target === shade) _this5.close();
+            if (e.target === shade || e.target.closest('.outside-hint')) _this5.close();
           });
           (_this$modal$querySele = this.modal.querySelector('[role=dialog]')) == null || _this$modal$querySele.focus();
         };
         _proto.info = function info(title, text, confirm) {
+          this.confirm(title, esc(text), confirm);
+        };
+        _proto.confirm = function confirm(title, html, _confirm) {
           var _this6 = this;
-          this.popup(title, "<div class=\"info-pad\">" + esc(text) + "</div>", confirm ? this.button('取消', function () {
+          this.popup(title, "<div class=\"info-pad\">" + html + "</div>", _confirm ? this.button('取消', function () {
             return _this6.close();
-          }, 'quiet') + this.button('确定', function () {
+          }, 'peach') + this.button('确定', function () {
             _this6.close();
-            confirm();
+            _confirm();
           }) : '', 'small');
         };
         _proto.row = function row(name, value, icon) {
           if (icon === void 0) {
             icon = '';
           }
-          return "<div class=\"stat-row\"><span>" + icon + " " + esc(name) + "</span><b>" + value + "</b></div>";
+          return "<div class=\"stat-row\"><span>" + (icon ? ico(icon) : '') + esc(name) + "</span><b>" + value + "</b></div>";
+        };
+        _proto.arrow = function arrow(before, after) {
+          return "<span class=\"change\">" + before + "<i>\u279C</i><em>" + after + "</em></span>";
         };
         _proto.section = function section(title) {
-          return "<h3 class=\"section-title\">" + esc(title) + "</h3>";
+          return "<h3 class=\"section-title\"><span>" + ico('leaf') + esc(title) + "</span></h3>";
+        };
+        _proto.divider = function divider() {
+          return '<div class="ornament-line"><i>✦</i></div>';
         };
         _proto.gear = function gear(g, slot, extra) {
           if (extra === void 0) {
             extra = '';
           }
-          return "<div class=\"gear-tile " + (g ? '' : 'empty') + "\" style=\"--quality:" + (g ? Q[g.quality] : '#c4b6a6') + "\">" + (g ? this.img('icon' + g.slot) : '<span class="empty-slot-symbol">＋</span>') + (g ? "<b class=\"gear-level\">Lv." + g.level + "</b>" + (g.locked ? '<span class="gear-lock">▣</span>' : '') : '') + extra + "</div>";
+          return "<div class=\"gear-tile " + (g ? '' : 'empty') + "\" style=\"--quality:" + (g ? Q[g.quality] : '#c4b6a6') + "\">" + (g ? this.img('icon' + g.slot) : '<span class="empty-slot-symbol">＋</span>') + (g ? "<b class=\"gear-level\">Lv." + g.level + "</b>" + (g.locked ? this.img('lock', 'gear-lock') : '') : '') + extra + "</div>";
         };
-        _proto.heroCard = function heroCard(id, rarity, fresh) {
-          if (fresh === void 0) {
-            fresh = false;
+        _proto.roleBadge = function roleBadge(id) {
+          return "<i class=\"role-badge r" + id + "\">" + ico(ROLE_ICONS[id]) + "</i>";
+        };
+        _proto.starRow = function starRow(n) {
+          return "<span class=\"star-row\" aria-label=\"" + n + "\u661F\">" + '<i class="on">★</i>'.repeat(n) + '<i>★</i>'.repeat(Math.max(0, 5 - n)) + "</span>";
+        };
+        _proto.heroCard = function heroCard(id, o) {
+          if (o === void 0) {
+            o = {};
           }
           var b = this.port.model(),
             h = b.heroes[id],
             owned = b.owns(id);
-          return "<div class=\"hero-card " + (owned ? '' : 'locked') + "\" style=\"--quality:" + Q[rarity === undefined ? [4, 3, 2, 2][id] : rarity + 2] + "\"><span class=\"hero-role\">" + ROLES[id] + "</span>" + (fresh ? '<em class="new">NEW</em>' : '') + this.face(id) + "<b>" + NAMES[id] + "</b><small>Lv." + h.level + "\u3000" + '★'.repeat(h.stars) + "</small>" + (owned ? '' : '<span class="lock">未招募 ▣</span>') + "</div>";
+          return "<div class=\"hero-card " + (owned ? '' : 'locked') + "\" title=\"" + NAMES[id] + "\" style=\"--quality:" + Q[o.rarity === undefined ? [4, 3, 2, 2][id] : o.rarity + 2] + "\">" + this.roleBadge(id) + (o.tag ? "<em class=\"card-tag " + (o.tag === 'NEW' ? 'new' : 'dup') + "\">" + o.tag + "</em>" : '') + "<div class=\"portrait\">" + this.face(id) + (o.deployed ? '<span class="deployed">已上阵</span>' : '') + (owned ? '' : this.img('lock', 'card-lock')) + "</div><span class=\"sr\">" + NAMES[id] + "</span><b>Lv." + h.level + "</b>" + this.starRow(h.stars) + "</div>";
         };
-        _proto.reward = function reward(icon, n, label) {
-          return "<div class=\"reward\">" + this.img(label === '强化石' ? 'material' : 'icon' + icon) + "<b>\xD7" + n + "</b><small>" + esc(label) + "</small></div>";
+        _proto.reward = function reward(icon, n, label, quality) {
+          if (quality === void 0) {
+            quality = 2;
+          }
+          return "<div class=\"reward\" style=\"--quality:" + Q[quality] + "\">" + this.img(label === '强化石' ? 'material' : 'icon' + icon) + "<b>\xD7" + n + "</b><small>" + esc(label) + "</small></div>";
+        };
+        _proto.gearReward = function gearReward(slot, quality, level) {
+          return "<div class=\"reward\" style=\"--quality:" + Q[quality] + "\">" + this.img('icon' + slot) + "<b>Lv." + level + "</b><small>" + QUALITY_NAMES[quality] + EQUIPMENT_PARTS[slot] + "</small></div>";
         };
         _proto.rewardItems = function rewardItems(r) {
           var _this7 = this;
-          return this.reward(6, (r == null ? void 0 : r.gold) || 0, '金币') + this.reward(7, (r == null ? void 0 : r.experience.reduce(function (n, v) {
+          return this.reward(6, (r == null ? void 0 : r.gold) || 0, '金币', 4) + this.reward(7, (r == null ? void 0 : r.experience.reduce(function (n, v) {
             return n + v;
           }, 0)) || 0, '英雄经验') + ((r == null ? void 0 : r.equipment.map(function (g) {
             return _this7.gear(g);
@@ -4746,6 +4846,18 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           }
           return "<div class=\"reward-scroll " + cls + "\" tabindex=\"0\" aria-label=\"\u5956\u52B1\u5217\u8868\uFF0C\u53EF\u4E0A\u4E0B\u6ED1\u52A8\"><div class=\"five-grid\">" + (items || '<p class="empty-message">暂无奖励</p>') + "</div></div>";
         };
+        _proto.dungeonRewards = function dungeonRewards(id, difficulty) {
+          var _this8 = this;
+          var r = dungeonReward(id, difficulty);
+          var items = '';
+          if (r.gold) items += this.reward(6, r.gold, '金币');
+          if (r.experience) items += this.reward(7, r.experience, '每位英雄经验');
+          if (r.materials) items += this.reward(7, r.materials, '强化石');
+          if (r.gear) items += [0, 1, 3].map(function (s, i) {
+            return _this8.gearReward(s, [3, 2, 1][i], r.level);
+          }).join('');
+          return items;
+        };
         _proto.draw = function draw() {
           this.inSecondary = false;
           this.root.classList.toggle('battle-mode', this.page === 'adventure' || this.page === 'dungeon' && !!this.port.model().dungeon.run && this.port.battle() !== this.port.model());
@@ -4754,50 +4866,50 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           this.content.innerHTML = this.page === 'adventure' ? this.adventure() : this.page === 'hero' ? this.hero() : this.page === 'bag' ? this.bag() : this.page === 'recruit' ? this.recruit() : this.dungeons();
         };
         _proto.adventure = function adventure() {
-          var _this8 = this,
+          var _this9 = this,
             _this$port$model$dung;
           var b = this.port.battle();
           return "<div class=\"battle-hud\">" + this.wallet() + this.button('☰', function () {
-            return _this8.settings();
+            return _this9.settings();
           }, 'menu quiet') + "<div class=\"stage-heading\"><h1>" + (this.page === 'dungeon' ? DUNGEONS[this.port.model().dungeon.run.id].name : '镇外森林') + "</h1><b data-live=\"wave\">\u7B2C" + b.wave + "\u6CE2</b><div class=\"checkpoint\"><i></i><i></i><i></i><i></i><i></i>\u2691</div><small data-live=\"checkpoint\">\u4E0B\u4E00\u68C0\u67E5\u70B9 \xB7 \u7B2C" + Math.ceil(b.wave / 10) * 10 + "\u6CE2</small></div><div class=\"turn-order\"><b>\u884C\u52A8\u987A\u5E8F</b>" + b.order.map(function (i) {
-            return "<span class=\"turn-portrait\" data-turn=\"" + i + "\">" + (i < 3 ? _this8.face(b.formation[i]) : _this8.img('monster' + b.enemies[i - 3].kind)) + "</span>";
-          }).join('<span>›</span>') + "</div><div class=\"battle-tools\">" + this.button(this.port.speed() + '×', function () {
-            _this8.port.setSpeed();
-            _this8.draw();
+            return "<span class=\"turn-portrait\" data-turn=\"" + i + "\">" + (i < 3 ? _this9.face(b.formation[i]) : _this9.img('monster' + b.enemies[i - 3].kind)) + "</span>";
+          }).join('<span class="turn-arrow">➜</span>') + "</div><div class=\"battle-tools\">" + this.button(this.port.speed() + '×', function () {
+            _this9.port.setSpeed();
+            _this9.draw();
           }, 'quiet') + this.button(this.img('nav7') + '<small>统计</small>', function () {
-            return _this8.statistics();
+            return _this9.statistics();
           }, 'quiet') + this.button(this.img('nav8') + '<small>自动技能</small>', function () {
             var before = b.autoSkill;
             b.autoSkill = !before;
-            var error = _this8.port.mutate(function () {
+            var error = _this9.port.mutate(function () {
               return null;
             });
             if (error) {
               b.autoSkill = before;
-              _this8.toast(error);
+              _this9.toast(error);
             }
-            _this8.draw();
+            _this9.draw();
           }, 'quiet ' + (b.autoSkill ? 'on' : '')) + "</div><div class=\"field-actions\">" + this.button(this.img('nav5') + '阵型', function () {
-            return _this8.formation();
+            return _this9.formation();
           }, 'quiet') + (this.page === 'adventure' ? this.button(this.img('nav6') + '挂机收益', function () {
-            return _this8.offline();
+            return _this9.offline();
           }, 'quiet') : (_this$port$model$dung = this.port.model().dungeon.run) != null && _this$port$model$dung.receipt ? this.button('查看结算', function () {
-            return _this8.result();
+            return _this9.result();
           }, 'quiet') : this.button('离开战斗', function () {
-            _this8.port.leave();
-            _this8.draw();
+            _this9.port.leave();
+            _this9.draw();
           }, 'quiet')) + "</div><div class=\"skill-bar\">" + b.formation.map(function (id, i) {
             var h = b.heroes[id];
-            return "<section class=\"party-card\"><header>" + _this8.face(id) + "<div><b>" + NAMES[id] + "</b><small>Lv." + h.level + "\u3000" + ROLES[id] + "</small><div class=\"health-track\"><i data-hp=\"" + id + "\"></i></div><small data-hp-label=\"" + id + "\">" + h.hp + "/" + b.stats(id).hp + "</small><small data-shield=\"" + id + "\"></small></div></header><div class=\"active-skills\">" + [0, 2].map(function (skill, j) {
-              return _this8.button(_this8.skillIcon(id, skill) + ("<span data-cooldown=\"" + id + "-" + j + "\"></span><small>" + (b.unlocked(id, skill) ? SKILL_NAMES[id][skill] : SKILL_LEVELS[skill] + '级解锁') + "</small>"), function () {
-                if (!b.requestSkill(i, j)) _this8.toast('技能冷却中、尚未解锁或英雄已阵亡');else {
-                  var error = _this8.port.mutate(function () {
+            return "<section class=\"party-card\"><header>" + _this9.face(id) + "<div><b>" + NAMES[id] + "</b><span class=\"party-tags\"><i>Lv." + h.level + "</i><i class=\"role-pill r" + id + "\">" + ico(id === 0 ? 'shield' : ROLE_ICONS[id]) + ROLES[id] + "</i></span><div class=\"health-track\"><i data-hp=\"" + id + "\"></i></div><small data-hp-label=\"" + id + "\">" + h.hp + "/" + b.stats(id).hp + "</small><small data-shield=\"" + id + "\"></small></div></header><div class=\"active-skills\">" + [0, 2].map(function (skill, j) {
+              return _this9.button(_this9.skillIcon(id, skill) + ("<span data-cooldown=\"" + id + "-" + j + "\"></span><small>" + (b.unlocked(id, skill) ? SKILL_NAMES[id][skill] : '待解锁') + "</small>"), function () {
+                if (!b.requestSkill(i, j)) _this9.toast(b.unlocked(id, skill) ? '技能冷却中或英雄已阵亡' : SKILL_LEVELS[skill] + '级解锁');else {
+                  var error = _this9.port.mutate(function () {
                     return null;
                   });
                   if (error) {
                     if (j) h.queued2 = false;else h.queued = false;
-                    _this8.toast(error);
-                  } else _this8.toast('已加入释放队列');
+                    _this9.toast(error);
+                  } else _this9.toast('已加入释放队列');
                 }
               }, 'skill-button ' + (b.unlocked(id, skill) ? '' : 'unavailable'));
             }).join('') + "</div></section>";
@@ -4808,83 +4920,85 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           return this.img('ability' + (!b.unlocked(id, index) ? 3 : index % 2 === 1 ? 1 : id === 0 ? index === 0 ? 0 : 2 : id === 2 ? 5 : id === 1 ? 4 : 2));
         };
         _proto.settings = function settings() {
-          var _this9 = this;
+          var _this10 = this;
           var b = this.port.battle();
           this.popup('战斗设置', '<div class="info-pad">战斗倍速不影响体力恢复与挂机收益。</div>', this.button(b.paused ? '继续战斗' : '暂停战斗', function () {
             b.paused = !b.paused;
-            _this9.close();
+            _this10.close();
           }) + (this.page === 'dungeon' ? this.button('结束挑战', function () {
-            _this9.close();
-            _this9.port.end();
-          }, 'quiet') : ''), 'small');
+            _this10.close();
+            _this10.port.end();
+          }, 'peach') : ''), 'small');
         };
         _proto.statistics = function statistics() {
-          var _this10 = this;
+          var _this11 = this;
           var b = this.port.battle();
           this.popup('战斗统计', this.section('输出与治疗') + b.formation.map(function (i) {
-            return _this10.row(NAMES[i], b.heroes[i].damage + ' / ' + b.heroes[i].healing);
-          }).join('') + this.row('承受伤害', b.received) + this.row('战斗时长', Math.floor(b.elapsed) + '秒'));
+            return _this11.row(NAMES[i], b.heroes[i].damage + ' / ' + b.heroes[i].healing, ROLE_ICONS[i]);
+          }).join('') + this.row('承受伤害', b.received, 'shield') + this.row('战斗时长', Math.floor(b.elapsed) + '秒', 'clock'));
         };
         _proto.hero = function hero() {
-          var _this11 = this;
+          var _this12 = this;
           var b = this.port.model(),
             id = this.selected,
             h = b.heroes[id],
             s = b.stats(id),
             owned = b.owns(id);
           return "<div class=\"page hero-page\" style=\"--scene:url('" + this.urls.scene1 + "')\">" + this.wallet(false) + "<div class=\"hero-tabs\">" + HERO_CONFIG.map(function (c, i) {
-            return _this11.button(_this11.face(i) + ("<b>" + c.name + "</b>"), function () {
-              _this11.selected = i;
-              _this11.draw();
+            return _this12.button(_this12.face(i) + ("<b>" + c.name + "</b>"), function () {
+              _this12.selected = i;
+              _this12.draw();
             }, i === id ? 'selected' : 'quiet');
-          }).join('') + "</div><div class=\"hero-stage\"><h1>" + HERO_CONFIG[id].name + " \xB7 Lv." + h.level + "</h1><div class=\"stars\">" + '★'.repeat(h.stars) + "<span>" + '★'.repeat(5 - h.stars) + "</span>" + this.button('☆', function () {
-            return _this11.star();
-          }, 'star-button') + "</div><p class=\"roles\">\u2694 " + ROLES[id] + "\u3000" + (owned ? '已招募' : '尚未招募') + "</p><div class=\"equipment-left\">" + [0, 1, 2].map(function (slot) {
-            return _this11.button(_this11.gear(b.equipment(id)[slot], slot) + ("<small>" + EQUIPMENT_PARTS[slot] + "</small>"), function () {
-              return _this11.equipmentSlot(slot);
+          }).join('') + "</div><div class=\"hero-stage\"><h1>" + HERO_CONFIG[id].name + " \xB7 Lv." + h.level + "</h1><div class=\"stars\">" + this.starRow(h.stars) + this.button(this.img('starIcon'), function () {
+            return _this12.star();
+          }, 'star-button', false, '英雄升星') + "</div><p class=\"roles\">" + ico(id === 0 ? 'shield' : ROLE_ICONS[id]) + ROLES[id] + "<span>" + (owned ? '已招募' : '尚未招募') + "</span></p><div class=\"equipment-left\">" + [0, 1, 2].map(function (slot) {
+            return _this12.button(_this12.gear(b.equipment(id)[slot], slot) + ("<small>" + EQUIPMENT_PARTS[slot] + "</small>"), function () {
+              return _this12.equipmentSlot(slot);
             }, 'equipment-slot');
           }).join('') + "</div>" + this.face(id, 'hero-figure') + "<div class=\"equipment-right\">" + [3, 4, 5].map(function (slot) {
-            return _this11.button(_this11.gear(b.equipment(id)[slot], slot) + ("<small>" + EQUIPMENT_PARTS[slot] + "</small>"), function () {
-              return _this11.equipmentSlot(slot);
+            return _this12.button(_this12.gear(b.equipment(id)[slot], slot) + ("<small>" + EQUIPMENT_PARTS[slot] + "</small>"), function () {
+              return _this12.equipmentSlot(slot);
             }, 'equipment-slot');
-          }).join('') + "</div>" + this.button('⠿ 编队', function () {
-            return _this11.formation();
-          }, 'quiet formation-link') + "</div><div class=\"experience\"><small>\u7ECF\u9A8C " + h.experience + "/" + upgradeCost(h.level) + "</small><progress value=\"" + h.experience + "\" max=\"" + upgradeCost(h.level) + "\"></progress></div><div class=\"page-actions\">" + this.button('一键换装', function () {
-            return _this11.run(function (m) {
+          }).join('') + "</div>" + this.button(ico('people') + '编队', function () {
+            return _this12.formation();
+          }, 'quiet formation-link') + "</div><div class=\"experience\"><small>\u7ECF\u9A8C " + h.experience + "/" + upgradeCost(h.level) + "</small><div class=\"exp-track\"><i style=\"width:" + Math.min(100, h.experience / upgradeCost(h.level) * 100) + "%\"></i></div></div><div class=\"page-actions\">" + this.button('一键换装', function () {
+            return _this12.run(function (m) {
               return m.autoEquip(id);
             }, function () {
-              return _this11.draw();
+              return _this12.draw();
             });
           }, '', !owned) + this.button('升级', function () {
-            return _this11.run(function (m) {
+            return _this12.run(function (m) {
               return m.upgrade(id);
             }, function () {
-              return _this11.draw();
+              return _this12.draw();
             });
-          }, '', !owned || h.level >= 100) + "</div><section class=\"cream-card skills-card\">" + this.section('技能') + "<div class=\"hero-skills\">" + [0, 1, 2, 3].map(function (i) {
-            return _this11.button("<small>" + (i % 2 ? '被动' : '主动') + "</small>" + _this11.skillIcon(id, i) + "<b>" + SKILL_NAMES[id][i] + "</b><small>" + (b.unlocked(id, i) ? '已解锁' : SKILL_LEVELS[i] + '级解锁') + "</small>", function () {
-              return _this11.skill(i);
-            }, 'flat ' + (b.unlocked(id, i) ? '' : 'unavailable'));
-          }).join('') + this.button(this.img('tree') + '<b>天赋树</b><small>' + b.talentPoints(id) + '点</small>', function () {
-            return _this11.talents();
-          }, 'flat') + "</div></section><section class=\"cream-card attributes\">" + this.section('英雄属性') + "<div class=\"two-grid\">" + (this.row('生命', s.hp, '♥') + this.row('攻击', s.attack, '⚔') + this.row('防御', s.defense, '⬟') + this.row('移速', s.speed, '➤') + this.row('技能效果', s.power, '✦') + this.row('技能冷却', s.cooldown + '秒', '◷')) + "</div></section>" + this.nav('hero') + "</div>";
+          }, '', !owned || h.level >= 100) + "</div><section class=\"cream-card skills-card\"><h3 class=\"card-title\">\u6280\u80FD</h3><div class=\"hero-skills\">" + [0, 1, 2, 3].map(function (i) {
+            return _this12.button("<small class=\"kind\">" + (i % 2 ? '被动' : '主动') + "</small>" + _this12.skillIcon(id, i) + "<b>" + (b.unlocked(id, i) ? SKILL_NAMES[id][i] : '待解锁') + "</b><small>" + (b.unlocked(id, i) ? '已解锁' : SKILL_LEVELS[i] + '级解锁') + "</small>", function () {
+              return _this12.skill(i);
+            }, 'flat ' + (b.unlocked(id, i) ? '' : 'unavailable'), false, SKILL_NAMES[id][i]);
+          }).join('') + "<i class=\"skill-divider\"></i>" + this.button(this.img('tree') + '<b>天赋树</b><small>' + b.talentPoints(id) + '点</small>', function () {
+            return _this12.talents();
+          }, 'flat tree-button') + "</div></section><section class=\"cream-card attributes\"><h3 class=\"card-title\">\u82F1\u96C4\u5C5E\u6027</h3><div class=\"two-grid\">" + (this.row('生命', s.hp, 'heart') + this.row('攻击', s.attack, 'sword') + this.row('防御', s.defense, 'shield') + this.row('移速', s.speed, 'speed') + this.row('技能效果', s.power, 'sparkle') + this.row('技能冷却', s.cooldown + '秒', 'clock')) + "</div></section>" + this.nav('hero') + "</div>";
         };
         _proto.star = function star() {
-          var _this12 = this;
+          var _this13 = this;
           var b = this.port.model(),
-            p = b.starPreview(this.selected);
+            id = this.selected,
+            p = b.starPreview(id);
           if (!p) {
             this.info('英雄升星', '请先招募该英雄');
             return;
           }
-          this.popup('英雄升星', "<div class=\"item-heading\">" + this.face(this.selected) + "<div><h3>" + NAMES[this.selected] + "</h3><p class=\"stars\">" + '★'.repeat(p.stars) + " \u2192 " + (p.stars < 5 ? '★'.repeat(p.stars + 1) : '已满星') + "</p></div></div>" + this.section('提升预览') + this.row('生命', p.before.hp + ' → <em>' + p.after.hp + '</em>') + this.row('攻击', p.before.attack + ' → <em>' + p.after.attack + '</em>') + this.row('招牌技能', p.before.power + ' → <em>' + p.after.power + '</em>') + this.section('升星消耗') + ("<div class=\"info-pad\">\u540C\u540D\u82F1\u96C4 " + p.available + " / " + p.cost + " \u4EFD</div>"), this.button(p.stars === 5 ? '已满星' : '升星', function () {
-            return _this12.run(function (m) {
-              return m.starUp(_this12.selected);
+          var max = p.stars >= 5;
+          this.popup('英雄升星', "<div class=\"item-heading\"><div class=\"portrait-tile\" style=\"--quality:" + Q[[4, 3, 2, 2][id]] + "\">" + this.face(id) + "</div><div><h3>" + HERO_CONFIG[id].name + "</h3><p class=\"star-change\">" + '★'.repeat(p.stars) + "<i>\u279C</i>" + (max ? '已满星' : '★'.repeat(p.stars + 1)) + "</p></div></div>" + this.divider() + this.section('提升预览') + this.row('生命', this.arrow(p.before.hp, p.after.hp), 'heart') + this.row('攻击', this.arrow(p.before.attack, p.after.attack), 'sword') + this.row(SKILL_NAMES[id][0] + '效果', this.arrow(p.before.power, p.after.power), 'shield') + this.divider() + this.section('升星消耗') + ("<div class=\"cost-card\"><div class=\"portrait-tile small\" style=\"--quality:" + Q[[4, 3, 2, 2][id]] + "\">" + this.face(id) + "<b>\xD7" + p.cost + "</b></div><div><h3>" + HERO_CONFIG[id].name + "\u4EFD\u6570</h3><p>\u6301\u6709 <em class=\"" + (p.available >= p.cost ? '' : 'short') + "\">" + p.available + "</em> \u4EFD / \u6D88\u8017 " + p.cost + " \u4EFD</p></div></div>"), this.button(max ? '已满星' : '升星', function () {
+            return _this13.run(function (m) {
+              return m.starUp(id);
             }, function () {
-              _this12.draw();
-              _this12.star();
+              _this13.draw();
+              _this13.star();
             });
-          }, '', p.stars === 5 || p.available < p.cost));
+          }, 'wide', max || p.available < p.cost));
         };
         _proto.skill = function skill(index) {
           var b = this.port.model(),
@@ -4892,10 +5006,24 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             s = b.stats(id),
             passive = index % 2 === 1;
           var descriptions = [['为自己施加护盾，抵挡敌人的伤害。', '提升自身防御。', '挥盾打击攻击最高的敌人。', '强化两个主动技能的效果。'], ['向随机敌人投出火焰。', '强化主动技能效果。', '引爆生命比例最低的敌人。', '强化两个主动技能的效果。'], ['恢复生命比例最低的队友。', '提升主动治疗效果。', '为伤势最重的队友施加强效治疗。', '强化两个主动技能的效果。'], ['射出一箭，攻击随机敌人。', '提升普通攻击伤害。', '瞄准生命比例最低的敌人射击。', '强化两个主动技能的效果。']];
-          this.popup('技能详情', "<div class=\"item-heading\"><div class=\"skill-preview\">" + this.skillIcon(id, index) + "</div><div><h3>" + SKILL_NAMES[id][index] + "</h3><p>" + (passive ? '被动' : '主动') + " \xB7 " + (b.unlocked(id, index) ? '已解锁' : SKILL_LEVELS[index] + '级解锁') + "</p></div></div>" + this.section('技能描述') + ("<div class=\"info-pad\">" + descriptions[id][index] + "</div>") + this.section('技能属性') + this.row(passive ? '解锁等级' : id === 2 ? '治疗量' : id === 0 && index === 0 ? '护盾量' : '技能效果', "<em>" + (passive ? SKILL_LEVELS[index] : Math.round(s.power * (index === 2 ? 1.4 : 1))) + "</em>") + this.row(passive ? '生效方式' : '冷却时间', passive ? '自动生效' : (index === 0 ? s.cooldown : b.secondCooldown(id)) + '秒'));
+          var power = Math.round(s.power * (index === 2 ? 1.4 : 1));
+          this.popup('技能详情', "<div class=\"item-heading\"><div class=\"skill-preview\">" + this.skillIcon(id, index) + "</div><div><h3>" + SKILL_NAMES[id][index] + "</h3><p class=\"pill\">" + (passive ? '被动' : '主动') + " \xB7 " + (b.unlocked(id, index) ? '已解锁' : SKILL_LEVELS[index] + '级解锁') + "</p></div></div>" + this.divider() + this.section('技能属性') + this.row(passive ? '解锁等级' : id === 2 ? '治疗量' : id === 0 && index === 0 ? '护盾值' : '技能效果', "<em>" + (passive ? 'Lv.' + SKILL_LEVELS[index] : power) + "</em>", passive ? 'star' : id === 2 ? 'heart' : id === 0 ? 'shield' : 'fire') + this.row(passive ? '生效方式' : '冷却', passive ? '自动生效' : "<em class=\"blue\">" + (index === 0 ? s.cooldown : b.secondCooldown(id)) + "\u79D2</em>", 'clock') + this.section('技能描述') + ("<div class=\"info-pad\">" + descriptions[id][index] + "</div>"));
+        };
+        _proto.treeLayout = function treeLayout() {
+          var left = [[25, 86], [13, 70], [28, 55], [14, 39], [26, 23]],
+            right = left.map(function (_ref4) {
+              var x = _ref4[0],
+                y = _ref4[1];
+              return [100 - x, y];
+            });
+          return Array.from({
+            length: 15
+          }, function (_, i) {
+            return i < 5 ? [50, 88 - i * 18.5] : i < 10 ? left[i - 5] : right[i - 10];
+          });
         };
         _proto.talents = function talents(selected) {
-          var _this13 = this;
+          var _this14 = this;
           if (selected === void 0) {
             selected = 0;
           }
@@ -4905,32 +5033,41 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             this.info('天赋树', '请先招募该英雄');
             return;
           }
-          var tree = b.interfaceProgress.tree[id];
-          var nodes = Array.from({
-            length: 15
-          }, function (_, i) {
-            return {
-              x: i < 5 ? 50 : i < 10 ? 22 - i % 2 * 7 : 78 + i % 2 * 7,
-              y: 8 + i % 5 * 18
-            };
-          });
-          this.popup('英雄天赋', "<div class=\"talent-wallet\">" + NAMES[id] + " \xB7 \u53EF\u7528\u5929\u8D4B\u70B9 <b>" + b.talentPoints(id) + "</b></div><div class=\"talent-tree\"><svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\"><path d=\"M50 95 L50 8 M50 18 L22 8 L15 26 L22 44 L15 62 L22 80 M50 18 L78 8 L85 26 L78 44 L85 62 L78 80\"/></svg>" + nodes.map(function (n, i) {
-            return _this13.button(i < 5 ? '✦' : i < 10 ? '♥' : '⚔', function () {
-              return _this13.talents(i);
-            }, 'talent-node ' + (tree[i] ? 'learned' : '') + ("\" style=\"left:" + n.x + "%;top:" + n.y + "%"));
-          }).join('') + "</div>" + this.section(TREE_NODES[selected].name) + ("<div class=\"info-pad\">" + TREE_NODES[selected].description + "<br>" + (tree[selected] ? '已学习' : '消耗 1 点') + "</div>"), this.button('重置天赋', function () {
-            return _this13.info('重置天赋', '返还该英雄已投入的全部天赋点？', function () {
-              return _this13.run(function (m) {
+          var tree = b.interfaceProgress.tree[id],
+            pos = this.treeLayout();
+          var icons = ['sparkle', 'shield', 'fire', 'heart', 'refresh', 'heart', 'shield', 'heart', 'shield', 'heart', 'sword', 'fire', 'sword', 'fire', 'sword'];
+          var branch = function branch(o) {
+            return pos.slice(o, o + 5).map(function (_ref5, k) {
+              var x = _ref5[0],
+                y = _ref5[1];
+              return k ? "L" + x + " " + y : "M50 " + (y + 3) + "Q" + (50 + x) / 2 + " " + (y + 4) + " " + x + " " + y;
+            }).join(' ').replace(/L/g, 'L');
+          };
+          var leaves = pos.map(function (_ref6, i) {
+            var x = _ref6[0],
+              y = _ref6[1];
+            return i % 2 ? "<ellipse cx=\"" + (x + (x < 50 ? 6 : -6)) + "\" cy=\"" + (y - 6) + "\" rx=\"2.4\" ry=\"1.1\" transform=\"rotate(" + (x < 50 ? -35 : 35) + " " + (x + (x < 50 ? 6 : -6)) + " " + (y - 6) + ")\"/>" : '';
+          }).join('');
+          this.popup('天赋树', "<div class=\"talent-wallet\">" + this.face(id) + "<b>" + HERO_CONFIG[id].name + "</b><i></i>\u53EF\u7528\u5929\u8D4B\u70B9 <em>" + b.talentPoints(id) + "</em></div><div class=\"talent-tree\"><svg viewBox=\"0 0 100 100\" preserveAspectRatio=\"none\" aria-hidden=\"true\"><path class=\"trunk\" d=\"M50 98 L50 12\"/><path class=\"branch\" d=\"" + branch(5) + "\"/><path class=\"branch\" d=\"" + branch(10) + "\"/><g class=\"leaves\">" + leaves + "</g></svg>" + pos.map(function (_ref7, i) {
+            var x = _ref7[0],
+              y = _ref7[1];
+            var ready = TREE_NODES[i].parent < 0 || tree[TREE_NODES[i].parent];
+            return _this14.button(ico(icons[i]) + (tree[i] ? '<b>1/1</b>' : ''), function () {
+              return _this14.talents(i);
+            }, 'talent-node ' + (tree[i] ? 'learned ' : ready ? 'ready ' : '') + (i === selected ? 'current' : '') + ("\" style=\"left:" + x + "%;top:" + y + "%"), false, TREE_NODES[i].name);
+          }).join('') + "</div><div class=\"talent-info\"><div><h3>" + TREE_NODES[selected].name + "</h3><p>" + TREE_NODES[selected].description + "</p></div><i></i><b>" + (tree[selected] ? '已学习' : '消耗 <em>1</em> 点') + "</b></div>", this.button('重置天赋', function () {
+            return _this14.info('重置天赋', '返还该英雄已投入的全部天赋点？', function () {
+              return _this14.run(function (m) {
                 return m.resetTreeTalents(id);
               }, function () {
-                return _this13.talents(selected);
+                return _this14.talents(selected);
               });
             });
-          }, 'quiet') + this.button('学习天赋', function () {
-            return _this13.run(function (m) {
+          }, 'peach') + this.button('学习天赋', function () {
+            return _this14.run(function (m) {
               return m.trainTreeTalent(id, selected);
             }, function () {
-              return _this13.talents(selected);
+              return _this14.talents(selected);
             });
           }), 'large');
         };
@@ -4943,57 +5080,57 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           if (g) this.detail(g.id);else this.picker(slot);
         };
         _proto.filters = function filters(update) {
-          var _this14 = this;
-          return "<div class=\"filter-row\">" + this.button('▽ 筛选', function () {
-            _this14.popup('品质筛选', "<div class=\"filter-options\">" + (_this14.button('全部品质', function () {
-              _this14.quality = -1;
+          var _this15 = this;
+          return "<div class=\"filter-row\">" + this.button(ico('filter') + '筛选', function () {
+            _this15.popup('品质筛选', "<div class=\"filter-options\">" + (_this15.button('全部品质', function () {
+              _this15.quality = -1;
               update();
             }, 'quiet') + QUALITY_NAMES.map(function (q, i) {
-              return _this14.button(q, function () {
-                _this14.quality = i;
+              return _this15.button(q, function () {
+                _this15.quality = i;
                 update();
-              }, _this14.quality === i ? '' : 'quiet');
-            }).join('')) + "</div>");
-          }, 'quiet') + this.button('品质 ' + (this.reverse ? '↑' : '↓') + '⌄', function () {
-            _this14.reverse = !_this14.reverse;
+              }, _this15.quality === i ? '' : 'quiet');
+            }).join('')) + "</div>", '', 'small');
+          }, 'quiet') + this.button('品质 ' + (this.reverse ? '↑' : '↓') + ' ⌄', function () {
+            _this15.reverse = !_this15.reverse;
             update();
           }, 'quiet') + "</div>";
         };
         _proto.filtered = function filtered(slot) {
-          var _this15 = this;
+          var _this16 = this;
           if (slot === void 0) {
             slot = this.part;
           }
           return this.port.model().inventory.filter(function (g) {
-            return (slot < 0 || g.slot === slot) && (_this15.quality < 0 || g.quality === _this15.quality);
+            return (slot < 0 || g.slot === slot) && (_this16.quality < 0 || g.quality === _this16.quality);
           }).slice().sort(function (a, b) {
-            return (b.quality - a.quality) * (_this15.reverse ? -1 : 1) || b.level - a.level || b.id - a.id;
+            return (b.quality - a.quality) * (_this16.reverse ? -1 : 1) || b.level - a.level || b.id - a.id;
           });
         };
         _proto.picker = function picker(slot) {
-          var _this16 = this;
+          var _this17 = this;
           var b = this.port.model(),
             items = this.filtered(slot).filter(function (g) {
               return b.owner(g.id) < 0;
             });
           this.popup('装备选择', this.filters(function () {
-            return _this16.picker(slot);
+            return _this17.picker(slot);
           }) + ("<div class=\"equipment-scroll\"><div class=\"five-grid\">" + items.map(function (g) {
-            return _this16.button(_this16.gear(g), function () {
-              return _this16.detail(g.id);
+            return _this17.button(_this17.gear(g), function () {
+              return _this17.detail(g.id);
             }, 'flat');
           }).join('') + Array.from({
             length: Math.max(0, 20 - items.length)
           }, function () {
             return '<div class="gear-tile empty"></div>';
-          }).join('') + "</div></div><div class=\"part-tabs\">" + [-1, 0, 1, 2, 3, 4, 5].map(function (i) {
-            return _this16.button(i < 0 ? '▦' : _this16.img('icon' + i), function () {
-              return _this16.picker(i);
-            }, i === slot ? 'selected' : 'quiet');
+          }).join('') + "</div></div><div class=\"part-tabs labeled\">" + [-1, 0, 3, 4, 5, 1, 2].map(function (i) {
+            return _this17.button((i < 0 ? ico('grid') : _this17.img('icon' + i)) + ("<small>" + (i < 0 ? '全部' : EQUIPMENT_PARTS[i]) + "</small>"), function () {
+              return _this17.picker(i);
+            }, i === slot ? 'selected' : 'flat');
           }).join('') + "</div>"), '', 'large');
         };
         _proto.gearRows = function gearRows(g, next, random) {
-          var _this17 = this;
+          var _this18 = this;
           if (random === void 0) {
             random = false;
           }
@@ -5003,16 +5140,16 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           return ['hp', 'attack', 'defense', 'power'].filter(function (k) {
             return (random ? k !== primary : k === primary) && s[k] > 0;
           }).map(function (k) {
-            return _this17.row(GEAR_ATTRIBUTE_NAMES[k], s[k] + (next && (!random || g.level % 10 === 9) ? ' → <em>' + after[k] + '</em>' : ''), {
-              hp: '♥',
-              attack: '⚔',
-              defense: '⬟',
-              power: '✦'
+            return _this18.row(GEAR_ATTRIBUTE_NAMES[k], next && (!random || g.level % 10 === 9) ? _this18.arrow(s[k], after[k]) : s[k], {
+              hp: 'heart',
+              attack: 'sword',
+              defense: 'shield',
+              power: 'sparkle'
             }[k]);
           }).join('') || '<div class="info-pad compact">无</div>';
         };
         _proto.detail = function detail(id) {
-          var _this18 = this,
+          var _this19 = this,
             _g$effects;
           var b = this.port.model(),
             g = b.inventory.find(function (g) {
@@ -5020,28 +5157,28 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             });
           if (!g) return;
           var owner = b.owner(id);
-          this.popup('装备详情', "<div class=\"item-heading\">" + this.gear(g) + "<div><h3>" + gearName(g) + "</h3><p style=\"color:" + ['#7d6b5c', '#488c1a', '#1479b8', '#8e34ba', '#b76d00'][g.quality] + "\">" + QUALITY_NAMES[g.quality] + " \xB7 " + EQUIPMENT_PARTS[g.slot] + "</p><small>Lv." + g.level + "</small></div>" + this.button(g.locked ? '▣' : '□', function () {
-            return _this18.run(function (m) {
+          this.popup('装备详情', "<div class=\"item-heading\">" + this.gear(g) + "<div><h3>" + gearName(g) + "</h3><p class=\"quality-pill\" style=\"--tone:" + QUALITY_TEXT[g.quality] + "\">" + QUALITY_NAMES[g.quality] + " \xB7 " + EQUIPMENT_PARTS[g.slot] + "</p><p class=\"pill\">Lv." + g.level + (g.enhancement ? ' · 强化 +' + g.enhancement : '') + "</p></div>" + this.button(this.img(g.locked ? 'lock' : 'unlock'), function () {
+            return _this19.run(function (m) {
               return m.toggleLock(id);
             }, function () {
-              return _this18.detail(id);
+              return _this19.detail(id);
             });
-          }, 'flat lock-button') + "</div>" + this.section('基础属性') + this.gearRows(g) + this.section('随机属性') + this.gearRows(g, undefined, true) + this.section('装备效果') + ("<div class=\"info-pad compact\">" + ((_g$effects = g.effects) != null && _g$effects.length ? g.effects.map(function (e) {
-            return '✦ ' + (e === 'attack' ? '攻击力' : '最大生命') + ' +<em>5%</em>';
+          }, 'flat lock-button', false, g.locked ? '解除锁定' : '锁定装备') + "</div>" + this.divider() + this.section('基础属性') + this.gearRows(g) + this.section('随机属性') + this.gearRows(g, undefined, true) + ("<h3 class=\"section-title effect\"><span>" + ico('sparkle') + "\u88C5\u5907\u6548\u679C</span></h3><div class=\"effect-line\">" + ((_g$effects = g.effects) != null && _g$effects.length ? g.effects.map(function (e) {
+            return ico('refresh') + (e === 'attack' ? '攻击力' : '最大生命值') + ' 提高<em>5%</em>';
           }).join('<br>') : '无') + "</div><small class=\"equip-owner\">" + (owner >= 0 ? '穿戴中：' + NAMES[owner] : '穿戴给：' + NAMES[this.selected]) + "</small>"), this.button('强化', function () {
-            _this18.close();
-            _this18.upgradePage(id);
-          }, 'quiet') + this.button(owner >= 0 ? '卸下' : '穿戴', function () {
-            return _this18.run(function (m) {
-              return m.equip(owner >= 0 ? owner : _this18.selected, owner >= 0 ? null : id, g.slot);
+            _this19.close();
+            _this19.upgradePage(id);
+          }, 'peach') + this.button(owner >= 0 ? '卸下' : '穿戴', function () {
+            return _this19.run(function (m) {
+              return m.equip(owner >= 0 ? owner : _this19.selected, owner >= 0 ? null : id, g.slot);
             }, function () {
-              _this18.close();
-              _this18.draw();
+              _this19.close();
+              _this19.draw();
             });
           }));
         };
         _proto.upgradePage = function upgradePage(id) {
-          var _this19 = this;
+          var _this20 = this;
           var b = this.port.model(),
             g = b.inventory.find(function (g) {
               return g.id === id;
@@ -5053,55 +5190,60 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             cost = (g.quality + 1) * (breakthrough ? 15 : 4),
             gold = g.level * (breakthrough ? 100 : 30),
             after = gearUpgradePreview(g);
-          this.content.innerHTML = "<div class=\"secondary upgrade-page\"><div class=\"forge-scene\" style=\"background-image:url('" + this.urls.scene4 + "')\">" + this.wallet(false) + "<h1 class=\"title-plaque\">\u88C5\u5907\u5F3A\u5316</h1><div class=\"forge-item\">" + this.gear(g) + "<div><h2>" + gearName(g) + "</h2><p>" + QUALITY_NAMES[g.quality] + " \xB7 " + EQUIPMENT_PARTS[g.slot] + "</p></div></div>" + this.img('icon' + g.slot, 'forge-weapon') + "</div><div class=\"upgrade-body\"><h1 class=\"level-preview\">" + (g.level >= 100 ? 'Lv.100 · 已达上限' : 'Lv.' + g.level + ' → <em>Lv.' + (g.level + 1) + '</em>') + "</h1>" + (this.section('基础属性') + this.gearRows(g, after) + this.section('随机属性') + this.gearRows(g, after, true)) + (breakthrough ? '<p class="breakthrough-note">◇　突破提升基础属性与随机属性　◇</p>' : '') + "<div class=\"upgrade-costs\"><div>" + this.reward(7, b.materials, '强化石') + "<b>" + b.materials + "/" + cost + "</b></div><div>" + this.reward(6, b.gold, '金币') + "<b>" + b.gold + "/" + gold + "</b></div>" + this.button(g.level >= 100 ? '已满级' : breakthrough ? '突破' : '升级', function () {
-            return _this19.run(function (m) {
+          var need = function need(have, n) {
+            return "<b><em class=\"" + (have >= n ? '' : 'short') + "\">" + have + "</em>/" + n + "</b>";
+          };
+          this.content.innerHTML = "<div class=\"secondary upgrade-page\"><div class=\"forge-scene\" style=\"background-image:url('" + this.urls.scene4 + "')\">" + this.wallet(false) + "<h1 class=\"title-plaque plaque\">" + this.plate('装备强化') + "</h1><div class=\"forge-item\">" + this.gear(g) + "<div><h2>" + gearName(g) + "</h2><p class=\"quality-pill\" style=\"--tone:" + QUALITY_TEXT[g.quality] + "\">" + QUALITY_NAMES[g.quality] + " \xB7 " + EQUIPMENT_PARTS[g.slot] + "</p></div></div>" + this.img('icon' + g.slot, 'forge-weapon') + "</div><div class=\"upgrade-body\"><h1 class=\"level-preview\">" + (g.level >= 100 ? 'Lv.100 · 已达上限' : 'Lv.' + g.level + ' <i>➜</i> <em>Lv.' + (g.level + 1) + '</em>') + "</h1>" + (this.section('基础属性') + this.gearRows(g, after) + this.section('随机属性') + this.gearRows(g, after, true)) + (breakthrough ? '<p class="breakthrough-note"><span>◇　突破提升基础属性与随机属性　◇</span></p>' : '') + "<div class=\"upgrade-costs\"><div><span class=\"cost-icon\">" + this.img('material') + "</span>" + need(b.materials, cost) + "</div><div><span class=\"cost-icon\">" + this.img('icon6') + "</span>" + need(b.gold, gold) + "</div>" + this.button(g.level >= 100 ? '已满级' : breakthrough ? '突破' : '升级', function () {
+            return _this20.run(function (m) {
               return m.upgradeGear(id);
             }, function () {
-              return _this19.upgradePage(id);
+              return _this20.upgradePage(id);
             });
           }, '', g.level >= 100) + "</div>" + this.button('关闭', function () {
-            return _this19.draw();
+            return _this20.draw();
           }, 'secondary-close') + "</div></div>";
         };
         _proto.bag = function bag() {
-          var _this20 = this;
+          var _this21 = this;
           var b = this.port.model(),
-            items = this.filtered();
+            items = this.filtered(),
+            cap = Math.max(b.interfaceProgress.capacity, b.inventory.length),
+            cost = 500 * (1 + Math.floor((b.interfaceProgress.capacity - 200) / 50));
           return "<div class=\"page bag-page\" style=\"--scene:url('" + this.urls.scene5 + "')\">" + this.wallet(false) + "<div class=\"main-tabs\">" + ['装备', '材料', '道具'].map(function (t, i) {
-            return _this20.button(t, function () {
-              _this20.category = i;
-              _this20.draw();
-            }, i === _this20.category ? 'selected' : 'quiet');
+            return _this21.button(t, function () {
+              _this21.category = i;
+              _this21.draw();
+            }, i === _this21.category ? 'selected' : 'quiet');
           }).join('') + "</div>" + (this.category === 0 ? "<div class=\"part-tabs\">" + [-1, 0, 1, 2, 3, 4, 5].map(function (i) {
-            return _this20.button(i < 0 ? '▦' : _this20.img('icon' + i), function () {
-              _this20.part = i;
-              _this20.draw();
-            }, i === _this20.part ? 'selected' : 'quiet');
+            return _this21.button(i < 0 ? ico('grid') : _this21.img('icon' + i), function () {
+              _this21.part = i;
+              _this21.draw();
+            }, i === _this21.part ? 'selected' : 'quiet', false, i < 0 ? '全部' : EQUIPMENT_PARTS[i]);
           }).join('') + "</div>" + this.filters(function () {
-            _this20.close();
-            _this20.draw();
+            _this21.close();
+            _this21.draw();
           }) : '') + "<div class=\"bag-scroll cream-card\"><div class=\"five-grid\">" + (this.category === 0 ? items.map(function (g) {
-            return _this20.button(_this20.gear(g), function () {
-              return _this20.detail(g.id);
+            return _this21.button(_this21.gear(g), function () {
+              return _this21.detail(g.id);
             }, 'flat');
           }).join('') + Array.from({
             length: Math.max(0, 25 - items.length)
           }, function () {
             return '<div class="gear-tile empty"></div>';
-          }).join('') : this.category === 1 ? this.reward(7, b.materials, '强化石') : '<p class="empty-message">暂无道具</p>') + "</div></div><div class=\"bag-footer\"><b>\u5BB9\u91CF " + b.inventory.length + "/" + Math.max(b.interfaceProgress.capacity, b.inventory.length) + "</b>" + this.button('⊕ 🪙 扩容', function () {
-            return _this20.info('扩充背包', '消耗' + 500 * (1 + Math.floor((b.interfaceProgress.capacity - 200) / 50)) + '金币，增加50格容量？', function () {
-              return _this20.run(function (m) {
+          }).join('') : this.category === 1 ? this.reward(7, b.materials, '强化石') : '<p class="empty-message">暂无道具</p>') + "</div></div><div class=\"bag-footer\"><b>\u5BB9\u91CF " + b.inventory.length + "/" + cap + "</b>" + this.button(ico('plus') + this.img('icon6') + cost + ' 扩容', function () {
+            return _this21.confirm('提示', "\u662F\u5426\u6D88\u8017 " + _this21.img('icon6', 'inline-icon') + " <b>" + cost + "</b><br>\u5C06\u80CC\u5305\u5BB9\u91CF\u6269\u5145\u81F3 <b>" + (b.interfaceProgress.capacity + 50) + "</b> \u683C\uFF1F<small>\u5F53\u524D\u5BB9\u91CF " + b.inventory.length + "/" + cap + "</small>", function () {
+              return _this21.run(function (m) {
                 return m.expandBag();
               }, function () {
-                return _this20.draw();
+                return _this21.draw();
               });
             });
-          }, 'quiet') + this.button('批量分解', function () {
-            return _this20.salvage();
-          }) + "</div>" + this.nav('bag') + "</div>";
+          }, 'quiet expand-button') + this.button('批量分解', function () {
+            return _this21.salvage();
+          }, 'salvage-button') + "</div>" + this.nav('bag') + "</div>";
         };
         _proto.salvage = function salvage(selected) {
-          var _this21 = this;
+          var _this22 = this;
           if (selected === void 0) {
             selected = new Set();
           }
@@ -5111,83 +5253,102 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             }),
             preview = b.salvagePreview([].concat(selected));
           var redraw = function redraw() {
-            return _this21.salvage(selected);
+            return _this22.salvage(selected);
           };
-          this.popup('装备分解', "<div class=\"quality-checks\">" + QUALITY_NAMES.map(function (q, i) {
-            return _this21.button((items.filter(function (g) {
-              return g.quality === i;
-            }).every(function (g) {
-              return selected.has(g.id);
-            }) ? '☑ ' : '□ ') + q, function () {
-              var subset = items.filter(function (g) {
-                  return g.quality === i;
-                }),
-                all = subset.every(function (g) {
-                  return selected.has(g.id);
-                });
+          this.popup('装备分解', "<p class=\"label-line\">\u6309\u54C1\u8D28\u9009\u62E9</p><div class=\"quality-checks\">" + QUALITY_NAMES.map(function (q, i) {
+            var subset = items.filter(function (g) {
+                return g.quality === i;
+              }),
+              on = subset.length > 0 && subset.every(function (g) {
+                return selected.has(g.id);
+              });
+            return _this22.button("<i class=\"box " + (on ? 'on' : '') + "\">" + (on ? ico('check') : '') + "</i><span style=\"color:" + QUALITY_TEXT[i] + "\">" + q + "</span>", function () {
+              var all = subset.every(function (g) {
+                return selected.has(g.id);
+              });
               subset.forEach(function (g) {
                 return all ? selected["delete"](g.id) : selected.add(g.id);
               });
               redraw();
-            }, 'quiet');
-          }).join('') + "</div><div class=\"list-heading\"><b>\u53EF\u5206\u89E3\u88C5\u5907</b><span>\u5DF2\u9009\u62E9 " + selected.size + " \u4EF6</span></div><div class=\"equipment-scroll salvage-scroll\"><div class=\"five-grid\">" + items.map(function (g) {
-            return _this21.button(_this21.gear(g, g.slot, selected.has(g.id) ? '<span class="checked">✓</span>' : ''), function () {
+            }, 'flat check-option');
+          }).join('') + "</div><p class=\"lock-note\">" + ico('lock') + "\u9501\u5B9A\u548C\u5DF2\u7A7F\u6234\u88C5\u5907\u4E0D\u53C2\u4E0E\u5206\u89E3</p><div class=\"list-heading\"><b>\u53EF\u5206\u89E3\u88C5\u5907</b><span>\u5DF2\u9009\u62E9 <em>" + selected.size + "\u4EF6</em></span></div><div class=\"equipment-scroll salvage-scroll\"><div class=\"five-grid\">" + items.map(function (g) {
+            return _this22.button(_this22.gear(g, g.slot, selected.has(g.id) ? "<span class=\"checked\">" + ico('check') + "</span>" : ''), function () {
               selected.has(g.id) ? selected["delete"](g.id) : selected.add(g.id);
               redraw();
             }, 'flat');
-          }).join('') + "</div></div><div class=\"material-line\">\u53EF\u83B7\u5F97\u6750\u6599 " + this.img('material') + "<b>\u5F3A\u5316\u77F3 \xD7" + preview.materials + "</b></div><small>\u9501\u5B9A\u53CA\u5DF2\u7A7F\u6234\u88C5\u5907\u4E0D\u53C2\u4E0E\u5206\u89E3</small>", this.button('分解装备', function () {
-            return _this21.info('确认分解', '分解后装备无法恢复，是否分解选中的' + selected.size + '件装备？', function () {
-              return _this21.run(function (m) {
+          }).join('') + "</div></div><div class=\"material-line\"><b>\u53EF\u83B7\u5F97\u6750\u6599</b><span>" + this.img('material') + "\xD7" + preview.materials + "</span></div>", this.button('分解装备', function () {
+            return _this22.info('确认分解', '分解后装备无法恢复，是否分解选中的' + selected.size + '件装备？', function () {
+              return _this22.run(function (m) {
                 return m.salvage([].concat(selected));
               }, function () {
-                _this21.draw();
-                _this21.rewards(_this21.reward(7, preview.materials, '强化石'));
+                _this22.draw();
+                _this22.rewards(_this22.reward(7, preview.materials, '强化石'));
               });
             });
-          }, '', !selected.size), 'large');
+          }, '', !selected.size) + ("<small class=\"warn\">" + ico('warn') + "\u5206\u89E3\u540E\u65E0\u6CD5\u6062\u590D</small>"), 'large');
         };
         _proto.recruit = function recruit() {
-          var _this22 = this;
+          var _this23 = this;
           var b = this.port.model(),
             r = b.recruitment,
-            p = r.pity[this.pool];
-          return "<div class=\"page recruit-page\" style=\"background-image:url('" + this.urls['scene' + (this.pool ? 3 : 2)] + "')\">" + this.wallet(false) + "<div class=\"ticket-wallet\">" + ('<span class="resource">' + this.img('ticket', this.pool ? 'up-ticket' : '') + '<b>' + (this.pool ? b.interfaceProgress.upTickets : r.tickets) + '</b></span>') + "<span>" + (this.pool ? 'UP招募券' : '常驻招募券') + "</span></div><div class=\"main-tabs\">" + ['常驻招募', '限时UP'].map(function (t, i) {
-            return _this22.button(t, function () {
-              _this22.pool = i;
-              _this22.draw();
-            }, _this22.pool === i ? 'selected' : 'quiet');
-          }).join('') + "</div><div class=\"recruit-cast\">" + this.face(this.pool ? 3 : 0, 'cast-left') + this.face(this.pool ? 1 : 2, 'cast-center') + this.face(this.pool ? 2 : 1, 'cast-right') + "</div><div class=\"recruit-caption\"><h1>" + (this.pool ? '星辉之约' : '英雄集结') + "</h1><p>" + (this.pool ? '艾琳 · 获取概率提升' : '集结伙伴，一同踏上冒险之路') + "</p></div><div class=\"recruit-bottom\"><div class=\"pool-links\">" + this.button('卡池详情', function () {
-            return _this22.poolDetails();
-          }, 'quiet') + this.button('招募记录', function () {
-            return _this22.results(r.history.filter(function (x) {
-              return x.pool === _this22.pool;
+            p = r.pity[this.pool],
+            left = RECRUIT_CONFIG.legendPity - p.legend;
+          var cast = this.pool ? [[3, 'c-back'], [2, 'c-left'], [0, 'c-right'], [1, 'c-front']] : [[3, 'c-left'], [1, 'c-back'], [2, 'c-right'], [0, 'c-front']];
+          return "<div class=\"page recruit-page " + (this.pool ? 'up' : 'normal') + "\" style=\"background-image:url('" + this.urls['scene' + (this.pool ? 3 : 2)] + "')\"><header class=\"wallet\">" + this.button('☰', function () {
+            return _this23.info('招募说明', '常驻券与UP券分别使用，两池保底独立计算。');
+          }, 'menu quiet') + this.resource(6, b.gold) + "<span class=\"resource ticket-resource\">" + this.img('ticket', this.pool ? 'up-ticket' : '') + "<b>" + (this.pool ? b.interfaceProgress.upTickets : r.tickets) + "</b></span></header><div class=\"main-tabs\">" + ['常驻招募', 'UP招募'].map(function (t, i) {
+            return _this23.button(t, function () {
+              _this23.pool = i;
+              _this23.draw();
+            }, _this23.pool === i ? 'selected' : 'quiet');
+          }).join('') + "</div><div class=\"recruit-banner\"><h1>" + LAUREL + "<span>" + (this.pool ? '星光邀约' : '冒险伙伴') + "</span>" + LAUREL.replace('class="laurel"', 'class="laurel mirror"') + "</h1><p class=\"ribbon\">" + (this.pool ? '艾琳概率提升' : '永久开放') + "</p></div><div class=\"recruit-cast\">" + cast.map(function (_ref8) {
+            var id = _ref8[0],
+              cls = _ref8[1];
+            return _this23.face(id, 'cast ' + cls);
+          }).join('') + (this.pool ? '<span class="up-badge">艾琳<b>UP</b></span>' : '') + "</div><div class=\"recruit-bottom\"><div class=\"pity-panel\"><span class=\"crown\">" + ico('crown') + "</span><div><p>\u5F53\u524D\u62BD\u6570 <em>" + p.legend + "</em>/" + RECRUIT_CONFIG.legendPity + "</p><div class=\"exp-track\"><i style=\"width:" + p.legend / RECRUIT_CONFIG.legendPity * 100 + "%\"></i></div><small>\u8DDD\u79BB\u4F20\u8BF4\u4FDD\u5E95\u8FD8\u9700<em>" + left + "</em>\u62BD</small></div></div><div class=\"pool-links\">" + this.button(ico('book') + '卡池详情', function () {
+            return _this23.poolDetails();
+          }, 'quiet') + this.button(ico('list') + '招募记录', function () {
+            return _this23.results(r.history.filter(function (x) {
+              return x.pool === _this23.pool;
             }).slice(-10), true);
-          }, 'quiet') + "</div><div class=\"pity\"><span>\u5F53\u524D " + p.legend + " \u62BD</span><span>\u8FD8\u6709 <em>" + (RECRUIT_CONFIG.legendPity - p.legend) + "</em> \u62BD\u5FC5\u5F97\u4F20\u8BF4</span></div><progress value=\"" + p.legend + "\" max=\"30\"></progress><div class=\"page-actions\">" + this.drawButtons() + "</div></div>" + this.nav('recruit') + "</div>";
+          }, 'quiet') + "</div><div class=\"page-actions\">" + this.drawButtons() + "</div></div>" + this.nav('recruit') + "</div>";
         };
-        _proto.drawButtons = function drawButtons() {
-          var _this23 = this;
+        _proto.ticketChip = function ticketChip(n) {
+          return "<small class=\"ticket-chip\">" + this.img('ticket', this.pool ? 'up-ticket' : '') + "\xD7" + n + "</small>";
+        };
+        _proto.drawButtons = function drawButtons(peach) {
+          var _this24 = this;
+          if (peach === void 0) {
+            peach = false;
+          }
           return [1, 10].map(function (n) {
-            return _this23.button("<b>\u62DB\u52DF" + (n === 1 ? '一次' : '十次') + "</b><small>" + (_this23.pool ? '🎟' : '🎫') + " \xD7" + n + "</small>", function () {
-              if (_this23.run(function (m) {
-                return m.recruitPool(_this23.pool, n);
+            return _this24.button("<b>\u62DB\u52DF" + (n === 1 ? '一次' : '十次') + "</b>" + _this24.ticketChip(n), function () {
+              if (_this24.run(function (m) {
+                return m.recruitPool(_this24.pool, n);
               })) {
-                _this23.draw();
-                _this23.results(_this23.port.model().recruitment.last);
+                _this24.draw();
+                _this24.results(_this24.port.model().recruitment.last);
               }
-            });
+            }, peach && n === 1 ? 'peach' : '');
           }).join('');
         };
         _proto.poolDetails = function poolDetails() {
-          var _this24 = this;
-          var b = this.port.model();
-          this.popup(this.pool ? 'UP卡池详情' : '常驻卡池详情', "<h3 class=\"pool-name\">" + (this.pool ? '星辉之约 · 艾琳概率提升' : '英雄集结') + "</h3><div class=\"pool-heroes\">" + HERO_CONFIG.map(function (_, i) {
-            return _this24.heroCard(i);
-          }).join('') + "</div>" + this.section('抽取概率') + ['稀有', '史诗', '传说'].map(function (q, i) {
-            return _this24.row(q, ['75%', '20%', '5%'][i]);
-          }).join('') + ("<div class=\"info-pad compact\">" + (this.pool ? '传说必得艾琳，其余品质艾琳概率62.5%。' : '常驻四位英雄等概率。') + "10\u62BD\u81F3\u5C11\u53F2\u8BD7\uFF0C30\u62BD\u5FC5\u5F97\u4F20\u8BF4\u3002\u4E24\u6C60\u4FDD\u5E95\u72EC\u7ACB\u3002</div>"));
+          var _this25 = this;
+          var up = this.pool === 1;
+          this.popup(up ? 'UP池详情' : '常驻池详情', "<p class=\"pool-name\">" + (up ? '星光邀约 · 艾琳概率提升' : '冒险伙伴 · 永久开放') + "</p>" + this.section('卡池内容') + ("<div class=\"pool-heroes\">" + (up ? [1, 0, 2, 3] : [0, 1, 2, 3]).map(function (i) {
+            return "<div class=\"portrait-tile\" style=\"--quality:" + Q[[4, 3, 2, 2][i]] + "\">" + _this25.face(i) + (up && i === 1 ? '<span class="up-mark">UP</span>' : '') + "<small>" + NAMES[i] + "</small></div>";
+          }).join('') + "</div>") + this.section('抽取概率') + [['稀有', 'star', '#3b8fe0', '75%'], ['史诗', 'crown', '#9a4fd0', '20%'], ['传说', 'crown', '#e6a514', '5%']].map(function (_ref9) {
+            var q = _ref9[0],
+              icon = _ref9[1],
+              color = _ref9[2],
+              v = _ref9[3];
+            return "<div class=\"stat-row rate\"><span><i style=\"color:" + color + "\">" + ico(icon) + "</i>" + q + "</span><b>" + v + "</b></div>";
+          }).join('') + this.section('规则说明') + ("<ul class=\"rules\">" + (up ? ['传说必得艾琳，其余品质艾琳概率62.5%。', 'UP池与常驻池保底独立计算。'] : ['四位英雄等概率出现。', '常驻池与UP池保底独立计算。']).concat(['10抽至少史诗，30抽必得传说。', '单抽与十连共享本池保底。']).map(function (t) {
+            return "<li>" + t + "</li>";
+          }).join('') + "</ul>"));
         };
         _proto.results = function results(rows, history) {
-          var _this25 = this;
+          var _this26 = this;
           if (history === void 0) {
             history = false;
           }
@@ -5195,84 +5356,154 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
             this.info('招募记录', '暂无记录');
             return;
           }
-          var one = rows.length === 1;
-          this.popup(history ? '招募记录' : '恭喜获得', "<div class=\"result-cards " + (one ? 'single' : 'five-grid') + "\">" + rows.map(function (r) {
-            return _this25.heroCard(r.hero, r.rarity, r.fresh);
-          }).join('') + "</div><p>" + (this.pool ? 'UP' : '常驻') + "\u62DB\u52DF\u5238\u5269\u4F59 " + (this.pool ? this.port.model().interfaceProgress.upTickets : this.port.model().recruitment.tickets) + "</p>", history ? '' : this.drawButtons(), 'fullscreen');
+          var one = rows.length === 1,
+            b = this.port.model();
+          this.popup(history ? '招募记录' : '招募结果', "<p class=\"result-sub\">\u672C\u6B21\u62DB\u52DF\u83B7\u5F97<em>" + rows.length + "</em>\u4F4D\u82F1\u96C4</p><div class=\"result-cards " + (one ? 'single' : 'five-grid') + "\">" + rows.map(function (r) {
+            return _this26.heroCard(r.hero, {
+              rarity: r.rarity,
+              tag: r.fresh ? 'NEW' : '重复'
+            });
+          }).join('') + "</div><p class=\"ticket-left\">" + this.img('ticket', this.pool ? 'up-ticket' : '') + "\u5269\u4F59<b>" + (this.pool ? b.interfaceProgress.upTickets : b.recruitment.tickets) + "</b></p>", history ? '' : this.drawButtons(true), 'fullscreen results-screen');
+        };
+        _proto.lineup = function lineup() {
+          var _this27 = this;
+          var b = this.port.model();
+          return "<div class=\"lineup\">" + b.formation.map(function (id) {
+            return "<span class=\"round-face\"><span class=\"disc\">" + _this27.face(id) + "</span><b>Lv." + b.heroes[id].level + "</b></span>";
+          }).join('') + "<i></i>" + this.button(ico('people') + '<small>阵型</small>', function () {
+            return _this27.formation();
+          }, 'quiet lineup-button') + "</div>";
         };
         _proto.dungeons = function dungeons() {
-          var _this26 = this;
+          var _this28 = this;
           if (this.port.model().dungeon.run && this.port.battle() !== this.port.model()) return this.adventure();
-          var b = this.port.model(),
-            ids = this.dungeonTab === 0 ? [0, 1, 2, 3] : this.dungeonTab === 1 ? [5] : [4];
-          return "<div class=\"page dungeon-page\" style=\"--scene:url('" + this.urls.scene5 + "')\">" + this.wallet() + "<div class=\"main-tabs\">" + ['资源副本', '无尽挑战', '每日副本'].map(function (t, i) {
-            return _this26.button(t, function () {
-              _this26.dungeonTab = i;
-              _this26.draw();
-            }, _this26.dungeonTab === i ? 'selected' : 'quiet');
-          }).join('') + "</div>" + (b.dungeon.run ? this.button('继续挑战', function () {
-            _this26.port.resume();
-            _this26.draw();
-          }) : '') + "<div class=\"dungeon-list\">" + ids.map(function (id) {
-            return "<article class=\"dungeon-card\"><img src=\"" + _this26.urls['dungeon' + Math.min(id, 3)] + "\" alt=\"" + DUNGEONS[id].name + "\"><div><h2>" + DUNGEONS[id].name + "</h2>" + (id === 5 ? '<p>最佳通关 ' + (b.dungeon.floor - 1) + ' 关</p>' : '') + "<div class=\"drop-icons\">" + (id === 0 ? _this26.reward(6, 3000, '金币') : id === 1 ? _this26.reward(7, 1200, '经验') : id === 2 ? _this26.reward(7, 30, '强化石') : _this26.img('icon0') + _this26.img('icon1') + _this26.img('icon3')) + "</div><footer><small>\u6D88\u8017\u4F53\u529B \u26A1\xD710</small>" + _this26.button('挑战', function () {
-              return _this26.challenge(id);
+          var b = this.port.model();
+          var body = '';
+          if (this.dungeonTab === 0) body = "<div class=\"dungeon-list\">" + [0, 1, 2, 3].map(function (id) {
+            return "<article class=\"dungeon-card\"><img src=\"" + _this28.urls['dungeon' + id] + "\" alt=\"" + DUNGEONS[id].name + "\"><div><h2>" + DUNGEONS[id].name + "</h2><div class=\"drop-icons\">" + _this28.dungeonRewards(id, 0) + "</div><footer><small>\u6D88\u8017\u4F53\u529B " + ico('bolt') + "\xD710</small>" + _this28.button('挑战', function () {
+              return _this28.challenge(id);
             }) + "</footer></div></article>";
-          }).join('') + (this.dungeonTab === 1 ? '<div class="endless-note"><h2>无尽试炼</h2><p>每关击败三名敌人，继续向更高层进发。<br>全队阵亡后结算本次挑战奖励。</p></div>' : '') + "</div>" + this.nav('dungeon') + "</div>";
+          }).join('') + "</div>";else if (this.dungeonTab === 1) {
+            var r = dungeonReward(5, 0);
+            body = "<article class=\"feature-card endless-card\"><div class=\"feature-art\" style=\"background-image:url('" + (this.urls.endlessArt || this.urls.dungeon3) + "')\"><div class=\"feature-title\"><div class=\"title-row\">" + LAUREL + "<h2>\u65E0\u5C3D\u8BD5\u70BC</h2>" + LAUREL.replace('class="laurel"', 'class="laurel mirror"') + "</div><p class=\"ribbon\">\u8FDE\u7EED\u95EF\u5173\uFF0C\u76F4\u5230\u5168\u961F\u9635\u4EA1</p></div>" + this.button(ico('question'), function () {
+              return _this28.info('无尽试炼', '每关击败三名敌人，继续向更高层进发。全队阵亡后结算本次挑战奖励。');
+            }, 'flat help-button', false, '无尽规则') + "</div><div class=\"feature-panel\"><div class=\"feature-row record\">" + ico('trophy') + "<b>\u6700\u9AD8\u901A\u5173 <strong>" + Math.max(0, b.dungeon.floor - 1) + "\u5173</strong></b><i></i><small>\u672C\u6B21\u4ECE\u7B2C1\u5173\u5F00\u59CB</small></div><div class=\"feature-row\"><b>\u6BCF\u901A\u51731\u5173\u83B7\u5F97</b><div class=\"feature-rewards\">" + this.reward(6, r.gold, '金币') + "<span>" + this.reward(7, r.experience, '经验') + "<small>\u6BCF\u4F4D\u82F1\u96C4</small></span>" + this.reward(7, r.materials, '强化石') + "</div></div><div class=\"feature-row\"><b>\u51FA\u6218\u9635\u5BB9</b>" + this.lineup() + "</div><div class=\"feature-row\"><b>\u5165\u573A\u6D88\u8017 " + ico('bolt') + "\xD710</b><i></i><small>\u5355\u6B21\u5165\u573A\uFF0C\u8FDE\u7EED\u6311\u6218</small>" + this.button('挑战', function () {
+              return _this28.challenge(5);
+            }, 'go-button') + "</div></div></article>";
+          } else {
+            var left = 2 - b.dungeon.dailyUsed;
+            body = "<article class=\"feature-card daily-card\"><header><h2>" + DUNGEONS[4].name + "</h2><i></i><span class=\"today\">" + ico('calendar') + "\u4ECA\u65E5\u6311\u6218 " + left + "/2</span></header><div class=\"feature-art\" style=\"background-image:url('" + (this.urls.dailyArt || this.urls.dungeon3) + "')\"></div><div class=\"feature-panel\"><div class=\"feature-row\"><b>\u5956\u52B1\u9884\u89C8</b><div class=\"feature-rewards\">" + this.reward(6, 1500, '金币') + "<span>" + this.reward(7, 600, '经验') + "<small>\u6BCF\u4F4D\u82F1\u96C4</small></span>" + this.reward(7, 15, '强化石') + "</div></div><div class=\"feature-row\"><b>\u51FA\u6218\u9635\u5BB9</b>" + this.lineup() + "</div><div class=\"feature-row\"><b>\u6D88\u8017\u4F53\u529B " + ico('bolt') + "\xD710</b>" + this.button('挑战', function () {
+              return _this28.challenge(4);
+            }, 'go-button') + "</div></div></article>";
+          }
+          return "<div class=\"page dungeon-page\" style=\"--scene:url('" + this.urls.scene5 + "')\">" + this.wallet() + "<div class=\"main-tabs\">" + ['资源副本', '无尽挑战', '每日副本'].map(function (t, i) {
+            return _this28.button(t, function () {
+              _this28.dungeonTab = i;
+              _this28.draw();
+            }, _this28.dungeonTab === i ? 'selected' : 'quiet');
+          }).join('') + "</div>" + (b.dungeon.run ? this.button('继续挑战', function () {
+            _this28.port.resume();
+            _this28.draw();
+          }, 'resume-button') : '') + body + this.nav('dungeon') + "</div>";
         };
         _proto.challenge = function challenge(id) {
-          var _this27 = this;
+          var _this29 = this;
           var b = this.port.model(),
-            r = dungeonReward(id, this.difficulty);
-          var items = '';
-          if (r.gold) items += this.reward(6, r.gold, '金币');
-          if (r.experience) items += this.reward(7, r.experience, '每位英雄经验');
-          if (r.materials) items += this.reward(7, r.materials, '强化石');
-          if (r.gear) items += this.reward(0, r.gear, '随机装备');
-          this.popup('副本挑战', "<div class=\"challenge-heading\"><img src=\"" + this.urls['dungeon' + Math.min(id, 3)] + "\"><div><h3>" + DUNGEONS[id].name + "</h3><small>" + (id === 5 ? '无限关卡 · 阵亡后结束' : '10波小怪 · 末波首领') + "</small>" + (id === 4 ? '<p>今日剩余 ' + (2 - b.dungeon.dailyUsed) + '/2 次</p>' : '') + "</div></div>" + this.section('选择难度') + ("<div class=\"main-tabs\">" + DIFFICULTIES.map(function (t, i) {
-            return _this27.button(t, function () {
-              _this27.difficulty = i;
-              _this27.challenge(id);
-            }, i === _this27.difficulty ? 'selected' : 'quiet');
-          }).join('') + "</div>") + this.row('推荐等级', 'Lv.' + [1, 8, 15][this.difficulty]) + this.section('奖励预览') + this.rewardViewport(items) + ("<p class=\"challenge-cost\">\u6D88\u8017\u4F53\u529B " + this.img('icon8') + "\xD7" + [10, 15, 20][this.difficulty] + "\u3000<small>\u5F53\u524D " + b.dungeon.stamina + "/120</small></p>"), this.button('开始挑战', function () {
-            _this27.close();
-            _this27.port.start(id, _this27.difficulty);
-            _this27.draw();
-          }), 'large');
+            cost = [10, 15, 20][this.difficulty];
+          this.popup('副本挑战', "<div class=\"challenge-heading\"><img src=\"" + (id === 5 ? this.urls.endlessArt || this.urls.dungeon3 : id === 4 ? this.urls.dailyArt || this.urls.dungeon3 : this.urls['dungeon' + id]) + "\" alt=\"\"><div><h3>" + DUNGEONS[id].name + "</h3><small>" + (id === 5 ? '无限关卡 · 阵亡后结束' : '共10波 · 末波首领') + "</small>" + (id === 4 ? '<small>今日剩余 ' + (2 - b.dungeon.dailyUsed) + '/2 次</small>' : '') + "</div></div>" + this.divider() + this.section('选择难度') + ("<div class=\"main-tabs\">" + DIFFICULTIES.map(function (t, i) {
+            return _this29.button(t, function () {
+              _this29.difficulty = i;
+              _this29.challenge(id);
+            }, i === _this29.difficulty ? 'selected' : 'quiet');
+          }).join('') + "</div>") + this.row('推荐等级', 'Lv.' + [1, 8, 15][this.difficulty]) + this.divider() + this.section('奖励预览') + this.rewardViewport(this.dungeonRewards(id, this.difficulty)) + this.row('当前体力', b.dungeon.stamina + '/120', 'bolt'), "<p class=\"challenge-cost\">\u6D88\u8017\u4F53\u529B " + ico('bolt') + "\xD7" + cost + "</p>" + this.button('开始挑战', function () {
+            _this29.close();
+            _this29.port.start(id, _this29.difficulty);
+            _this29.draw();
+          }), 'large challenge-dialog');
         };
         _proto.offline = function offline() {
-          var _this28 = this;
+          var _this30 = this;
           var b = this.port.model(),
-            r = b.offline;
-          this.popup('挂机奖励', "<h3 class=\"pool-name\">\u9547\u5916\u68EE\u6797 \xB7 \u68C0\u67E5\u70B9 " + ((r == null ? void 0 : r.checkpoint) || b.highestWave) + "</h3><div class=\"offline-rates\">" + this.resource(6, '+' + 7200 * (1 + Math.floor((((r == null ? void 0 : r.checkpoint) || b.highestWave) - 1) / 5)) + '/小时') + this.resource(7, '+' + 5760 * (1 + Math.floor((((r == null ? void 0 : r.checkpoint) || b.highestWave) - 1) / 5)) + '/小时') + "</div><div class=\"info-pad compact\">\u6302\u673A\u65F6\u95F4 " + (r ? Math.floor(r.seconds / 3600) + '小时' + Math.floor(r.seconds % 3600 / 60) + '分' : '暂无离线收益') + " \xB7 \u6700\u957F8\u5C0F\u65F6</div>" + this.rewardViewport(this.rewardList(b)) + "<small>\u9886\u53D6\u540E\u5956\u52B1\u5B58\u5165\u80CC\u5305\uFF0C\u6EE1\u5305\u88C5\u5907\u8F6C\u4E3A\u5F3A\u5316\u77F3\u3002</small>", this.button('快速扫荡<small>⚡×10</small>', function () {
-            return _this28.quick();
-          }, 'quiet') + this.button('领取', function () {
-            var items = _this28.rewardList(b);
-            _this28.run(function (m) {
+            r = b.offline,
+            cp = (r == null ? void 0 : r.checkpoint) || b.highestWave,
+            scale = 1 + Math.floor((cp - 1) / 5),
+            sec = (r == null ? void 0 : r.seconds) || 0,
+            clock = [Math.floor(sec / 3600), Math.floor(sec % 3600 / 60), Math.floor(sec % 60)].map(function (n) {
+              return ('0' + n).slice(-2);
+            }).join(':');
+          this.popup('挂机奖励', "<p class=\"pool-name lined\">\u9547\u5916\u68EE\u6797 \xB7 \u68C0\u67E5\u70B9 " + cp + "</p><div class=\"offline-rates\">" + this.resource(6, '+' + 7200 * scale + '/小时') + this.resource(7, '+' + 5760 * scale + '/小时') + "</div><p class=\"idle-time\"><span>" + ico('clock') + "\u6302\u673A\u65F6\u95F4 " + (r ? clock : '--:--:--') + "</span><small>\u4E0A\u96508\u5C0F\u65F6</small></p>" + this.divider() + this.rewardViewport(this.rewardList(b)) + this.divider(), this.button('快速扫荡' + ("<small>" + ico('bolt') + "\xD710</small>"), function () {
+            return _this30.quick();
+          }, 'peach') + this.button('领取', function () {
+            var items = _this30.rewardList(b);
+            _this30.run(function (m) {
               return m.claimOffline();
             }, function () {
-              _this28.draw();
-              _this28.rewards(items);
+              _this30.draw();
+              _this30.rewards(items);
             });
           }, '', !r), 'large');
         };
         _proto.quick = function quick() {
-          var _this29 = this;
+          var _this31 = this;
           this.info('快速扫荡', '消耗10体力，获得30分钟挂机收益？', function () {
             var reward = null;
-            _this29.run(function (m) {
+            _this31.run(function (m) {
               var result = m.quickSweep();
               reward = result.reward;
               return result.error;
             }, function () {
-              return _this29.rewards(_this29.rewardItems(reward));
+              return _this31.rewards(_this31.rewardItems(reward));
             });
           });
         };
         _proto.rewards = function rewards(items) {
           this.popup('恭喜获得', this.rewardViewport(items), '', 'fullscreen rewards-fullscreen');
+        }
+        /** Formation slot placement: front row on the right, back row on the left (rates come from FORMATIONS). */;
+        _proto.placement = function placement(rates) {
+          var even = Math.max.apply(Math, rates) - Math.min.apply(Math, rates) < 5;
+          if (even) return [{
+            x: 72,
+            y: 30,
+            front: true
+          }, {
+            x: 48,
+            y: 52,
+            front: false
+          }, {
+            x: 24,
+            y: 74,
+            front: false
+          }];
+          if (rates[1] >= rates[0] * .9) return [{
+            x: 72,
+            y: 28,
+            front: true
+          }, {
+            x: 72,
+            y: 72,
+            front: true
+          }, {
+            x: 28,
+            y: 50,
+            front: false
+          }];
+          return [{
+            x: 72,
+            y: 50,
+            front: true
+          }, {
+            x: 28,
+            y: 22,
+            front: false
+          }, {
+            x: 30,
+            y: 74,
+            front: false
+          }];
         };
         _proto.formation = function formation() {
-          var _this30 = this;
+          var _this32 = this;
           var b = this.port.battle();
           var draft = b.formation.slice(),
             preset = this.port.model().interfaceProgress.preset;
@@ -5280,82 +5511,102 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           this.root.classList.remove('battle-mode');
           this.backdrop.style.display = 'none';
           var render = function render() {
-            _this30.content.innerHTML = "<div class=\"secondary formation-page\"><div class=\"formation-scene\" style=\"background-image:url('" + _this30.urls.scene1 + "')\"><h1 class=\"title-plaque\">\u961F\u4F0D\u7F16\u961F</h1><div class=\"standing-heroes\">" + [1, 0, 2].map(function (slot, i) {
-              return draft[slot] === undefined ? _this30.button('＋', function () {}, 'empty-position') : _this30.button(_this30.face(draft[slot]) + ("<b>" + NAMES[draft[slot]] + "</b><small>" + FORMATIONS[_this30.port.model().interfaceProgress.formation].rates[slot] + "%</small>"), function () {
+            var f = FORMATIONS[_this32.port.model().interfaceProgress.formation],
+              place = _this32.placement(f.rates);
+            _this32.content.innerHTML = "<div class=\"secondary formation-page\"><div class=\"formation-scene\" style=\"background-image:url('" + _this32.urls.scene1 + "')\"><h1 class=\"title-plaque plaque\">" + _this32.plate('编队') + "</h1><div class=\"standing-heroes\">" + [0, 1, 2].map(function (slot) {
+              var p = place[slot],
+                style = "left:" + p.x + "%;top:" + p.y + "%";
+              return draft[slot] === undefined ? _this32.button('＋', function () {
+                return _this32.toast('点击下方英雄卡片上阵');
+              }, 'empty-position" style="' + style, false, '空位') : _this32.button("<span class=\"role-tag\">" + _this32.roleBadge(draft[slot]) + HERO_CONFIG[draft[slot]].name + " \xB7 " + ROLES[draft[slot]] + "</span>" + _this32.face(draft[slot]) + "<span class=\"row-plaque\">" + (p.front ? '前排' : '后排') + "</span><small>\u53D7\u51FB\u7387 " + f.rates[slot] + "%</small>", function () {
                 draft.splice(slot, 1);
                 render();
-              }, 'standing slot' + slot);
-            }).join('') + "</div></div><div class=\"formation-toolbar\"><b>\u5DF2\u4E0A\u9635 " + draft.length + "/3</b><div>" + [0, 1, 2, 3].map(function (i) {
-              return _this30.button(String(i + 1), function () {
+              }, 'standing ' + (p.front ? 'front' : 'back') + '" style="' + style, false, NAMES[draft[slot]]);
+            }).join('') + "</div></div><div class=\"formation-sheet\"><div class=\"formation-toolbar\"><b>\u5DF2\u4E0A\u9635 " + draft.length + "/3</b><i></i><div class=\"preset-buttons\">" + [0, 1, 2, 3].map(function (i) {
+              return _this32.button(String(i + 1), function () {
                 preset = i;
-                draft = _this30.port.model().interfaceProgress.presets[i].filter(function (id) {
-                  return _this30.port.model().owns(id);
+                draft = _this32.port.model().interfaceProgress.presets[i].filter(function (id) {
+                  return _this32.port.model().owns(id);
                 });
                 render();
               }, i === preset ? 'selected' : 'quiet');
-            }).join('') + "</div>" + _this30.button(FORMATIONS[_this30.port.model().interfaceProgress.formation].name + ' ▾', function () {
-              return _this30.formationTypes(render);
-            }, 'quiet') + "</div><div class=\"roster-grid\">" + HERO_CONFIG.map(function (h, id) {
-              return _this30.button(_this30.heroCard(id) + (draft.indexOf(id) >= 0 ? '<span class="deployed">已上阵</span>' : ''), function () {
-                if (!_this30.port.model().owns(id)) {
-                  _this30.toast('请先招募该英雄');
+            }).join('') + "</div><i></i><span class=\"formation-name\">" + f.name + "</span>" + _this32.button(ico('people') + '阵型选择', function () {
+              return _this32.formationTypes(render);
+            }) + "</div><div class=\"roster-grid\">" + HERO_CONFIG.map(function (h, id) {
+              return _this32.button(_this32.heroCard(id, {
+                deployed: draft.indexOf(id) >= 0
+              }), function () {
+                if (!_this32.port.model().owns(id)) {
+                  _this32.toast('请先招募该英雄');
                   return;
                 }
                 var i = draft.indexOf(id);
-                if (i >= 0) draft.splice(i, 1);else if (draft.length < 3) draft.push(id);else _this30.toast('最多上阵三名英雄，请先移除一位');
+                if (i >= 0) draft.splice(i, 1);else if (draft.length < 3) draft.push(id);else _this32.toast('最多上阵三名英雄，请先移除一位');
                 render();
-              }, 'flat');
-            }).join('') + "</div>" + _this30.button('关闭', function () {
+              }, 'flat', false, NAMES[id]);
+            }).join('') + "</div></div>" + _this32.button('关闭', function () {
               if (!draft.length) {
-                _this30.toast('至少上阵一名英雄');
+                _this32.toast('至少上阵一名英雄');
                 return;
               }
-              var error = _this30.port.formation(draft);
+              var error = _this32.port.formation(draft);
               if (error) {
-                _this30.toast(error);
+                _this32.toast(error);
                 return;
               }
-              _this30.run(function (m) {
+              _this32.run(function (m) {
                 m.interfaceProgress.presets[preset] = draft.slice();
                 m.interfaceProgress.preset = preset;
                 return null;
               }, function () {
-                _this30.port.navigate(_this30.page);
-                _this30.draw();
+                _this32.port.navigate(_this32.page);
+                _this32.draw();
               });
             }, 'secondary-close') + "</div>";
           };
           render();
         };
-        _proto.formationTypes = function formationTypes(back) {
-          var _this31 = this;
+        _proto.formationTypes = function formationTypes(back, pick) {
+          var _this33 = this;
+          if (pick === void 0) {
+            pick = this.port.model().interfaceProgress.formation;
+          }
+          var team = this.port.battle().formation,
+            heroes = [0, 1, 2].map(function (n) {
+              var _ref10, _team$n;
+              return (_ref10 = (_team$n = team[n]) != null ? _team$n : [0, 1, 2].filter(function (i) {
+                return team.indexOf(i) < 0;
+              })[n - team.length]) != null ? _ref10 : n;
+            });
           this.popup('阵型选择', "<div class=\"two-grid formation-types\">" + FORMATIONS.map(function (f, i) {
-            return _this31.button("<h3>" + f.name + "</h3><div class=\"formation-mini\">" + [0, 1, 2].map(function (n) {
-              var _this31$port$battle$f;
-              return "<div>" + _this31.face((_this31$port$battle$f = _this31.port.battle().formation[n]) != null ? _this31$port$battle$f : n) + "<b>" + f.rates[n] + "%</b></div>";
+            var place = _this33.placement(f.rates);
+            return _this33.button("<header>" + ico(['shield', 'sword', 'people', 'bolt'][i]) + "<h3>" + f.name + "</h3><small>\u540E\u6392 \u279C \u524D\u6392</small><i class=\"radio " + (pick === i ? 'on' : '') + "\">" + (pick === i ? ico('check') : '') + "</i></header><div class=\"formation-mini\">" + [0, 1, 2].map(function (n) {
+              return "<div style=\"left:" + place[n].x + "%;top:" + place[n].y + "%\">" + _this33.face(heroes[n]) + "<b>\u53D7\u51FB\u7387 " + f.rates[n] + "%</b></div>";
             }).join('') + "</div>", function () {
-              return _this31.run(function (m) {
-                m.interfaceProgress.formation = i;
-                return null;
-              }, function () {
-                _this31.port.battle().interfaceProgress.formation = i;
-                _this31.close();
-                back();
-              });
-            }, _this31.port.model().interfaceProgress.formation === i ? 'selected' : 'quiet');
-          }).join('') + "</div>");
+              return _this33.formationTypes(back, i);
+            }, 'flat formation-option ' + (pick === i ? 'picked' : ''), false, f.name);
+          }).join('') + "</div><p class=\"formation-note\">" + ico('leaf') + "\u53D7\u51FB\u7387\u51B3\u5B9A\u654C\u4EBA\u666E\u901A\u653B\u51FB\u7684\u76EE\u6807\u6982\u7387" + ico('leaf', 'mirror') + "</p>", this.button('使用阵型', function () {
+            return _this33.run(function (m) {
+              m.interfaceProgress.formation = pick;
+              return null;
+            }, function () {
+              _this33.port.battle().interfaceProgress.formation = pick;
+              _this33.close();
+              back();
+            });
+          }, 'wide'), 'large');
         };
         _proto.update = function update() {
-          var _this32 = this,
+          var _this34 = this,
             _this$port$model$dung3;
           var now = performance.now();
           if (now - this.lastUpdate < 50) return;
           this.lastUpdate = now;
           var b = this.port.battle();
           this.root.querySelectorAll('.wallet').forEach(function (wallet) {
-            var values = wallet.querySelectorAll('b');
-            if (values[0]) values[0].textContent = String(_this32.port.model().gold);
-            if (values[1]) values[1].textContent = _this32.port.model().dungeon.stamina + '/120';
+            var values = wallet.querySelectorAll('.resource b');
+            if (values[0]) values[0].textContent = String(_this34.port.model().gold);
+            if (values[1] && !wallet.querySelector('.ticket-resource')) values[1].textContent = _this34.port.model().dungeon.stamina + '/120';
           });
           if (this.root.classList.contains('battle-mode')) {
             var _this$port$model$dung2;
@@ -5368,19 +5619,19 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
               n.classList.toggle('turn-current', b.nextActor === i);
               if (i >= 3) {
                 var image = n.querySelector('img');
-                if (image && image.src !== _this32.urls['monster' + b.enemies[i - 3].kind]) image.src = _this32.urls['monster' + b.enemies[i - 3].kind];
+                if (image && image.src !== _this34.urls['monster' + b.enemies[i - 3].kind]) image.src = _this34.urls['monster' + b.enemies[i - 3].kind];
               }
             });
             b.formation.forEach(function (id) {
               var h = b.heroes[id],
-                bar = _this32.root.querySelector("[data-hp=\"" + id + "\"]"),
-                label = _this32.root.querySelector("[data-hp-label=\"" + id + "\"]"),
-                shield = _this32.root.querySelector("[data-shield=\"" + id + "\"]");
+                bar = _this34.root.querySelector("[data-hp=\"" + id + "\"]"),
+                label = _this34.root.querySelector("[data-hp-label=\"" + id + "\"]"),
+                shield = _this34.root.querySelector("[data-shield=\"" + id + "\"]");
               if (bar) bar.style.width = Math.max(0, h.hp / b.stats(id).hp * 100) + '%';
               if (label) label.textContent = '♥ ' + h.hp + '/' + b.stats(id).hp;
               if (shield) shield.textContent = h.shield > 0 ? '⬟ ' + h.shield : '';
               [0, 1].forEach(function (j) {
-                var n = _this32.root.querySelector("[data-cooldown=\"" + id + "-" + j + "\"]");
+                var n = _this34.root.querySelector("[data-cooldown=\"" + id + "-" + j + "\"]");
                 if (n) n.textContent = (j ? h.queued2 : h.queued) ? '待释放' : (j ? h.cooldown2 : h.cooldown) > 0 ? (j ? h.cooldown2 : h.cooldown).toFixed(1) : '';
               });
             });
@@ -5401,21 +5652,21 @@ System.register("chunks:///_virtual/SecondEditionUI.ts", ['./rollupPluginModLoBa
           }
         };
         _proto.result = function result() {
-          var _this33 = this;
+          var _this35 = this;
           var b = this.port.battle(),
             r = this.port.model().dungeon.run,
             p = r.receipt;
-          this.popup(r.id === 5 ? '无尽结算' : b.result === 'victory' ? '挑战胜利' : '挑战失败', "<h3>" + DUNGEONS[r.id].name + " \xB7 " + DIFFICULTIES[r.difficulty] + "</h3><p>\u901A\u5173 " + p.cleared + " " + (r.id === 5 ? '关' : '波') + " \xB7 \u7528\u65F6 " + Math.floor(b.elapsed) + "\u79D2</p>" + this.rewardViewport(this.reward(6, p.gold, '金币') + this.reward(7, p.experience, '每位英雄经验') + this.reward(7, p.materials, '强化石') + (p.gear ? this.reward(0, p.gear, '装备') : '')) + this.section('战斗统计') + b.formation.map(function (id) {
-            return _this33.row(NAMES[id], '伤害 ' + b.heroes[id].damage + ' / 治疗 ' + b.heroes[id].healing);
+          this.popup(r.id === 5 ? '无尽结算' : b.result === 'victory' ? '挑战胜利' : '挑战失败', "<p class=\"pool-name\">" + DUNGEONS[r.id].name + " \xB7 " + DIFFICULTIES[r.difficulty] + "</p><p class=\"result-line\">\u901A\u5173 <em>" + p.cleared + "</em> " + (r.id === 5 ? '关' : '波') + " \xB7 \u7528\u65F6 " + Math.floor(b.elapsed) + "\u79D2</p>" + this.section('获得奖励') + this.rewardViewport(this.reward(6, p.gold, '金币', 4) + this.reward(7, p.experience, '每位英雄经验') + this.reward(7, p.materials, '强化石') + (p.gear ? this.reward(0, p.gear, '装备', 3) : '')) + this.section('战斗统计') + b.formation.map(function (id) {
+            return _this35.row(NAMES[id], '伤害 ' + b.heroes[id].damage + ' / 治疗 ' + b.heroes[id].healing, ROLE_ICONS[id]);
           }).join(''), this.button('退出', function () {
-            _this33.close();
-            _this33.port.exit();
-            _this33.draw();
-          }, 'quiet') + this.button('再次挑战', function () {
-            _this33.close();
-            _this33.port.retry();
-            _this33.lastReceipt = '';
-            _this33.draw();
+            _this35.close();
+            _this35.port.exit();
+            _this35.draw();
+          }, 'peach') + this.button('再次挑战', function () {
+            _this35.close();
+            _this35.port.retry();
+            _this35.lastReceipt = '';
+            _this35.draw();
           }), 'large');
         };
         _proto.destroy = function destroy() {

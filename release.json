@@ -1,0 +1,455 @@
+{
+  "revision": "2c30c736108deaba2b7e994489bb9aefa97caeaf",
+  "files": [
+    {
+      "path": "releases/2c30c736108d/application.js",
+      "bytes": 3300,
+      "sha256": "3876486e03ffd49f5cb8bce6d5a23b7ec392a533487229483a3b2429530093f2"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/internal/config.json",
+      "bytes": 5778,
+      "sha256": "dd27418acbed024a7854eaf49c58b76b808aa6b066f4813587ba81a4de2854e5"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/internal/import/04/04f923b60.json",
+      "bytes": 193611,
+      "sha256": "954df1cc306adb765d6585cc62dee4284e4e75f0194f9fb78220354808609ea2"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/internal/index.js",
+      "bytes": 103596,
+      "sha256": "f9243370c4b83dcd52c5275ad887bb3c780c78f3fba57552433eba9adb08cc5a"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/main/config.json",
+      "bytes": 1093,
+      "sha256": "525b3942512380c018274774846d56185abd2aeb7493ccb69514c6640e0f3ee1"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/main/import/4e/4ef00fc0-9384-4a14-8c25-6416ef40f001.json",
+      "bytes": 799,
+      "sha256": "2488ec9f1505b308d330e154352de0ab60e888997113fccde621a2bbdb0172ab"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/main/import/ba/ba21476f-2866-4f81-9c4d-6e359316e448.json",
+      "bytes": 192,
+      "sha256": "0a34e9263b215bb661d6334db6a255497c6cdac1f1c40b130f50bf9d91f4dd39"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/main/import/fd/fd8ec536-a354-4a17-9c74-4f3883c378c8.json",
+      "bytes": 480,
+      "sha256": "c2eee4552a460ed97591f527e127b95c811d5f796b9448f3f705974af9beba9d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/main/index.js",
+      "bytes": 372138,
+      "sha256": "df0bc9679dba849ad47058df20d7be1264150c9b36ab2539a214bc9491f06d22"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/config.json",
+      "bytes": 13453,
+      "sha256": "94f5ff18e32b9072131ce44dacc1464d3c48c180193fcd64f259749ebe953efd"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/01/0180dc19-8684-4b74-9e1d-566d91130877.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/01/0180dc19-8684-4b74-9e1d-566d91130877@f9941.json",
+      "bytes": 595,
+      "sha256": "df30eb28c1c272fdc98359852f635df5ff85cbc7882137741150c18f97581334"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/02/02e877c1-d657-4b46-8e25-9e8e02e4ec04.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/02/02e877c1-d657-4b46-8e25-9e8e02e4ec04@f9941.json",
+      "bytes": 588,
+      "sha256": "3b6643e9f2b4f6169b48ec2702e9f28ed38e9ad9d487ff2d687c30d9b3483db3"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/08/08cba099-0b68-44ff-8196-1fb9b2a5facd.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/08/08cba099-0b68-44ff-8196-1fb9b2a5facd@f9941.json",
+      "bytes": 680,
+      "sha256": "27ab20bb690e477921abfab023d2f4a3fb4e62768a6bdf11fffbd92f13e9adea"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/0b/0b2f2bde6.json",
+      "bytes": 1173,
+      "sha256": "3032fc56bdc29ad10ef477e1496cb6dd330a36c6cc43c0939a421139fa8d7e79"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/0f/0f838bea-d8ee-48a9-a516-95aeb6579ac7.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/0f/0f838bea-d8ee-48a9-a516-95aeb6579ac7@f9941.json",
+      "bytes": 603,
+      "sha256": "d1e74fd6c3dac7f5a1174bd82e138aab9633dd1af9800815fc319bc8e75b9445"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/14/1441eb79-ae27-42dc-b8b9-213a8002fc8d.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/14/1441eb79-ae27-42dc-b8b9-213a8002fc8d@f9941.json",
+      "bytes": 762,
+      "sha256": "4892efed3d9c9136f3f6d63f97e57dffe5528acccd5229199bbdf3e592ec3343"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/1f/1fb846a0-6c7b-42f6-898b-176a930db7e9.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/1f/1fb846a0-6c7b-42f6-898b-176a930db7e9@f9941.json",
+      "bytes": 704,
+      "sha256": "381e04dff247fbe1472ba4f74f9040cfcd916ad344477d9c40c8a085b963ec2e"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/48/48b69c13-0e29-45c9-98c9-aa9a78849323.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/48/48b69c13-0e29-45c9-98c9-aa9a78849323@f9941.json",
+      "bytes": 709,
+      "sha256": "2da52657528750548bfef150c31cfd937e2af4b0ed63359516666ea040fefb60"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/4d/4dacceee-9b44-4e1b-b90f-223778a1d00d.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/4d/4dacceee-9b44-4e1b-b90f-223778a1d00d@f9941.json",
+      "bytes": 587,
+      "sha256": "0906cddd5b9d2a924f48a899151e9db3bc066c8c613a88c868daaf3998cdcb79"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/66/6688a0d8-81f2-442b-a440-20865d0be5df.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/66/6688a0d8-81f2-442b-a440-20865d0be5df@f9941.json",
+      "bytes": 597,
+      "sha256": "b588e757e2f47dce0b9b79e8ce1ecbfb3d9716295f34de0214740e25b22404e6"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/69/694cf9fc-8751-4507-8ad5-e07fadc3a3eb.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/69/694cf9fc-8751-4507-8ad5-e07fadc3a3eb@f9941.json",
+      "bytes": 746,
+      "sha256": "bf706f9bbd0daf52d7fd12d574ef5f4b71dbc5219535e80ad0653f78b6dcd588"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/6b/6b6f4a33-90fc-4a3c-8d9b-f736c9181dfc.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/6b/6b6f4a33-90fc-4a3c-8d9b-f736c9181dfc@f9941.json",
+      "bytes": 749,
+      "sha256": "bb663ca7a705b31b7d944e588740cf5a6ec9f81c2acb1f56daad0f73bd5fed26"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/79/79f712c1-5c36-47d7-bc72-1c9f243d1bd3.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/79/79f712c1-5c36-47d7-bc72-1c9f243d1bd3@f9941.json",
+      "bytes": 746,
+      "sha256": "9cac7f5bfdf97b3bfb833e7ae8e0b83a94de8ba1ab01fc3464ae078ebc0957b6"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/9a/9ad92f7f-0fd3-4d21-8017-d28c30830a7d.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/9a/9ad92f7f-0fd3-4d21-8017-d28c30830a7d@f9941.json",
+      "bytes": 690,
+      "sha256": "04540df7735e52ea947e68e9634870c51f11f0dccb540c049f047001ab6c13b8"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/a5/a5e318f6-5f9c-48f6-950f-343ae6a785dc.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/a5/a5e318f6-5f9c-48f6-950f-343ae6a785dc@f9941.json",
+      "bytes": 668,
+      "sha256": "3cabdefc2e7def2dedd90146d83d38634767338ebb0c1bd62eadb9bc01f20d48"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/a8/a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/a8/a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c@f9941.json",
+      "bytes": 658,
+      "sha256": "28d14334d4ec82f8ebd3bc49955eca00f3bf73cbe2869aafce1c41be9b109218"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/c3/c3fdc5dc-3410-487c-b36f-46c7fc3795f9.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/c3/c3fdc5dc-3410-487c-b36f-46c7fc3795f9@f9941.json",
+      "bytes": 709,
+      "sha256": "0866b8b2635bf15ada81a24a67631d589290b319e911595d78ec0360634f0b91"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/cd/cd45215e-c8ca-4c85-87d0-10f079658178.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/cd/cd45215e-c8ca-4c85-87d0-10f079658178@f9941.json",
+      "bytes": 592,
+      "sha256": "2c738dbb70991da86206998a81b8fbccc7970318ec2ce472e07d1743e82b7293"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/d2/d251be49-d451-4b30-81dc-89ef9b1396c7.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/d2/d251be49-d451-4b30-81dc-89ef9b1396c7@f9941.json",
+      "bytes": 607,
+      "sha256": "a49bffb71259ddfe67c555f3b6c16495d3dc91d3c121693072f87f8e10fbeb63"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/d2/d26914be-7c22-4077-bb8b-052e154fa4c7.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/d2/d26914be-7c22-4077-bb8b-052e154fa4c7@f9941.json",
+      "bytes": 580,
+      "sha256": "0389160bd35e3a01fe368f087dcfd5257c43b129da0317dce61d970d8cc53906"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/e3/e321fea6-1aa2-4546-a8dc-eb703a05701a.json",
+      "bytes": 72,
+      "sha256": "60928632edcd22b5694a8c22de01de0d2cbb6f374103242a99a4394cc767f44d"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/import/e3/e321fea6-1aa2-4546-a8dc-eb703a05701a@f9941.json",
+      "bytes": 661,
+      "sha256": "207a8d2b26aef759d48418ddce790bff7e34fa43d8d3262ebce37c2be4973a66"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/index.js",
+      "bytes": 658,
+      "sha256": "28d1f0ea5576ab6ed32c9f5502c46ed2e8c13c005e2c1f642803c760c65d0378"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/01/0180dc19-8684-4b74-9e1d-566d91130877.png",
+      "bytes": 1783050,
+      "sha256": "2e240025c9115cbfe84a94994544fc853c80455af3dab1dfd3eee21651272216"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/02/02e877c1-d657-4b46-8e25-9e8e02e4ec04.png",
+      "bytes": 2282477,
+      "sha256": "234d58341b60500286baee66f1684227d141388ef5eecf534865f5778ce0f25f"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/08/08cba099-0b68-44ff-8196-1fb9b2a5facd.png",
+      "bytes": 1023318,
+      "sha256": "bc6da8b7b79b717015d3b00b107b22bedc6f8949b836fb8bef959055a7fc4e91"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/0f/0f838bea-d8ee-48a9-a516-95aeb6579ac7.png",
+      "bytes": 1819987,
+      "sha256": "892df1335b45b8605a46a7422fa83b0333a5f601644183ce1fbdd7af11dd5896"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/14/1441eb79-ae27-42dc-b8b9-213a8002fc8d.png",
+      "bytes": 818203,
+      "sha256": "e3359e81b18d9149ff0d6ef0581ef3bc4ad0ce1fbf8970d6e0cb42317c187069"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/1f/1fb846a0-6c7b-42f6-898b-176a930db7e9.png",
+      "bytes": 632582,
+      "sha256": "c9bad2e68bf12a8328950245e79c08c80e90f92b8f94b802ffc3e01231b19770"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/48/48b69c13-0e29-45c9-98c9-aa9a78849323.png",
+      "bytes": 789860,
+      "sha256": "94d042439d8214b1bbff9615ee5b173b6cc926cb9b60a33242bee805afad3dbb"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/4d/4dacceee-9b44-4e1b-b90f-223778a1d00d.png",
+      "bytes": 1785657,
+      "sha256": "73ff688e1d64d8e087e9d0a81e270f86f0b285257051c4298148093d961a20b0"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/66/6688a0d8-81f2-442b-a440-20865d0be5df.png",
+      "bytes": 2122954,
+      "sha256": "5a150bd52975d1f27a8b0840f23985d7bc501fef7b2e3e3a32c602391ce2ea04"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/69/694cf9fc-8751-4507-8ad5-e07fadc3a3eb.png",
+      "bytes": 1886231,
+      "sha256": "c2fd94279bdde14ea6ca9c01cb0f88275cbbb3689c0b54420afde7461c820230"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/6b/6b6f4a33-90fc-4a3c-8d9b-f736c9181dfc.png",
+      "bytes": 763953,
+      "sha256": "df13814b1726f84f3ea1415ef22dd1edb9bd899c484c744a2ccd15a6911ef47e"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/79/79f712c1-5c36-47d7-bc72-1c9f243d1bd3.png",
+      "bytes": 1623113,
+      "sha256": "84ba8263e1fd23abf443f3e1529326aee9037412087566ecb6d3500ef3117f99"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/9a/9ad92f7f-0fd3-4d21-8017-d28c30830a7d.png",
+      "bytes": 843532,
+      "sha256": "255d8b031f977e31632025cf4921c2b06c0bd7d9d80282725ac36f220365a418"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/a5/a5e318f6-5f9c-48f6-950f-343ae6a785dc.png",
+      "bytes": 778862,
+      "sha256": "112d8ee4852923d1a4d6b744327da82dbe93b8207d6c5cead711c1c880446eef"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/a8/a8e14799-66eb-419f-9fc9-0c0f2d4fcb6c.png",
+      "bytes": 1426954,
+      "sha256": "84f160210021c0b1c600826b1509b37cae191e3b5e4cf882b56ef7bc9fb90bad"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/c3/c3fdc5dc-3410-487c-b36f-46c7fc3795f9.png",
+      "bytes": 1083869,
+      "sha256": "6f5f57da226eb28628ebfa40f79c2386111751203832d5bce0919e7c1ebb0980"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/cd/cd45215e-c8ca-4c85-87d0-10f079658178.png",
+      "bytes": 1979717,
+      "sha256": "f849354d0268e2bf8d90ad034032eb8c71a7e8f3c33c30444f23328c13b2ae49"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/d2/d251be49-d451-4b30-81dc-89ef9b1396c7.png",
+      "bytes": 2062539,
+      "sha256": "f230e7e6ff5de9cf57375bb8cca92d0ba88a215aa26f401a84663591f91ce5e1"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/d2/d26914be-7c22-4077-bb8b-052e154fa4c7.png",
+      "bytes": 1965350,
+      "sha256": "e95c7eebeafa60f4e16dcad4a642cb7713544000d267663a40a73bf8b97664c4"
+    },
+    {
+      "path": "releases/2c30c736108d/assets/resources/native/e3/e321fea6-1aa2-4546-a8dc-eb703a05701a.png",
+      "bytes": 958195,
+      "sha256": "66800f840191e4c278c0a484dd7183c0cfc5b38c1911e7d273603a5b3d1293c5"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/_virtual_cc-DPceWclo.js",
+      "bytes": 5700752,
+      "sha256": "af1f32f2baa09a8c62e6ca8a5affda5ebb239791be064587d91bdc1b8b949e99"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/assets/spine-CC34fKUR.wasm",
+      "bytes": 205175,
+      "sha256": "b3d705bd391da35dcf0980c1d8c526f609ad64ac12652dd8c0bf3b20a626f2f2"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/assets/spine.js.mem-pbmhlDdv.bin",
+      "bytes": 19998,
+      "sha256": "7a22a12630af3de76efe992d68fdcc25f072d663ccb569d7369cbe2d91e8147e"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/cc.js",
+      "bytes": 11083,
+      "sha256": "42db84efb2487de2f5b1af569d621d30c4f4407d0439624bcc614faeb9b22e15"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/spine-DfhiCve8.js",
+      "bytes": 251,
+      "sha256": "4b78b5a47c8a8272b231288a6d23157a1fbede3c7b68299e68c1c1ed685727e8"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/spine.asm-CxUwFpAn.js",
+      "bytes": 391812,
+      "sha256": "ebaeda6eab08d3b91ae574f087529a517b1751ddcdfe475e0da09bc6357e7c8f"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/spine.js-Daiw-Blo.js",
+      "bytes": 263,
+      "sha256": "0ed4be3181acd46e82e0216d03a6e6b22aed6cbee6cff04f6f6a39096a220fd1"
+    },
+    {
+      "path": "releases/2c30c736108d/cocos-js/spine.wasm-CqLXokmv.js",
+      "bytes": 45003,
+      "sha256": "fee0536ac5799fe13862aab87a06fe30ba3e54d52309e6b23dd0a7f9b032a637"
+    },
+    {
+      "path": "releases/2c30c736108d/index.html",
+      "bytes": 2168,
+      "sha256": "66cafc3c6457ebb91d86b8c2b5e43669dbddfc21648804ba9c44296c776ef76f"
+    },
+    {
+      "path": "releases/2c30c736108d/index.js",
+      "bytes": 818,
+      "sha256": "4317cb547b4d105f69346b925d961df7f951002fd5a4aaae807a361aa1ad49cd"
+    },
+    {
+      "path": "releases/2c30c736108d/src/chunks/bundle.js",
+      "bytes": 7415,
+      "sha256": "5567c659d739bd6a907ead1ac5a8750e382266706d8dbf935c3fdbed6f5ac258"
+    },
+    {
+      "path": "releases/2c30c736108d/src/effect.bin",
+      "bytes": 5755,
+      "sha256": "b0d92f8307e3109abe8af8a863d68feb58cf4f49cf000b1d48fbb3dc3ad45556"
+    },
+    {
+      "path": "releases/2c30c736108d/src/import-map.json",
+      "bytes": 54,
+      "sha256": "ae84a42bfd0fe767a4141f7cd4e120b85ced56a55baf02bd48835d20bc6996f4"
+    },
+    {
+      "path": "releases/2c30c736108d/src/polyfills.bundle.js",
+      "bytes": 14750,
+      "sha256": "f1e4ced3322168d6b9915e782e4c1cf1055d75f66f2b38e7fcd60f48cf89082b"
+    },
+    {
+      "path": "releases/2c30c736108d/src/settings.json",
+      "bytes": 22587,
+      "sha256": "e516bbe08ff01d23f0739064d6345974a4b56f2b9c7f75ae9d1d87a7735472f4"
+    },
+    {
+      "path": "releases/2c30c736108d/src/system.bundle.js",
+      "bytes": 37210,
+      "sha256": "d87bfc4cd4e1f49956114cd2c97e3fdc1229d90eef71036b24a19f3458ba1fda"
+    },
+    {
+      "path": "releases/2c30c736108d/style.css",
+      "bytes": 1283,
+      "sha256": "b9dac5de1b7792243a6432dfe553901f0a235f41edb42c719d482d1c17016a2f"
+    },
+    {
+      "path": "index.html",
+      "bytes": 2142,
+      "sha256": "d48eed9fce9e1c72521606a433c32c55f0f6f566ca8e8aff4f4b09c62c780808"
+    }
+  ]
+}
